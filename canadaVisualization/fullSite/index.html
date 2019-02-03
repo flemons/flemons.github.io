@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/gasCost.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <!--    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/odometer-theme-default.css" />
+    <title>Visualizing Canada's Housing Crisis</title>
+</head>
+
+<body>
+    <div id="jumpTo">
+        <table cellspacing="0" cellpadding="0" id="jumpToLinks">
+            <tr class="inlineSelect">
+                <td class="inlineSelect">
+                    <div class="quickJump highlight" id="land"><img src="svg/homeIcon2.svg" id="land"></div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="19841"></div>
+                    <div class="quickJump" id="1984">1984</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="19881"></div>
+                    <div class="quickJump" id="1988">1988</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="19921"></div>
+                    <div class="quickJump" id="1992">1992</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="19961"></div>
+                    <div class="quickJump" id="1996">1996</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="20001"></div>
+                    <div class="quickJump" id="2000">2000</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="20041"></div>
+                    <div class="quickJump" id="2004">2004</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="20081"></div>
+                    <div class="quickJump" id="2008">2008</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="20121"></div>
+                    <div class="quickJump" id="2012">2012</div>
+                </td>
+                <td class="inlineSelect">
+                    <div class="quickJumpGap" id="20161"></div>
+                    <div class="quickJump" id="2016">2016</div>
+                </td>
+                <!--
+            <td class=" inlineSelect">
+                <div class="quickJump" id="2020"><img src="img/Circle.png" id="2020"></div>
+                <div class="quickJumpGap" id="20201"></div>
+            </td>
+-->
+                <td class=" inlineSelect">
+                    <div class="quickJumpGap" id="end1"></div>
+                    <div class="quickJump" id="end"><img src="svg/Flag_of_Canada.svg" id="end"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="overlay2 hide lowZ" id="overlay2">
+        <div class="infoBox2">
+            <h1>What can you do?</h1>
+            <p style="width:85%; text-align:left; margin: auto; font-size:1.2em"> Although it might seem more feasible to turn back time, all hope is not lost. There are more options becoming available for you to save and prepare for buying your first&nbsp;house.
+                <br>
+                <br>
+                <br> Learn more at the government of Canada's website here: </p>
+            <br>
+            <a href="https://www.canada.ca/en/employment-social-development/services/benefits/housing/buying-home.html"><img src="svg/Flag_of_Canada.svg" class="flag"></a>
+        </div>
+        
+    </div>
+    <div class="arrowCont">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.57 68.01">
+            <polygon id="nextItem" class="pointer" points="44.56 34 0 0 0 10.96 30.2 34 0 57.05 0 68.01 44.56 34" /> </svg>
+    </div>
+    <div class="overlay1" id="overlay1">
+        <div class="infoBox1">
+            <h1 class="noPad">Canada is getting expensive</h1>
+            <p style="width:75%; text-align:left; margin: auto; font-size:1.2em"> Despite median wages nearly matching values from thirty years ago, almost a third of Canadians plan on buying a home in the next two years.
+                <br>
+                <br> With the rising housing costs, a majority of first time home buyers have to extend their wait, with almost a third are relying on family for help.
+                <br>
+                <br> But it did not always used to be so unaffordable, Canada thirty years ago was a far different place.
+                <br><br>
+                <strong style="color:#2d3e50"> Let's take a look at how we've progressed.</strong>
+        </div>
+    </div>
+
+    <div class="dates">
+        <h1 class="backgroundNum">1984</h1>
+        <h1 class="backgroundNum" style="left:1536px">1988</h1>
+        <h1 class="backgroundNum" style="left:3072px">1992</h1>
+        <h1 class="backgroundNum" style="left:4608px">1996</h1>
+        <h1 class="backgroundNum" style="left:6144px">2000</h1>
+        <h1 class="backgroundNum" style="left:7680px">2004</h1>
+        <h1 class="backgroundNum" style="left:9216px">2008</h1>
+        <h1 class="backgroundNum" style="left:10752px">2012</h1>
+        <h1 class="backgroundNum" style="left:12228px">2016</h1>
+    </div>
+    <img src="svg/costRate.svg" class="trend" style="z-index:-1">
+
+    <!--Take components that I cant replicate and convert to svg, add to background -->
+    <div class="carPanel">
+        <div class="PanelTitle">
+            <h1>Vehicle Costs</h1>
+        </div>
+        <img src="svg/corvette.svg" class="carPosition" id="corvette"> <img src="svg/lincoln.svg" class="carPosition hide" id="lincoln">
+        <img src="svg/bmw.svg" class="carPosition hide" id="bmw">
+        <img src="svg/dodge.svg" class="carPosition hide" id="dodge"> <img src="svg/ford.svg" class="carPosition hide" id="ford">
+        <img src="svg/mazda.svg" class="carPosition hide" id="mazda">
+        <img src="svg/audi.svg" class="carPosition hide" id="audi">
+        <img src="svg/hyundai.svg" class="carPosition hide" id="hyundai">
+        <img src="svg/honda.svg" class="carPosition hide" id="honda">
+
+        <div class="carTitle">
+            <p class="label carType">Chevrolet Corvette</p>
+        </div>
+        <div class="gasLabel">
+            <p class="label">Per Litre Of Gas</p> 
+        </div>
+        <div class="carLabel">
+            <p class="label">Cost Of An Average Car</p> 
+        </div>
+<!--        <img src="svg/PriceTag_1.svg" class="carTag">-->
+        <div class="carCost">
+            <p class="dollars">$</p>
+            <p id="carCost" class="odometer">27,000</p>
+            </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.55 66.56" id="gasPosition">
+            <g id="carPanel1984">
+                <g>
+                    <path class="cls-1" d="M15.91 1.15h14.46v23.23H15.91zM31.41 1.15h14.46v23.23H31.41zM46.82 1.15h14.46v23.23H46.82zM67.01 1.15h14.46v23.23H67.01z" />
+                    <g>
+                        <text class="cls-2 " transform="translate(16.45 21.03)" id="gasDig1">0</text>
+                        <text class="cls-2 " transform="translate(31.95 21.03)" id="gasDig2">3</text>
+                        <text class="cls-2" transform="translate(47.37 21.03)" id="gasDig3">9</text>
+                        <text class="cls-2 " transform="translate(67.56 21.03)" id="gasDig4">9</text>
+                    </g>
+                    <text class="cls-3" transform="translate(62 21.45)">.</text>
+                    <text class="cls-8" transform="translate(82.66 16.72)">¢</text>
+                    <text class="cls-9" transform="rotate(-90 17.99 5.99)">SELF</text>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="housePanel">
+        <div class="PanelTitle">
+            <h1>House Costs</h1> </div>
+        <br>
+        <img src="svg/house1984.svg" class="housePosition" id="house1">
+        <img src="svg/house1988.svg" class="housePosition hide" id="house2">
+        <h3 class="underConstruction">Under Construction</h3>
+<!--        <img src="svg/PriceTag_1.svg" class="houseTag">-->
+        <div class="houseCost">
+            <p class="dollars">$</p>
+            <p id="houseCost" class="odometer">76,351</p> </div>
+        <div class="houseLabel">
+            <p class="label">Cost Of An Average Home</p> 
+        </div>
+    </div>
+    <div class="foodPanel">
+        <div class="PanelTitle">
+            <h1>Food Costs</h1>
+        </div>
+        <img src="svg/eggs.svg" class="eggPos">
+        <img src="svg/milk.svg" class="milkPos">
+        <div class="eggLabel">
+            <p class="label">A Dozen Eggs</p>
+        </div>
+        <div class="milkLabel">
+            <p class="label">2L Milk</p>
+        </div>
+        <div class="milkCost">
+            <p class="dollars">$</p>
+            <p id="milkCost" class="odometer">1.40</p>
+        </div>
+        <div class="eggsCost">
+            <p class="dollars">$</p>
+            <p id="eggsCost" class="odometer">0.94</p>
+        </div>
+    </div>
+
+    <!--
+    <div class="arrowCont">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.57 68.01">
+            <polygon id="nextItem" class="pointer" points="44.56 34 0 0 0 10.96 30.2 34 0 57.05 0 68.01 44.56 34" /> </svg>
+    </div>
+-->
+    <!--
+    <div class="arrowBack">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.57 68.01">
+            <polygon id="nextItem" class="pointer" points="44.56 34 0 0 0 10.96 30.2 34 0 57.05 0 68.01 44.56 34" /> </svg>
+    </div>
+-->
+    <!--    <img src="svg/CarPanel.svg" class="carcoPanel">-->
+    <!--        <img src="svg/HousePanel.svg" class="housePanel">-->
+    <!--    <img src="svg/FoodPanel.svg" class="foodPanel">-->
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 9642.16 540" height="759" style="z-index:10" id="fullDoc">
+        <defs>
+            <linearGradient id="linear-gradient" x1="387.62" y1="141.11" x2="387.62" y2="144.24" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#4f2417" stop-opacity="0" />
+                <stop offset="1" stop-color="#20100c" /> </linearGradient>
+            <linearGradient id="linear-gradient-2" x1="462.94" y1="131.29" x2="462.94" y2="143.78" xlink:href="#linear-gradient" />
+            <linearGradient id="linear-gradient-3" x1="540.96" y1="134.37" x2="541.41" y2="138.62" xlink:href="#linear-gradient" />
+            <linearGradient id="linear-gradient-4" x1="464.82" y1="105.23" x2="464.82" y2="116.2" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#d4ba78" />
+                <stop offset="1" stop-color="#b7a168" stop-opacity="0" /> </linearGradient>
+            <linearGradient id="linear-gradient-5" x1="464.72" y1="98.57" x2="464.72" y2="139.13" gradientUnits="userSpaceOnUse">
+                <stop offset="0.43" stop-color="#bebebe" />
+                <stop offset="0.58" stop-color="#97979b" /> </linearGradient>
+            <linearGradient id="linear-gradient-6" x1="464.72" y1="132.98" x2="464.72" y2="144.82" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#bebebe" stop-opacity="0" />
+                <stop offset="0.85" stop-color="#757578" /> </linearGradient>
+            <linearGradient id="linear-gradient-7" x1="463.4" y1="99.09" x2="464.27" y2="124.44" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#c72135" />
+                <stop offset="1" stop-color="#8c1826" stop-opacity="0" /> </linearGradient>
+            <linearGradient id="linear-gradient-8" x1="464.73" y1="143.74" x2="464.56" y2="133.32" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#591019" />
+                <stop offset="0.63" stop-color="#781722" stop-opacity="0.37" />
+                <stop offset="1" stop-color="#8c1826" stop-opacity="0" /> </linearGradient>
+            <linearGradient id="linear-gradient-9" x1="459.22" y1="137.64" x2="459.22" y2="153.46" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#4b4b4a" stop-opacity="0" />
+                <stop offset="1" /> </linearGradient>
+            <linearGradient id="linear-gradient-10" x1="368.31" y1="137.02" x2="368.31" y2="152.36" xlink:href="#linear-gradient-9" />
+            <linearGradient id="linear-gradient-11" x1="554.67" y1="140.03" x2="554.67" y2="150.53" xlink:href="#linear-gradient-9" />
+            <linearGradient id="linear-gradient-12" x1="464.12" y1="101.32" x2="464.12" y2="144.11" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff" />
+                <stop offset="0.57" stop-opacity="0" /> </linearGradient>
+            <linearGradient id="linear-gradient-13" x1="464.12" y1="141.62" x2="464.12" y2="151.71" gradientUnits="userSpaceOnUse">
+                <stop offset="0.2" stop-color="#b72032" stop-opacity="0" />
+                <stop offset="1" stop-color="#770717" /> </linearGradient>
+            <linearGradient id="linear-gradient-14" x1="552.25" y1="126.56" x2="547.96" y2="128.34" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                <stop offset="1" /> </linearGradient>
+            <linearGradient id="linear-gradient-15" x1="475.56" y1="125.6" x2="481.29" y2="128.3" xlink:href="#linear-gradient-14" />
+            <linearGradient id="linear-gradient-16" x1="464.72" y1="99.22" x2="464.72" y2="147.39" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                <stop offset="1" stop-opacity="0" /> </linearGradient>
+            <linearGradient id="linear-gradient-17" x1="464.72" y1="136.68" x2="464.72" y2="145.12" xlink:href="#linear-gradient-14" />
+            <linearGradient id="linear-gradient-18" x1="375.43" y1="138.89" x2="380.32" y2="138.88" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                <stop offset="1" stop-color="#6b6262" /> </linearGradient>
+            <linearGradient id="linear-gradient-19" x1="464.72" y1="127.75" x2="464.72" y2="143.3" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#847a78" stop-opacity="0" />
+                <stop offset="1" stop-color="#4a4544" /> </linearGradient>
+            <linearGradient id="linear-gradient-20" x1="464.72" y1="101.65" x2="464.72" y2="107.63" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#a89b98" />
+                <stop offset="1" stop-color="#847a78" stop-opacity="0" /> </linearGradient>
+            <radialGradient id="radial-gradient" cx="552.95" cy="135.75" r="5.17" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#605f61" />
+                <stop offset="1" stop-color="#a4a3a9" /> </radialGradient>
+            <linearGradient id="linear-gradient-21" x1="690.64" y1="144.73" x2="690.64" y2="140.44" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                <stop offset="1" stop-opacity="0.4" /> </linearGradient>
+            <linearGradient id="linear-gradient-22" x1="693.52" y1="92.07" x2="693.52" y2="89.21" xlink:href="#linear-gradient-21" />
+            <linearGradient id="linear-gradient-23" x1="760.8" y1="134.28" x2="760.8" y2="133" xlink:href="#linear-gradient-21" />
+            <linearGradient id="linear-gradient-24" x1="760.07" y1="165.56" x2="760.07" y2="164.66" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#d8d9da" />
+                <stop offset="0.17" stop-color="#d1d2d4" />
+                <stop offset="0.59" stop-color="#c4c6c8" />
+                <stop offset="1" stop-color="#c0c2c4" /> </linearGradient>
+            <linearGradient id="linear-gradient-25" x1="760.07" y1="158.37" x2="760.07" y2="139.74" xlink:href="#linear-gradient-21" />
+            <linearGradient id="linear-gradient-26" x1="803.27" y1="139.19" x2="803.27" y2="132.98" xlink:href="#linear-gradient-21" />
+            <clipPath id="clip-path">
+                <polygon points="712.78 125.12 771.51 82.59 830.77 125.12 712.78 125.12" style="fill:none" /> </clipPath>
+            <linearGradient id="linear-gradient-27" x1="681.7" y1="72.17" x2="681.7" y2="92.64" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#7b4d39" />
+                <stop offset="1" stop-color="#5f3b2d" /> </linearGradient>
+            <linearGradient id="linear-gradient-28" x1="696.07" y1="162.85" x2="696.07" y2="159.73" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#dbcbb2" />
+                <stop offset="1" stop-color="#8f8474" /> </linearGradient>
+            <linearGradient id="linear-gradient-29" x1="798.12" y1="108.03" x2="800.84" y2="104.05" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#231f20" stop-opacity="0" />
+                <stop offset="1" stop-color="#231f20" stop-opacity="0.8" /> </linearGradient>
+            <linearGradient id="linear-gradient-30" x1="13207.85" y1="106.98" x2="13210.16" y2="103.45" gradientTransform="matrix(-1, 0, 0, 1, 13952.36, 0)" xlink:href="#linear-gradient-29" />
+            <linearGradient id="linear-gradient-31" x1="703.43" y1="108.89" x2="703.43" y2="119.53" xlink:href="#linear-gradient-27" />
+            <linearGradient id="linear-gradient-32" x1="696.86" y1="125.42" x2="696.86" y2="123.06" xlink:href="#linear-gradient-29" />
+            <linearGradient id="linear-gradient-33" x1="657.69" y1="128.45" x2="657.69" y2="127.23" xlink:href="#linear-gradient-29" /> </defs>
+        <g style="isolation:isolate">
+            <g id="Layer_2" data-name="Layer 2">
+                <!--            <rect id="Background" width="8640" height="540" style="fill:#e0e0e0" />-->
+
+                <!--
+                <g id="Menu">
+                    <rect x="14.24" y="13.07" width="17.42" height="17.42" style="fill:#808285" />
+                    <rect x="14.24" y="30.49" width="17.42" height="17.42" style="fill:#808285" />
+                    <rect x="31.66" y="30.49" width="17.42" height="17.42" style="fill:#808285" />
+                    <rect x="31.66" y="13.07" width="17.42" height="17.42" style="fill:#808285" />
+                    <rect x="18.99" y="20.99" width="25.33" height="4.01" rx="2.01" ry="2.01" style="fill:#fff" />
+                    <rect x="18.99" y="28.48" width="25.33" height="4.01" rx="2.01" ry="2.01" style="fill:#fff" />
+                    <rect x="18.99" y="35.97" width="25.33" height="4.01" rx="2.01" ry="2.01" style="fill:#fff" /> </g>
+-->
+                <!--
+    <g id="GridGuide" class="jumpTo">
+    <line x1="957" y1="75" x2="957" y2="540" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <polyline points="0 480 936.67 480 957 480" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="936.67" y1="420" y2="420" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="936.67" y1="360" y2="360" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="936.67" y1="300" y2="300" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="936.67" y1="240" y2="240" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="957" y1="420" x2="936.67" y2="420" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="957" y1="360" x2="936.67" y2="360" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="957" y1="300" x2="936.67" y2="300" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" />
+    <line x1="957" y1="240" x2="936.67" y2="240" style="fill:none;stroke:#e6e7e8;stroke-miterlimit:10;stroke-width:2px" /> </g>
+-->
+                <!--                <polygon points="7681.92 540 6721.68 540 5761.44 540 4801.2 540 3840.96 540 2880.72 540 1920.48 540 960.24 540 0 540 0 525 960.24 525 1920.48 435.93 2880.72 419.15 3840.96 419.15 4801.2 405.33 5761.44 360 6722.77 330 7681.92 300 8642.16 270 8642.16 540 7681.92 540" style="fill:#b11f24;opacity:0.8" />-->
+                <g id="appleAd1984">
+                    <rect id="point" x="80.04" y="504.92" width="2.67" height="34.43" style="fill:#939598" />
+                    <rect id="box" x="9.52" y="320.83" width="146.38" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox" />
+                    <text transform="translate(15.04 487.81)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Apple “1984” Ad</tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Janua</tspan>
+                            <tspan x="22.63" y="10.8" style="letter-spacing:0.026991102430555556em">r</tspan>
+                            <tspan x="25.72" y="10.8">y 22</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand" class="hide">
+                        <image width="320" height="240" transform="translate(28.16 330.85) scale(0.34)" xlink:href="img/HousePrices4.png" />
+                        <text transform="translate(19.72 424.23)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Apple
+                            <tspan x="20.81" y="0" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="23.5" y="0">el</tspan>
+                            <tspan x="29.51" y="0" style="letter-spacing:-0.0139923095703125em">e</tspan>
+                            <tspan x="33.37" y="0">ased in</tspan>
+                            <tspan x="57.18" y="0" style="letter-spacing:-0.019989013671875em">f</tspan>
+                            <tspan x="59.36" y="0">amous </tspan>
+                            <tspan x="83.74" y="0" style="font-family:SourceSansPro-Semibold, Source Sans Pro;font-weight:700">“</tspan>
+                            <tspan x="87.6" y="0">1984”</tspan>
+                            <tspan x="106.91" y="0" style="font-family:SourceSansPro-Semibold, Source Sans Pro;font-weight:700"></tspan>
+                            <tspan x="108.55" y="0">ad, </tspan>
+                            <tspan x="0" y="9.6">ad</tspan>
+                            <tspan x="8.54" y="9.6" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="12.24" y="9.6">ertising the n</tspan>
+                            <tspan x="56.02" y="9.6" style="letter-spacing:0.0049896240234375em">e</tspan>
+                            <tspan x="60.02" y="9.6">w Macin</tspan>
+                            <tspan x="87.25" y="9.6" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="89.87" y="9.6">osh </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="3.48" y="19.2">ompu</tspan>
+                            <tspan x="23.24" y="19.2" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="25.86" y="19.2">e</tspan>
+                            <tspan x="29.83" y="19.2" style="letter-spacing:-0.0569915771484375em">r</tspan>
+                            <tspan x="32.15" y="19.2">. The ad </tspan>
+                            <tspan x="60.1" y="19.2" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="62.79" y="19.2" style="letter-spacing:0.0049896240234375em">e</tspan>
+                            <tspan x="66.8" y="19.2" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="70.5" y="19.2">olutioni</tspan>
+                            <tspan x="96.58" y="19.2" style="letter-spacing:-0.0099945068359375em">z</tspan>
+                            <tspan x="99.9" y="19.2">ed the </tspan>
+                            <tspan x="0" y="28.8">indust</tspan>
+                            <tspan x="21.19" y="28.8" style="letter-spacing:0.0189971923828125em">r</tspan>
+                            <tspan x="24.12" y="28.8">y and d</tspan>
+                            <tspan x="48.44" y="28.8" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="51.14" y="28.8" style="letter-spacing:0.0049896240234375em">e</tspan>
+                            <tspan x="55.14" y="28.8">w unp</tspan>
+                            <tspan x="75.67" y="28.8" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="78.37" y="28.8">e</tspan>
+                            <tspan x="82.33" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="85.81" y="28.8">eden</tspan>
+                            <tspan x="102.57" y="28.8" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="105.19" y="28.8">ed </tspan>
+                            <tspan x="0" y="38.4">at</tspan>
+                            <tspan x="6.8" y="38.4" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="9.42" y="38.4">ention </tspan>
+                            <tspan x="32.77" y="38.4" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="35.39" y="38.4">o Apple despi</tspan>
+                            <tspan x="80.32" y="38.4" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="82.94" y="38.4">e only airing </tspan>
+                            <tspan x="0" y="48">on</tspan>
+                            <tspan x="8.71" y="48" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="12.19" y="48">e publicl</tspan>
+                            <tspan x="40.7" y="48" style="letter-spacing:-0.0349884033203125em">y</tspan>
+                            <tspan x="44.16" y="48">.</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="hongKong1984">
+                    <rect id="point-2" data-name="point" x="879.79" y="490.28" width="2.67" height="49.72" style="fill:#939598" />
+                    <rect id="box-2" data-name="box" x="807.94" y="306.2" width="146.38" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox2" />
+                    <text transform="translate(813.51 473.44)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">UK &amp; China sign Hong
+                            <tspan x="87.06" y="0" style="letter-spacing:-0.0159912109375em">K</tspan>
+                            <tspan x="92.44" y="0">ong </tspan>
+                            <tspan x="109.26" y="0" style="letter-spacing:-0.0419921875em">T</tspan>
+                            <tspan x="113.88" y="0" style="letter-spacing:-0.009996202256944444em">r</tspan>
+                            <tspan x="117.37" y="0" style="letter-spacing:-0.010986328125em">e</tspan>
+                            <tspan x="121.93" y="0">aty </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">De</tspan>
+                            <tspan x="9.74" y="10.8" style="letter-spacing:-0.016994900173611112em">c</tspan>
+                            <tspan x="13.63" y="10.8">ember 19</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-2" data-name="expand" class="hide">
+                        <text transform="translate(816.66 410.02)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">UK and China sign ag
+                            <tspan x="70.26" y="0" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="72.96" y="0">eement </tspan>
+                            <tspan x="100.19" y="0" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="102.81" y="0">o </tspan>
+                            <tspan x="108.77" y="0" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="111.46" y="0" style="letter-spacing:0.0049896240234375em">e</tspan>
+                            <tspan x="115.47" y="0" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="119.17" y="0">ert </tspan>
+                            <tspan x="0" y="9.6">Hong </tspan>
+                            <tspan x="19.54" y="9.6" style="letter-spacing:-0.0059967041015625em">K</tspan>
+                            <tspan x="24.08" y="9.6">ong </tspan>
+                            <tspan x="38.44" y="9.6" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="41.06" y="9.6">o China in 20 </tspan>
+                            <tspan x="85.48" y="9.6" style="letter-spacing:-0.003997802734375em">y</tspan>
+                            <tspan x="89.18" y="9.6" style="letter-spacing:-0.0139923095703125em">e</tspan>
+                            <tspan x="93.04" y="9.6">a</tspan>
+                            <tspan x="97.13" y="9.6" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="99.83" y="9.6">s. This </tspan>
+                            <tspan x="0" y="19.2">marks the ending of a UK ruled e</tspan>
+                            <tspan x="108.33" y="19.2" style="letter-spacing:-0.024993896484375em">r</tspan>
+                            <tspan x="110.91" y="19.2">a in </tspan>
+                            <tspan x="0" y="28.8">Hong </tspan>
+                            <tspan x="19.54" y="28.8" style="letter-spacing:-0.0059967041015625em">K</tspan>
+                            <tspan x="24.08" y="28.8">ong.</tspan>
+                        </text>
+                        <image width="1682" height="1055" transform="translate(815.78 314.27) scale(0.08)" xlink:href="img/HousePrices5.png" /> </g>
+                </g>
+                <g id="pierreTrudeau1984">
+                    <rect id="point-3" data-name="point" x="183.79" y="473.98" width="2.67" height="66.02" style="fill:#939598" />
+                    <rect id="box-3" data-name="box" x="111.93" y="289.89" width="146.38" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox3" />
+                    <text transform="translate(117.5 457.13)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Pier
+                            <tspan x="16.17" y="0" style="letter-spacing:-0.009996202256944444em">r</tspan>
+                            <tspan x="19.66" y="0">e </tspan>
+                            <tspan x="26.2" y="0" style="letter-spacing:-0.0419921875em">T</tspan>
+                            <tspan x="30.82" y="0">rud</tspan>
+                            <tspan x="44.67" y="0" style="letter-spacing:-0.010986328125em">e</tspan>
+                            <tspan x="49.23" y="0">au </tspan>
+                            <tspan x="61.02" y="0" style="letter-spacing:-0.009996202256944444em">R</tspan>
+                            <tspan x="66.46" y="0" style="letter-spacing:-0.017985026041666668em">e</tspan>
+                            <tspan x="70.96" y="0">ti</tspan>
+                            <tspan x="76.9" y="0" style="letter-spacing:-0.009996202256944444em">r</tspan>
+                            <tspan x="80.39" y="0">es as PM</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.010986328125em">F</tspan>
+                            <tspan x="4.12" y="10.8">ebrua</tspan>
+                            <tspan x="25.47" y="10.8" style="letter-spacing:0.026991102430555556em">r</tspan>
+                            <tspan x="28.57" y="10.8">y 29</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-3" data-name="expand" class="hide">
+                        <text transform="translate(121.99 393.71)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Amidst rising hostility
+                            <tspan x="73.88" y="0" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="76.5" y="0" style="letter-spacing:-0.003997802734375em">o</tspan>
+                            <tspan x="80.81" y="0" style="letter-spacing:-0.0099945068359375em">w</tspan>
+                            <tspan x="86.47" y="0">a</tspan>
+                            <tspan x="90.57" y="0" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="93.26" y="0">ds his </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.0139923095703125em">g</tspan>
+                            <tspan x="3.92" y="9.6" style="letter-spacing:-0.003997802734375em">ov</tspan>
+                            <tspan x="11.93" y="9.6">ernment p</tspan>
+                            <tspan x="46.78" y="9.6" style="letter-spacing:-0.024993896484375em">r</tspan>
+                            <tspan x="49.36" y="9.6">acti</tspan>
+                            <tspan x="61.78" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="65.26" y="9.6">es and an </tspan>
+                            <tspan x="0" y="19.2">e</tspan>
+                            <tspan x="3.97" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="7.45" y="19.2">onomic d</tspan>
+                            <tspan x="38.8" y="19.2" style="letter-spacing:-0.003997802734375em">o</tspan>
+                            <tspan x="43.1" y="19.2">wn</tspan>
+                            <tspan x="53.22" y="19.2" style="letter-spacing:-0.0059967041015625em">t</tspan>
+                            <tspan x="55.88" y="19.2">urn, Prime Minis</tspan>
+                            <tspan x="109.96" y="19.2" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="112.58" y="19.2">er </tspan>
+                            <tspan x="0" y="28.8" style="letter-spacing:-0.045989990234375em">T</tspan>
+                            <tspan x="3.88" y="28.8">rud</tspan>
+                            <tspan x="15.45" y="28.8" style="letter-spacing:-0.0139923095703125em">e</tspan>
+                            <tspan x="19.3" y="28.8">au </tspan>
+                            <tspan x="29.37" y="28.8" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="32.06" y="28.8" style="letter-spacing:-0.0139923095703125em">e</tspan>
+                            <tspan x="35.92" y="28.8">ti</tspan>
+                            <tspan x="40.59" y="28.8" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="43.29" y="28.8">es. His su</tspan>
+                            <tspan x="74.03" y="28.8" style="letter-spacing:-0.02099609375em">cc</tspan>
+                            <tspan x="80.99" y="28.8">essor John </tspan>
+                            <tspan x="0" y="38.4" style="letter-spacing:-0.045989990234375em">T</tspan>
+                            <tspan x="3.88" y="38.4">urner </tspan>
+                            <tspan x="23.74" y="38.4" style="letter-spacing:-0.0099945068359375em">w</tspan>
+                            <tspan x="29.41" y="38.4">as s</tspan>
+                            <tspan x="41.82" y="38.4" style="letter-spacing:-0.003997802734375em">w</tspan>
+                            <tspan x="47.54" y="38.4">orn in the same da</tspan>
+                            <tspan x="109.44" y="38.4" style="letter-spacing:-0.0349884033203125em">y</tspan>
+                            <tspan x="112.89" y="38.4">.</tspan>
+                        </text>
+                        <image width="460" height="288" transform="translate(124.65 298.56) scale(0.26)" xlink:href="img/HousePrices6.png" /> </g>
+                </g>
+                <g id="TSN_MUCH" data-name="TSN/MUCH">
+                    <rect id="point-4" data-name="point" x="449.93" y="493.36" width="2.67" height="46.64" style="fill:#939598" />
+                    <rect id="box-4" data-name="box" x="378.08" y="309.28" width="146.38" class="hideBox4" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" />
+                    <text transform="translate(383.65 476.51)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.024997287326388888em">T</tspan>
+                            <tspan x="4.77" y="0">SN &amp; MUCH Music Channels Air </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.008992513020833334em">A</tspan>
+                            <tspan x="4.59" y="10.8">ugust 31 - Sep</tspan>
+                            <tspan x="55.5" y="10.8" style="letter-spacing:-0.009996202256944444em">t</tspan>
+                            <tspan x="58.22" y="10.8">ember 1</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-4" data-name="expand" class="hide">
+                        <text transform="translate(386.8 413.09)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Canadian TV channels “
+                            <tspan x="78.77" y="0" style="letter-spacing:-0.0389862060546875em">T</tspan>
+                            <tspan x="82.7" y="0">SN” and </tspan>
+                            <tspan x="0" y="9.6">“MUCH” air </tspan>
+                            <tspan x="39.49" y="9.6" style="letter-spacing:-0.0099945068359375em">f</tspan>
+                            <tspan x="41.74" y="9.6">or the fi</tspan>
+                            <tspan x="67.41" y="9.6" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="70.11" y="9.6">st time within </tspan>
+                            <tspan x="0" y="19.2">days of one anothe</tspan>
+                            <tspan x="63.66" y="19.2" style="letter-spacing:-0.0569915771484375em">r</tspan>
+                            <tspan x="65.97" y="19.2">. Both Canadian </tspan>
+                            <tspan x="0" y="28.8">channels be</tspan>
+                            <tspan x="40.23" y="28.8" style="letter-spacing:-0.0099945068359375em">c</tspan>
+                            <tspan x="43.8" y="28.8">ame major pla</tspan>
+                            <tspan x="92.12" y="28.8" style="letter-spacing:-0.003997802734375em">y</tspan>
+                            <tspan x="95.82" y="28.8">e</tspan>
+                            <tspan x="99.79" y="28.8" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="102.49" y="28.8">s in the </tspan>
+                            <tspan x="0" y="38.4">music/sports en</tspan>
+                            <tspan x="53.67" y="38.4" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="56.3" y="38.4">er</tspan>
+                            <tspan x="63.04" y="38.4" style="letter-spacing:-0.0179901123046875em">t</tspan>
+                            <tspan x="65.6" y="38.4">ainment indust</tspan>
+                            <tspan x="116.53" y="38.4" style="letter-spacing:0.0189971923828125em">r</tspan>
+                            <tspan x="119.45" y="38.4" style="letter-spacing:-0.0349884033203125em">y</tspan>
+                            <tspan x="122.91" y="38.4">.</tspan>
+                        </text>
+                        <image width="1217" height="1024" transform="translate(391.1 334.38) scale(0.05)" xlink:href="img/HousePrices7.png" />
+                        <image width="590" height="438" transform="translate(447.5 334.38) scale(0.11)" xlink:href="img/HousePrices8.png" /> </g>
+                </g>
+                <g id="popeJohnII1984">
+                    <rect id="point-5" data-name="point" x="555.6" y="459.07" width="2.67" height="80.93" style="fill:#939598" />
+                    <rect id="box-5" data-name="box" x="483.74" y="274.99" width="146.38" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox5" />
+                    <text transform="translate(489.32 442.22)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.02099609375em">P</tspan>
+                            <tspan x="5.26" y="0">ope John </tspan>
+                            <tspan x="43.66" y="0" style="letter-spacing:-0.034003363715277776em">P</tspan>
+                            <tspan x="48.8" y="0" style="letter-spacing:0.000013563368055555555em">aul II visits Canada </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Sep</tspan>
+                            <tspan x="13.87" y="10.8" style="letter-spacing:-0.009996202256944444em">t</tspan>
+                            <tspan x="16.59" y="10.8">ember 9</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-5" data-name="expand" class="hide">
+                        <text transform="translate(492.47 378.8)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.0099945068359375em">C</tspan>
+                            <tspan x="4.45" y="0">ur</tspan>
+                            <tspan x="11.58" y="0" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="14.27" y="0">ent pope John </tspan>
+                            <tspan x="64.21" y="0" style="letter-spacing:-0.042999267578125em">P</tspan>
+                            <tspan x="68.43" y="0">aul the se</tspan>
+                            <tspan x="100.49" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="103.97" y="0">ond </tspan>
+                            <tspan x="0" y="9.6">ma</tspan>
+                            <tspan x="10.73" y="9.6" style="letter-spacing:-0.0179901123046875em">k</tspan>
+                            <tspan x="14.54" y="9.6">es his debut trip </tspan>
+                            <tspan x="69.79" y="9.6" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="72.41" y="9.6">o Canada </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.0099945068359375em">f</tspan>
+                            <tspan x="2.26" y="19.2">oll</tspan>
+                            <tspan x="10.67" y="19.2" style="letter-spacing:-0.003997802734375em">o</tspan>
+                            <tspan x="14.98" y="19.2">wing public in</tspan>
+                            <tspan x="61.56" y="19.2" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="64.18" y="19.2">e</tspan>
+                            <tspan x="68.15" y="19.2" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="70.85" y="19.2">est f</tspan>
+                            <tspan x="84.82" y="19.2" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="87.52" y="19.2">om his </tspan>
+                            <tspan x="0" y="28.8">Ameri</tspan>
+                            <tspan x="19.65" y="28.8" style="letter-spacing:-0.0099945068359375em">c</tspan>
+                            <tspan x="23.22" y="28.8">an </tspan>
+                            <tspan x="33.3" y="28.8" style="letter-spacing:-0.0099945068359375em">t</tspan>
+                            <tspan x="35.93" y="28.8">our a </tspan>
+                            <tspan x="54.72" y="28.8" style="letter-spacing:-0.0099945068359375em">f</tspan>
+                            <tspan x="56.98" y="28.8" style="letter-spacing:0.0049896240234375em">e</tspan>
+                            <tspan x="60.98" y="28.8">w </tspan>
+                            <tspan x="68.34" y="28.8" style="letter-spacing:-0.003997802734375em">y</tspan>
+                            <tspan x="72.05" y="28.8" style="letter-spacing:-0.0139923095703125em">e</tspan>
+                            <tspan x="75.9" y="28.8">a</tspan>
+                            <tspan x="80" y="28.8" style="letter-spacing:-0.0099945068359375em">r</tspan>
+                            <tspan x="82.69" y="28.8">s </tspan>
+                            <tspan x="87.66" y="28.8" style="letter-spacing:-0.0139923095703125em">e</tspan>
+                            <tspan x="91.52" y="28.8">arlie</tspan>
+                            <tspan x="106.37" y="28.8" style="letter-spacing:-0.0569915771484375em">r</tspan>
+                            <tspan x="108.69" y="28.8">.</tspan>
+                        </text>
+                        <image width="620" height="396" transform="translate(492.03 282.66) scale(0.21)" xlink:href="img/HousePrices9.png" /> </g>
+                </g>
+                <g id="abortion1988" style="left:1000px; position: absolute;">
+                    <rect id="point-6" data-name="point" x="1173.28" y="479.67" width="2.67" height="60.33" style="fill:#939598" />
+                    <rect id="box-6" data-name="box" x="1101.42" y="295.86" width="146.38" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox6" />
+                    <text transform="translate(1107 463.1)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Canada
+                            <tspan x="31.81" y="0" style="letter-spacing:-0.009982638888888888em">R</tspan>
+                            <tspan x="37.26" y="0">ep</tspan>
+                            <tspan x="47.08" y="0" style="letter-spacing:-0.010986328125em">e</tspan>
+                            <tspan x="51.64" y="0">als Anti-Abortion Law </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Janua</tspan>
+                            <tspan x="22.63" y="10.8" style="letter-spacing:0.026991102430555556em">r</tspan>
+                            <tspan x="25.72" y="10.8">y 28</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-6" data-name="expand" class="hide">
+                        <text transform="translate(1110.15 399.68)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Sup
+                            <tspan x="13.02" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="15.72" y="0">eme </tspan>
+                            <tspan x="31.9" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="35.38" y="0">ourt of Canada d</tspan>
+                            <tspan x="91.14" y="0" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="95" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="97.62" y="0">ermines </tspan>
+                            <tspan x="0" y="9.6">the cur</tspan>
+                            <tspan x="23.42" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="26.11" y="9.6">ent an</tspan>
+                            <tspan x="47.25" y="9.6" style="letter-spacing:-0.025970458984375em">t</tspan>
+                            <tspan x="49.74" y="9.6">-abortion law </tspan>
+                            <tspan x="96.37" y="9.6" style="letter-spacing:-0.009979248046875em">t</tspan>
+                            <tspan x="99" y="9.6">o be </tspan>
+                            <tspan x="0" y="19.2">un</tspan>
+                            <tspan x="8.73" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="12.21" y="19.2">onsti</tspan>
+                            <tspan x="28.94" y="19.2" style="letter-spacing:-0.0059814453125em">t</tspan>
+                            <tspan x="31.6" y="19.2">utional and</tspan>
+                            <tspan x="70" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="72.7" y="19.2">ep</tspan>
+                            <tspan x="81.1" y="19.2" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="84.96" y="19.2" style="letter-spacing:-0.000030517578125em">als it </tspan>
+                            <tspan x="0" y="28.8">immedi</tspan>
+                            <tspan x="25.61" y="28.8" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="29.46" y="28.8">tl</tspan>
+                            <tspan x="34.21" y="28.8" style="letter-spacing:-0.035003662109375em">y</tspan>
+                            <tspan x="37.66" y="28.8">.</tspan>
+                        </text>
+                        <image width="2500" height="1625" transform="translate(1110.15 305.51) scale(0.05)" xlink:href="img/HousePrices10.png" /> </g>
+                </g>
+                <g id="CalgaryOlympics1988">
+                    <rect id="point-7" data-name="point" x="1274.28" y="448.63" width="2.67" height="91.37" style="fill:#939598" />
+                    <rect id="box-7" data-name="box" x="1202.42" y="264.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox7" />
+                    <text transform="translate(1208 431.78)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Cal
+                            <tspan x="12.6" y="0" style="letter-spacing:-0.018988715277777776em">g</tspan>
+                            <tspan x="17.23" y="0">a</tspan>
+                            <tspan x="22.04" y="0" style="letter-spacing:0.004991319444444444em">r</tspan>
+                            <tspan x="25.67" y="0">y H</tspan>
+                            <tspan x="38.28" y="0" style="letter-spacing:-0.004991319444444444em">o</tspan>
+                            <tspan x="43.23" y="0">sts Win</tspan>
+                            <tspan x="71.46" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="74.82" y="0">er Olympics </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.010986328125em">F</tspan>
+                            <tspan x="4.12" y="10.8">ebrua</tspan>
+                            <tspan x="25.47" y="10.8" style="letter-spacing:0.026991102430555556em">r</tspan>
+                            <tspan x="28.57" y="10.8">y 15</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-7" data-name="expand" class="hide">
+                        <text transform="translate(1211.15 370.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Su
+                            <tspan x="8.58" y="0" style="letter-spacing:-0.02099609375em">cc</tspan>
+                            <tspan x="15.54" y="0">eeding the 1984 Sa</tspan>
+                            <tspan x="78.4" y="0" style="letter-spacing:-0.024993896484375em">r</tspan>
+                            <tspan x="80.97" y="0">aj</tspan>
+                            <tspan x="87.05" y="0" style="letter-spacing:0.004974365234375em">e</tspan>
+                            <tspan x="91.05" y="0" style="letter-spacing:-0.00396728515625em">v</tspan>
+                            <tspan x="94.76" y="0">o win</tspan>
+                            <tspan x="112.8" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="115.42" y="0">er </tspan>
+                            <tspan x="0" y="9.6">olympics, Cal</tspan>
+                            <tspan x="44.42" y="9.6" style="letter-spacing:-0.0159912109375em">g</tspan>
+                            <tspan x="48.33" y="9.6">a</tspan>
+                            <tspan x="52.42" y="9.6" style="letter-spacing:0.01898193359375em">r</tspan>
+                            <tspan x="55.35" y="9.6" style="letter-spacing:-0.03497314453125em">y</tspan>
+                            <tspan x="58.81" y="9.6">, Alber</tspan>
+                            <tspan x="79.94" y="9.6" style="letter-spacing:-0.01800537109375em">t</tspan>
+                            <tspan x="82.5" y="9.6" style="letter-spacing:0.000030517578125em">a hos</tspan>
+                            <tspan x="100.25" y="9.6" style="letter-spacing:-0.009979248046875em">t</tspan>
+                            <tspan x="102.88" y="9.6">ed the </tspan>
+                            <tspan x="0" y="19.2">Win</tspan>
+                            <tspan x="12.59" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="15.22" y="19.2">er Olympic Games </tspan>
+                            <tspan x="77.49" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="80.11" y="19.2">o </tspan>
+                            <tspan x="86.06" y="19.2" style="letter-spacing:-0.003997802734375em">ov</tspan>
+                            <tspan x="94.07" y="19.2">er 1400 </tspan>
+                            <tspan x="0" y="28.8">athel</tspan>
+                            <tspan x="17.16" y="28.8" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="21.02" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="23.64" y="28.8">es.</tspan>
+                        </text>
+                        <image width="550" height="361" transform="translate(1211.3 274.89) scale(0.23)" xlink:href="img/HousePrices11.png" /> </g>
+                </g>
+                <g id="Iran_IraqWar1988" data-name="Iran/IraqWar1988">
+                    <rect id="point-8" data-name="point" x="1534.94" y="493.78" width="2.67" height="46.22" style="fill:#939598" />
+                    <rect id="box-8" data-name="box" x="1463.08" y="309.7" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox8" />
+                    <text transform="translate(1468.65 476.94)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">I
+                            <tspan x="2.7" y="0" style="letter-spacing:-0.028998480902777776em">r</tspan>
+                            <tspan x="6.02" y="0">an/I</tspan>
+                            <tspan x="21.73" y="0" style="letter-spacing:-0.028971354166666668em">r</tspan>
+                            <tspan x="25.05" y="0" style="letter-spacing:-0.00002712673611111111em">aq </tspan>
+                            <tspan x="36.87" y="0" style="letter-spacing:-0.012017144097222222em">W</tspan>
+                            <tspan x="44.07" y="0">ar Ends</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">July 20</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-8" data-name="expand" class="hide">
+                        <text transform="translate(1471.81 431.35)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Mili
+                            <tspan x="11.75" y="0" style="letter-spacing:-0.01800537109375em">t</tspan>
+                            <tspan x="14.31" y="0" style="letter-spacing:0.000030517578125em">a</tspan>
+                            <tspan x="18.41" y="0" style="letter-spacing:0.01898193359375em">r</tspan>
+                            <tspan x="21.34" y="0">y </tspan>
+                            <tspan x="26.69" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="30.17" y="0">onflict due </tspan>
+                            <tspan x="67.57" y="0" style="letter-spacing:-0.009979248046875em">t</tspan>
+                            <tspan x="70.19" y="0">o a land dispu</tspan>
+                            <tspan x="116.97" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="119.6" y="0">e </tspan>
+                            <tspan x="0" y="9.6">b</tspan>
+                            <tspan x="4.44" y="9.6" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="8.3" y="9.6">t</tspan>
+                            <tspan x="11" y="9.6" style="letter-spacing:-0.003997802734375em">w</tspan>
+                            <tspan x="16.71" y="9.6" xml:space="preserve" style="letter-spacing:-0.000030517578125em">een his</tspan>
+                            <tspan x="41.93" y="9.6" style="letter-spacing:-0.009979248046875em">t</tspan>
+                            <tspan x="44.55" y="9.6">oric ri</tspan>
+                            <tspan x="63.64" y="9.6" style="letter-spacing:-0.019989013671875em">v</tspan>
+                            <tspan x="67.22" y="9.6">als, I</tspan>
+                            <tspan x="82.37" y="9.6" style="letter-spacing:-0.024993896484375em">r</tspan>
+                            <tspan x="84.95" y="9.6">an and I</tspan>
+                            <tspan x="111.63" y="9.6" style="letter-spacing:-0.024993896484375em">r</tspan>
+                            <tspan x="114.21" y="9.6">aq, </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="3.48" y="19.2">omes </tspan>
+                            <tspan x="23.38" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="26.01" y="19.2">o an end.</tspan>
+                        </text>
+                        <image width="570" height="445" transform="translate(1471.81 320.05) scale(0.23)" xlink:href="img/HousePrices12.png" /> </g>
+                </g>
+                <g id="computerWorm1988">
+                    <rect id="point-9" data-name="point" x="1923.04" y="448.63" width="2.67" height="91.37" style="fill:#939598" />
+                    <rect id="box-9" data-name="box" x="1851.18" y="264.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox9" />
+                    <text transform="translate(1856.76 431.78)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Fi
+                            <tspan x="7.19" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="10.68" y="0">st In</tspan>
+                            <tspan x="27.84" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="31.19" y="0">ern</tspan>
+                            <tspan x="44.59" y="0" style="letter-spacing:-0.017985026041666668em">e</tspan>
+                            <tspan x="49.09" y="0">t Worm Dis</tspan>
+                            <tspan x="92.05" y="0" style="letter-spacing:-0.027994791666666668em">c</tspan>
+                            <tspan x="96" y="0" style="letter-spacing:-0.008002387152777778em">ov</tspan>
+                            <tspan x="105.56" y="0">e</tspan>
+                            <tspan x="110.22" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="113.71" y="0">ed</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">November 2</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-9" data-name="expand" class="hide">
+                        <text transform="translate(1859.91 369.91)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">The fi
+                            <tspan x="18.49" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="21.18" y="0">st </tspan>
+                            <tspan x="28.86" y="0" style="letter-spacing:0.004974365234375em">e</tspan>
+                            <tspan x="32.86" y="0" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="36.57" y="0">er in</tspan>
+                            <tspan x="51.27" y="0" style="letter-spacing:-0.009979248046875em">t</tspan>
+                            <tspan x="53.9" y="0">ern</tspan>
+                            <tspan x="65.01" y="0" style="letter-spacing:-0.014007568359375em">e</tspan>
+                            <tspan x="68.87" y="0">t </tspan>
+                            <tspan x="73.19" y="0" style="letter-spacing:-0.003997802734375em">w</tspan>
+                            <tspan x="78.9" y="0">orm </tspan>
+                            <tspan x="94.26" y="0" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="99.93" y="0" style="letter-spacing:0.000030517578125em">as </tspan>
+                            <tspan x="0" y="9.6">dis</tspan>
+                            <tspan x="9.76" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="13.24" y="9.6" style="letter-spacing:-0.003997802734375em">ov</tspan>
+                            <tspan x="21.25" y="9.6">e</tspan>
+                            <tspan x="25.22" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="27.91" y="9.6">ed. C</tspan>
+                            <tspan x="44.45" y="9.6" style="letter-spacing:-0.009979248046875em">r</tspan>
+                            <tspan x="47.15" y="9.6" style="letter-spacing:-0.014007568359375em">e</tspan>
+                            <tspan x="51.01" y="9.6" style="letter-spacing:0.000030517578125em">a</tspan>
+                            <tspan x="55.1" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="57.73" y="9.6">ed </tspan>
+                            <tspan x="67.75" y="9.6" style="letter-spacing:-0.003997802734375em">b</tspan>
+                            <tspan x="72.16" y="9.6">y a Cornell </tspan>
+                            <tspan x="0" y="19.2">Uni</tspan>
+                            <tspan x="11.46" y="19.2" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="15.17" y="19.2">e</tspan>
+                            <tspan x="19.14" y="19.2" style="letter-spacing:-0.009979248046875em">r</tspan>
+                            <tspan x="21.83" y="19.2">sity s</tspan>
+                            <tspan x="38.56" y="19.2" style="letter-spacing:-0.006011962890625em">t</tspan>
+                            <tspan x="41.21" y="19.2">uden</tspan>
+                            <tspan x="58.35" y="19.2" style="letter-spacing:0.014007568359375em">t</tspan>
+                            <tspan x="61.17" y="19.2" style="letter-spacing:-0.000030517578125em">, it </tspan>
+                            <tspan x="71.06" y="19.2" style="letter-spacing:-0.009979248046875em">r</tspan>
+                            <tspan x="73.76" y="19.2">esul</tspan>
+                            <tspan x="87.47" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="90.09" y="19.2">ed in the </tspan>
+                            <tspan x="0" y="28.8">fi</tspan>
+                            <tspan x="4.3" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="7" y="28.8">st </tspan>
+                            <tspan x="14.67" y="28.8" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="16.93" y="28.8">elony </tspan>
+                            <tspan x="37" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="40.48" y="28.8">onviction of a </tspan>
+                            <tspan x="87.54" y="28.8" style="letter-spacing:0.006011962890625em">c</tspan>
+                            <tspan x="91.24" y="28.8">yber crime.</tspan>
+                        </text>
+                        <image width="1024" height="681" transform="translate(1860.17 273.88) scale(0.12)" xlink:href="img/HousePrices13.png" /> </g>
+                </g>
+                <g id="PGA1992">
+                    <rect id="point-10" data-name="point" x="2370.15" y="511.86" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-10" data-name="box" x="2298.29" y="327.78" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox10" />
+                    <text transform="translate(2303.86 495.01)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Ti
+                            <tspan x="7.48" y="0" style="letter-spacing:-0.017985026041666668em">g</tspan>
+                            <tspan x="12.12" y="0">er Woods Joins P</tspan>
+                            <tspan x="79.05" y="0" style="letter-spacing:-0.008002387152777778em">G</tspan>
+                            <tspan x="84.7" y="0">A</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.010986328125em">F</tspan>
+                            <tspan x="4.12" y="10.8">ebrua</tspan>
+                            <tspan x="25.47" y="10.8" style="letter-spacing:0.026991102430555556em">r</tspan>
+                            <tspan x="28.57" y="10.8">y 27</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-10" data-name="expand" class="hide">
+                        <text transform="translate(2307.02 434.1)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Ti
+                            <tspan x="6.22" y="0" style="letter-spacing:-0.014007568359375em">g</tspan>
+                            <tspan x="10.14" y="0" style="letter-spacing:0.000030517578125em">er Woods at six</tspan>
+                            <tspan x="60.13" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="62.75" y="0">een </tspan>
+                            <tspan x="76.68" y="0" style="letter-spacing:-0.003997802734375em">y</tspan>
+                            <tspan x="80.38" y="0" style="letter-spacing:-0.014007568359375em">e</tspan>
+                            <tspan x="84.24" y="0" style="letter-spacing:0.000030517578125em">a</tspan>
+                            <tspan x="88.33" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="91.03" y="0">s old joins </tspan>
+                            <tspan x="0" y="9.6">the P</tspan>
+                            <tspan x="17.21" y="9.6" style="letter-spacing:-0.003997802734375em">G</tspan>
+                            <tspan x="22.07" y="9.6">A, the </tspan>
+                            <tspan x="42.62" y="9.6" style="letter-spacing:-0.003997802734375em">y</tspan>
+                            <tspan x="46.33" y="9.6">oun</tspan>
+                            <tspan x="59.39" y="9.6" style="letter-spacing:-0.014007568359375em">g</tspan>
+                            <tspan x="63.31" y="9.6" style="letter-spacing:0.000030517578125em">est in </tspan>
+                            <tspan x="82.91" y="9.6" style="letter-spacing:-0.00396728515625em">ov</tspan>
+                            <tspan x="90.92" y="9.6">er thirty </tspan>
+                            <tspan x="0" y="19.2">fi</tspan>
+                            <tspan x="4.3" y="19.2" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="8.01" y="19.2">e </tspan>
+                            <tspan x="13.59" y="19.2" style="letter-spacing:-0.003997802734375em">y</tspan>
+                            <tspan x="17.3" y="19.2" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="21.15" y="19.2" style="letter-spacing:-0.000030517578125em">a</tspan>
+                            <tspan x="25.25" y="19.2" style="letter-spacing:-0.009979248046875em">r</tspan>
+                            <tspan x="27.94" y="19.2">s.</tspan>
+                        </text>
+                        <image width="886" height="849" transform="translate(2328.04 334.5) scale(0.1)" xlink:href="img/HousePrices14.png" /> </g>
+                </g>
+                <g id="montreal1992">
+                    <rect id="point-11" data-name="point" x="2599.48" y="522.63" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-11" data-name="box" x="2527.63" y="338.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox11" />
+                    <text transform="translate(2533.2 505.78)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Mont
+                            <tspan x="20.44" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="23.93" y="0" style="letter-spacing:-0.010986328125em">e</tspan>
+                            <tspan x="28.49" y="0">als 350th Anni</tspan>
+                            <tspan x="84.36" y="0" style="letter-spacing:-0.008002387152777778em">v</tspan>
+                            <tspan x="89" y="0">e</tspan>
+                            <tspan x="93.66" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="97.15" y="0">sa</tspan>
+                            <tspan x="105.95" y="0" style="letter-spacing:0.004991319444444444em">r</tspan>
+                            <tspan x="109.57" y="0">y </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">May 16</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-11" data-name="expand" class="hide">
+                        <text transform="translate(2536.35 444.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Mont
+                            <tspan x="17.19" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="19.89" y="0" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="23.74" y="0">al </tspan>
+                            <tspan x="31.5" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="34.98" y="0">eleb</tspan>
+                            <tspan x="49.39" y="0" style="letter-spacing:-0.024993896484375em">r</tspan>
+                            <tspan x="51.97" y="0">a</tspan>
+                            <tspan x="56.06" y="0" style="letter-spacing:-0.009979248046875em">t</tspan>
+                            <tspan x="58.69" y="0">es it</tspan>
+                            <tspan x="72.29" y="0" style="letter-spacing:-0.04901123046875em">’</tspan>
+                            <tspan x="73.89" y="0">s 350th </tspan>
+                            <tspan x="0" y="9.6">anni</tspan>
+                            <tspan x="14.82" y="9.6" style="letter-spacing:-0.003997802734375em">v</tspan>
+                            <tspan x="18.52" y="9.6">e</tspan>
+                            <tspan x="22.49" y="9.6" style="letter-spacing:-0.009979248046875em">r</tspan>
+                            <tspan x="25.18" y="9.6">sa</tspan>
+                            <tspan x="32.63" y="9.6" style="letter-spacing:0.019012451171875em">r</tspan>
+                            <tspan x="35.56" y="9.6">y sin</tspan>
+                            <tspan x="50.61" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="54.09" y="9.6">e it</tspan>
+                            <tspan x="64.34" y="9.6" style="letter-spacing:-0.048980712890625em">’</tspan>
+                            <tspan x="65.94" y="9.6" style="letter-spacing:-0.000030517578125em">s </tspan>
+                            <tspan x="70.91" y="9.6" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="73.17" y="9.6">ounding in 1642. </tspan>
+                        </text>
+                        <image width="750" height="503" transform="translate(2537.65 345.86) scale(0.17)" xlink:href="img/HousePrices15.png" /> </g>
+                </g>
+                <g id="logan1992">
+                    <rect id="box-12" data-name="box" x="2758.21" y="505.62" width="2.67" height="34.01" style="fill:#939598" class="hideBox12" />
+                    <rect id="point-12" data-name="point" x="2686.36" y="321.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox12" />
+                    <text transform="translate(2691.93 488.77)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Mount
+                            <tspan x="27.42" y="0" style="letter-spacing:-0.013997395833333334em">L</tspan>
+                            <tspan x="31.94" y="0">o</tspan>
+                            <tspan x="36.94" y="0" style="letter-spacing:-0.018988715277777776em">g</tspan>
+                            <tspan x="41.57" y="0">an M</tspan>
+                            <tspan x="60.25" y="0" style="letter-spacing:-0.011013454861111112em">e</tspan>
+                            <tspan x="64.81" y="0">asu</tspan>
+                            <tspan x="78.71" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="82.21" y="0">ed at 5959ft </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">June 6</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-12" data-name="expand" class="hide">
+                        <text transform="translate(2695.08 427.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Mount
+                            <tspan x="23.16" y="0" style="letter-spacing:-0.011962890625em">L</tspan>
+                            <tspan x="26.91" y="0">o</tspan>
+                            <tspan x="31.25" y="0" style="letter-spacing:-0.0159912109375em">g</tspan>
+                            <tspan x="35.15" y="0">an </tspan>
+                            <tspan x="45.24" y="0" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="50.9" y="0">as m</tspan>
+                            <tspan x="66.6" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="70.45" y="0">asu</tspan>
+                            <tspan x="82.25" y="0" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="84.95" y="0">ed finally </tspan>
+                            <tspan x="117.18" y="0" style="letter-spacing:-0.0040283203125em">b</tspan>
+                            <tspan x="121.59" y="0">y </tspan>
+                            <tspan x="0" y="9.6">and </tspan>
+                            <tspan x="14.53" y="9.6" style="letter-spacing:-0.0069580078125em">e</tspan>
+                            <tspan x="18.44" y="9.6" style="letter-spacing:-0.00006103515625em">xpedition l</tspan>
+                            <tspan x="53.86" y="9.6" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="57.72" y="9.6">ad </tspan>
+                            <tspan x="67.87" y="9.6" style="letter-spacing:-0.00396728515625em">b</tspan>
+                            <tspan x="72.28" y="9.6">y the </tspan>
+                            <tspan x="90.27" y="9.6" style="letter-spacing:-0.010009765625em">R</tspan>
+                            <tspan x="94.8" y="9.6" style="letter-spacing:-0.0040283203125em">o</tspan>
+                            <tspan x="99.1" y="9.6" style="letter-spacing:-0.01995849609375em">y</tspan>
+                            <tspan x="102.68" y="9.6">al </tspan>
+                            <tspan x="0" y="19.2">Canadian Geog</tspan>
+                            <tspan x="50.82" y="19.2" style="letter-spacing:-0.02496337890625em">r</tspan>
+                            <tspan x="53.4" y="19.2" style="letter-spacing:-0.00006103515625em">aphic Soci</tspan>
+                            <tspan x="87.7" y="19.2" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="91.56" y="19.2">t</tspan>
+                            <tspan x="94.26" y="19.2" style="letter-spacing:-0.03497314453125em">y</tspan>
+                            <tspan x="97.72" y="19.2">. The </tspan>
+                            <tspan x="0" y="28.8">height </tspan>
+                            <tspan x="22.99" y="28.8" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="28.66" y="28.8">as </tspan>
+                            <tspan x="37.72" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="41.2" y="28.8">onfirmed using G</tspan>
+                            <tspan x="98.24" y="28.8" style="letter-spacing:-0.010009765625em">P</tspan>
+                            <tspan x="102.73" y="28.8" style="letter-spacing:0.00006103515625em">S.</tspan>
+                        </text>
+                        <image width="975" height="639" transform="translate(2695.39 329.11) scale(0.13)" xlink:href="img/HousePrices16.png" /> </g>
+                </g>
+                <rect id="point-13" data-name="point" x="2996.91" y="522.63" width="2.67" height="17.37" style="fill:#939598" />
+                <rect id="box-13" data-name="box" x="2925.06" y="338.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox13" />
+                <text transform="translate(2930.63 505.78)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                    <tspan style="font-weight:700">Aladdin is
+                        <tspan x="40.68" y="0" style="letter-spacing:-0.009982638888888888em">R</tspan>
+                        <tspan x="46.13" y="0">el</tspan>
+                        <tspan x="53.36" y="0" style="letter-spacing:-0.011013454861111112em">e</tspan>
+                        <tspan x="57.92" y="0">ased</tspan>
+                    </tspan>
+                    <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                        <tspan x="0" y="10.8">November 25</tspan>
+                    </tspan>
+                </text>
+                <g id="expand-13" data-name="expand" class="hide">
+                    <text transform="translate(2933.78 444.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Disn
+                        <tspan x="14.59" y="0" style="letter-spacing:0.0050048828125em">e</tspan>
+                        <tspan x="18.6" y="0">y musi</tspan>
+                        <tspan x="40.26" y="0" style="letter-spacing:-0.010009765625em">c</tspan>
+                        <tspan x="43.82" y="0">al film </tspan>
+                        <tspan x="66.17" y="0" style="letter-spacing:-0.05499267578125em">‘</tspan>
+                        <tspan x="67.72" y="0">Aladdin’ </tspan>
+                        <tspan x="96.99" y="0" style="letter-spacing:-0.010009765625em">w</tspan>
+                        <tspan x="102.66" y="0">as </tspan>
+                        <tspan x="0" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                        <tspan x="2.7" y="9.6">el</tspan>
+                        <tspan x="8.7" y="9.6" style="letter-spacing:-0.01397705078125em">e</tspan>
+                        <tspan x="12.56" y="9.6">ased, g</tspan>
+                        <tspan x="36.06" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                        <tspan x="38.75" y="9.6">ossing the highest of all </tspan>
+                        <tspan x="0" y="19.2">films in 1992</tspan>
+                    </text>
+                    <image width="640" height="361" transform="translate(2930.63 344.28) scale(0.21)" xlink:href="img/HousePrices17.png" /> </g>
+                <rect x="9160.83" y="482.13" width="2.67" height="58.52" style="fill:#939598" />
+                <rect x="9088.98" y="298.05" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox35" />
+                <text transform="translate(9094.55 465.29)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                    <tspan style="font-weight:700">Bri
+                        <tspan x="11.5" y="0" style="letter-spacing:-0.012044270833333334em">t</tspan>
+                        <tspan x="14.84" y="0">ain Plans </tspan>
+                        <tspan x="52.98" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                        <tspan x="56.34" y="0">o </tspan>
+                        <tspan x="63.21" y="0" style="letter-spacing:-0.013997395833333334em">L</tspan>
+                        <tspan x="67.72" y="0" style="letter-spacing:-0.010959201388888888em">e</tspan>
+                        <tspan x="72.29" y="0">a</tspan>
+                        <tspan x="77.09" y="0" style="letter-spacing:-0.008029513888888888em">v</tspan>
+                        <tspan x="81.73" y="0">e EU</tspan>
+                    </tspan>
+                    <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                        <tspan x="0" y="10.8">June 23</tspan>
+                    </tspan>
+                </text>
+                <g class="hide" id="expand-34">
+                    <text transform="translate(9097.7 404.37)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                        <tspan style="letter-spacing:-0.0140380859375em">F</tspan>
+                        <tspan x="3.8" y="0">oll</tspan>
+                        <tspan x="12.22" y="0" style="letter-spacing:-0.00390625em">o</tspan>
+                        <tspan x="16.52" y="0">wing the UK </tspan>
+                        <tspan x="58.22" y="0" style="letter-spacing:-0.0040283203125em">v</tspan>
+                        <tspan x="61.93" y="0">o</tspan>
+                        <tspan x="66.26" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                        <tspan x="68.89" y="0">e </tspan>
+                        <tspan x="74.47" y="0" style="letter-spacing:-0.010009765625em">f</tspan>
+                        <tspan x="76.73" y="0">or EU </tspan>
+                        <tspan x="0" y="9.6">membe</tspan>
+                        <tspan x="25.64" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                        <tspan x="28.34" y="9.6">shi</tspan>
+                        <tspan x="38.01" y="9.6" style="letter-spacing:-0.010009765625em">p</tspan>
+                        <tspan x="42.37" y="9.6">, the </tspan>
+                        <tspan x="58.62" y="9.6" style="letter-spacing:-0.00390625em">v</tspan>
+                        <tspan x="62.32" y="9.6">o</tspan>
+                        <tspan x="66.66" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                        <tspan x="69.28" y="9.6">e </tspan>
+                        <tspan x="74.86" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                        <tspan x="77.56" y="9.6">esul</tspan>
+                        <tspan x="91.27" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                        <tspan x="93.9" y="9.6">ed in a </tspan>
+                        <tspan x="0" y="19.2">choi</tspan>
+                        <tspan x="14.3" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                        <tspan x="17.78" y="19.2">e </tspan>
+                        <tspan x="23.37" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                        <tspan x="25.99" y="19.2">o l</tspan>
+                        <tspan x="33.98" y="19.2" style="letter-spacing:-0.013916015625em">e</tspan>
+                        <tspan x="37.84" y="19.2">a</tspan>
+                        <tspan x="41.94" y="19.2" style="letter-spacing:-0.0040283203125em">v</tspan>
+                        <tspan x="45.64" y="19.2">e. Planning has sin</tspan>
+                        <tspan x="107.77" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                        <tspan x="111.25" y="19.2">e </tspan>
+                        <tspan x="0" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                        <tspan x="3.48" y="28.8">ommen</tspan>
+                        <tspan x="29.42" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                        <tspan x="32.9" y="28.8">ed </tspan>
+                        <tspan x="42.93" y="28.8" style="letter-spacing:-0.010009765625em">f</tspan>
+                        <tspan x="45.18" y="28.8">or Bri</tspan>
+                        <tspan x="63.32" y="28.8" style="letter-spacing:-0.0179443359375em">t</tspan>
+                        <tspan x="65.88" y="28.8">ain </tspan>
+                        <tspan x="77.94" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                        <tspan x="80.56" y="28.8">o l</tspan>
+                        <tspan x="88.55" y="28.8" style="letter-spacing:-0.0140380859375em">e</tspan>
+                        <tspan x="92.41" y="28.8">a</tspan>
+                        <tspan x="96.5" y="28.8" style="letter-spacing:-0.0040283203125em">v</tspan>
+                        <tspan x="100.21" y="28.8" style="letter-spacing:0.0001220703125em">e.</tspan>
+                    </text>
+                    <image width="1000" height="533" transform="translate(9098.56 310.81) scale(0.13)" xlink:href="img/HousePrices18.png" /> </g>
+                <g id="nintendo641996">
+                    <rect id="point-14" data-name="point" x="3952.01" y="511.39" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-14" data-name="box" x="3880.15" y="327.31" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox14" />
+                    <text transform="translate(3885.72 494.54)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Nin
+                            <tspan x="13.61" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="16.96" y="0">endo 64 </tspan>
+                            <tspan x="50.17" y="0" style="letter-spacing:-0.009982638888888888em">R</tspan>
+                            <tspan x="55.62" y="0">el</tspan>
+                            <tspan x="62.86" y="0" style="letter-spacing:-0.011013454861111112em">e</tspan>
+                            <tspan x="67.42" y="0">ased</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Sep</tspan>
+                            <tspan x="13.87" y="10.8" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="16.59" y="10.8">ember 29</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-14" data-name="expand" class="hide">
+                        <text transform="translate(3888.88 433.63)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Claimed
+                            <tspan x="29.29" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="31.91" y="0">o be the fi</tspan>
+                            <tspan x="64.83" y="0" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="67.53" y="0" style="letter-spacing:-0.00006103515625em">st 64 bit sys</tspan>
+                            <tspan x="105.93" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="108.56" y="0">em, </tspan>
+                            <tspan x="0" y="9.6">Nin</tspan>
+                            <tspan x="11.48" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="14.1" y="9.6">endo </tspan>
+                            <tspan x="32.84" y="9.6" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="35.54" y="9.6">el</tspan>
+                            <tspan x="41.54" y="9.6" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="45.4" y="9.6">ased the su</tspan>
+                            <tspan x="83.21" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="86.69" y="9.6">essor </tspan>
+                            <tspan x="106.09" y="9.6" style="letter-spacing:-0.00994873046875em">t</tspan>
+                            <tspan x="108.72" y="9.6">o the </tspan>
+                            <tspan x="0" y="19.2">SNES </tspan>
+                            <tspan x="19.39" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="22.02" y="19.2">o </tspan>
+                            <tspan x="27.97" y="19.2" style="letter-spacing:-0.00396728515625em">w</tspan>
+                            <tspan x="33.68" y="19.2">orldwide a</tspan>
+                            <tspan x="69.1" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="72.58" y="19.2">claim. It sold </tspan>
+                            <tspan x="0" y="28.8">n</tspan>
+                            <tspan x="4.38" y="28.8" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="8.23" y="28.8">arly 33 million units as of 2009.</tspan>
+                        </text>
+                        <image width="4317" height="2108" transform="translate(3485.54 331.99) scale(0.03)" xlink:href="img/HousePrices19.png" /> </g>
+                </g>
+                <g id="MLS1996">
+                    <rect id="point-15" data-name="point" x="3478.27" y="522.52" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-15" data-name="box" x="3406.42" y="338.44" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox15" />
+                    <text transform="translate(3411.99 505.68)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">M
+                            <tspan x="6.85" y="0" style="letter-spacing:-0.027994791666666668em">L</tspan>
+                            <tspan x="11.24" y="0">S Has Fi</tspan>
+                            <tspan x="42" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="45.49" y="0">st S</tspan>
+                            <tspan x="59.79" y="0" style="letter-spacing:-0.011013454861111112em">e</tspan>
+                            <tspan x="64.35" y="0">ason</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">April 6</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-15" data-name="expand" class="hide">
+                        <text transform="translate(3415.14 444.76)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Major
+                            <tspan x="20.58" y="0" style="letter-spacing:-0.011962890625em">L</tspan>
+                            <tspan x="24.33" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="28.18" y="0">ague So</tspan>
+                            <tspan x="54.81" y="0" style="letter-spacing:-0.02099609375em">cc</tspan>
+                            <tspan x="61.77" y="0">er in North Ameri</tspan>
+                            <tspan x="118.66" y="0" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="122.23" y="0">a </tspan>
+                            <tspan x="0" y="9.6">has opening s</tspan>
+                            <tspan x="45.88" y="9.6" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="49.74" y="9.6">ason. Despi</tspan>
+                            <tspan x="88.13" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="90.75" y="9.6">e initially </tspan>
+                            <tspan x="0" y="19.2">per</tspan>
+                            <tspan x="11.18" y="19.2" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="13.44" y="19.2">orming poorly </tspan>
+                            <tspan x="62.45" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="65.08" y="19.2">o d</tspan>
+                            <tspan x="75.47" y="19.2" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="78.05" y="19.2">aw in an </tspan>
+                            <tspan x="0" y="28.8">audien</tspan>
+                            <tspan x="23.2" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="26.68" y="28.8" xml:space="preserve">e, the l</tspan>
+                            <tspan x="50.55" y="28.8" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="54.41" y="28.8">ague n</tspan>
+                            <tspan x="76.85" y="28.8" style="letter-spacing:-0.0040283203125em">o</tspan>
+                            <tspan x="81.15" y="28.8">w d</tspan>
+                            <tspan x="92.95" y="28.8" style="letter-spacing:-0.02496337890625em">r</tspan>
+                            <tspan x="95.53" y="28.8">aw mo</tspan>
+                            <tspan x="117.95" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="120.65" y="28.8">e </tspan>
+                            <tspan x="0" y="38.4">audien</tspan>
+                            <tspan x="23.2" y="38.4" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="26.68" y="38.4">e at</tspan>
+                            <tspan x="39.06" y="38.4" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="41.69" y="38.4">endents then the NHL or </tspan>
+                            <tspan x="0" y="48">NBA.</tspan>
+                        </text>
+                        <image width="620" height="350" transform="translate(3411.99 343.49) scale(0.22)" xlink:href="img/HousePrices20.png" /> </g>
+                </g>
+                <g id="askJeeves1996">
+                    <rect id="point-16" data-name="point" x="3669.23" y="505.52" width="2.67" height="34.01" style="fill:#939598" />
+                    <rect id="box-16" data-name="box" x="3597.38" y="321.43" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox16" />
+                    <text transform="translate(3602.95 488.67)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Ask Je
+                            <tspan x="25.16" y="0" style="letter-spacing:-0.006022135416666667em">e</tspan>
+                            <tspan x="29.76" y="0" style="letter-spacing:-0.007975260416666666em">v</tspan>
+                            <tspan x="34.4" y="0">es is Fi</tspan>
+                            <tspan x="60.45" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="63.95" y="0">st </tspan>
+                            <tspan x="73.25" y="0" style="letter-spacing:-0.009982638888888888em">R</tspan>
+                            <tspan x="78.7" y="0">el</tspan>
+                            <tspan x="85.93" y="0" style="letter-spacing:-0.011013454861111112em">e</tspan>
+                            <tspan x="90.5" y="0">ase</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">June</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-16" data-name="expand" class="hide">
+                        <text transform="translate(3606.1 427.75)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.06597900390625em">T</tspan>
+                            <tspan x="3.72" y="0">empo</tspan>
+                            <tspan x="23.1" y="0" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="25.67" y="0">arily popular s</tspan>
+                            <tspan x="73.35" y="0" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="77.21" y="0">a</tspan>
+                            <tspan x="81.3" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="84" y="0">ch engine </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.05499267578125em">‘</tspan>
+                            <tspan x="1.55" y="9.6">Ask Je</tspan>
+                            <tspan x="22.54" y="9.6" style="letter-spacing:0.0050048828125em">e</tspan>
+                            <tspan x="26.55" y="9.6" style="letter-spacing:-0.0040283203125em">v</tspan>
+                            <tspan x="30.25" y="9.6">e</tspan>
+                            <tspan x="34.22" y="9.6" style="letter-spacing:-0.00994873046875em">s</tspan>
+                            <tspan x="37.5" y="9.6">’ app</tspan>
+                            <tspan x="54.08" y="9.6" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="57.93" y="9.6">a</tspan>
+                            <tspan x="62.03" y="9.6" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="64.73" y="9.6" style="letter-spacing:-0.00006103515625em">s </tspan>
+                            <tspan x="69.69" y="9.6" style="letter-spacing:-0.00994873046875em">f</tspan>
+                            <tspan x="71.95" y="9.6">or fi</tspan>
+                            <tspan x="84.98" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="87.68" y="9.6">st time. </tspan>
+                        </text>
+                        <image width="270" height="301" transform="translate(3632.61 333.01) scale(0.27)" xlink:href="img/HousePrices21.png" /> </g>
+                </g>
+                <g id="sheep1996">
+                    <rect id="pointer" x="3744.59" y="442.57" width="2.67" height="96.96" style="fill:#939598" />
+                    <rect id="box-17" data-name="box" x="3672.73" y="258.48" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox17" />
+                    <text transform="translate(3678.31 425.72)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Dolly the Sheep Cloned</tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">July 5</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-17" data-name="expand" class="hide">
+                        <text transform="translate(3681.46 364.8)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Dolly the sheep be
+                            <tspan x="61.41" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="64.89" y="0">omes fi</tspan>
+                            <tspan x="89.09" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="91.79" y="0">st animal </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:0.0050048828125em">e</tspan>
+                            <tspan x="4.01" y="9.6" style="letter-spacing:-0.0040283203125em">v</tspan>
+                            <tspan x="7.71" y="9.6">er </tspan>
+                            <tspan x="16.07" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="18.7" y="9.6">o be su</tspan>
+                            <tspan x="42.38" y="9.6" style="letter-spacing:-0.02093505859375em">cc</tspan>
+                            <tspan x="49.33" y="9.6">ess</tspan>
+                            <tspan x="60.01" y="9.6" style="letter-spacing:-0.01495361328125em">f</tspan>
+                            <tspan x="62.22" y="9.6">ully cloned. Dolly </tspan>
+                            <tspan x="0" y="19.2">li</tspan>
+                            <tspan x="4.01" y="19.2" style="letter-spacing:-0.00396728515625em">v</tspan>
+                            <tspan x="7.71" y="19.2">ed </tspan>
+                            <tspan x="17.74" y="19.2" style="letter-spacing:-0.00994873046875em">f</tspan>
+                            <tspan x="19.99" y="19.2">or s</tspan>
+                            <tspan x="32.07" y="19.2" style="letter-spacing:0.0050048828125em">e</tspan>
+                            <tspan x="36.08" y="19.2" style="letter-spacing:-0.0040283203125em">v</tspan>
+                            <tspan x="39.78" y="19.2">en </tspan>
+                            <tspan x="49.74" y="19.2" style="letter-spacing:-0.0040283203125em">y</tspan>
+                            <tspan x="53.45" y="19.2" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="57.3" y="19.2">a</tspan>
+                            <tspan x="61.4" y="19.2" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="64.09" y="19.2" style="letter-spacing:-0.00006103515625em">s and died of the </tspan>
+                            <tspan x="0" y="28.8">same dis</tspan>
+                            <tspan x="29.42" y="28.8" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="33.28" y="28.8">ase that killed the sheep </tspan>
+                            <tspan x="0" y="38.4">that she </tspan>
+                            <tspan x="28.76" y="38.4" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="34.42" y="38.4">as cloned f</tspan>
+                            <tspan x="70.25" y="38.4" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="72.94" y="38.4">om.</tspan>
+                        </text>
+                        <image width="1024" height="684" transform="translate(3680.3 265.55) scale(0.13)" xlink:href="img/HousePrices22.png" /> </g>
+                </g>
+                <g id="soldier2000">
+                    <rect id="point-17" data-name="point" x="4756.86" y="511.86" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-18" data-name="box" x="4685.01" y="327.78" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox18" />
+                    <text transform="translate(4690.58 495.01)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">WWI Soldier B
+                            <tspan x="54.94" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="58.43" y="0">ought </tspan>
+                            <tspan x="83.8" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="87.16" y="0">o Canada</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">May 25</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-18" data-name="expand" class="hide">
+                        <text transform="translate(4693.73 434.09)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">The
+                            <tspan x="14.18" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="16.81" y="0">omb of the unkn</tspan>
+                            <tspan x="71.82" y="0" style="letter-spacing:-0.00396728515625em">o</tspan>
+                            <tspan x="76.13" y="0">wn soldier in </tspan>
+                            <tspan x="0" y="9.6">Canada </tspan>
+                            <tspan x="27.25" y="9.6" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="32.91" y="9.6">as </tspan>
+                            <tspan x="41.98" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="45.46" y="9.6">onstruc</tspan>
+                            <tspan x="71" y="9.6" style="letter-spacing:-0.00994873046875em">t</tspan>
+                            <tspan x="73.62" y="9.6">ed, and the </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="2.7" y="19.2">emains of an unkn</tspan>
+                            <tspan x="64.14" y="19.2" style="letter-spacing:-0.00396728515625em">o</tspan>
+                            <tspan x="68.45" y="19.2">wn Canadian </tspan>
+                            <tspan x="0" y="28.8" style="letter-spacing:-0.0040283203125em">w</tspan>
+                            <tspan x="5.71" y="28.8">e</tspan>
+                            <tspan x="9.68" y="28.8" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="12.38" y="28.8">e b</tspan>
+                            <tspan x="22.4" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="25.1" y="28.8">ought </tspan>
+                            <tspan x="46.49" y="28.8" style="letter-spacing:-0.01397705078125em">b</tspan>
+                            <tspan x="50.81" y="28.8">ack f</tspan>
+                            <tspan x="66.47" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="69.17" y="28.8">om Vimy Rid</tspan>
+                            <tspan x="110.8" y="28.8" style="letter-spacing:-0.01397705078125em">g</tspan>
+                            <tspan x="114.72" y="28.8">e.</tspan>
+                        </text>
+                        <image width="220" height="165" transform="translate(4703.2 337.32) scale(0.5)" xlink:href="img/HousePrices23.png" /> </g>
+                </g>
+                <g id="dotcom2000">
+                    <rect id="point-18" data-name="point" x="4533.09" y="522.63" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-19" data-name="box" x="4461.23" y="338.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox19" />
+                    <text transform="translate(4466.8 505.78)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Dot-Com Bubble Burst
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">January 10</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-19" data-name="expand" class="hide">
+                        <text transform="translate(4469.96 444.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.01397705078125em">F</tspan>
+                            <tspan x="3.8" y="0">oll</tspan>
+                            <tspan x="12.22" y="0" style="letter-spacing:-0.0040283203125em">o</tspan>
+                            <tspan x="16.52" y="0">wing the immense in</tspan>
+                            <tspan x="85.75" y="0" style="letter-spacing:-0.00396728515625em">v</tspan>
+                            <tspan x="89.45" y="0">esting f</tspan>
+                            <tspan x="113.81" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="116.5" y="0">om </tspan>
+                            <tspan x="0" y="9.6">people in</tspan>
+                            <tspan x="31.15" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="33.78" y="9.6">o in</tspan>
+                            <tspan x="46.07" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="48.7" y="9.6">ern</tspan>
+                            <tspan x="59.82" y="9.6" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="63.67" y="9.6">t </tspan>
+                            <tspan x="67.99" y="9.6" style="letter-spacing:-0.01397705078125em">b</tspan>
+                            <tspan x="72.32" y="9.6">ased </tspan>
+                            <tspan x="89.79" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="93.27" y="9.6">om</tspan>
+                            <tspan x="104.24" y="9.6" style="letter-spacing:-0.01397705078125em">p</tspan>
+                            <tspan x="108.57" y="9.6">anies, </tspan>
+                            <tspan x="0" y="19.2">a massi</tspan>
+                            <tspan x="25.11" y="19.2" style="letter-spacing:-0.00396728515625em">v</tspan>
+                            <tspan x="28.82" y="19.2">e c</tspan>
+                            <tspan x="38.05" y="19.2" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="40.62" y="19.2">ash o</tspan>
+                            <tspan x="58.37" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="61.85" y="19.2">cu</tspan>
+                            <tspan x="69.85" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="72.55" y="19.2">ed </tspan>
+                            <tspan x="82.57" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="85.27" y="19.2">esulting in </tspan>
+                            <tspan x="0" y="28.8">the </tspan>
+                            <tspan x="12.64" y="28.8" style="letter-spacing:-0.01397705078125em">b</tspan>
+                            <tspan x="16.97" y="28.8">akrup</tspan>
+                            <tspan x="36.59" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="39.22" y="28.8" style="letter-spacing:0.0059814453125em">c</tspan>
+                            <tspan x="42.91" y="28.8">y of some and loss of </tspan>
+                            <tspan x="0" y="38.4">major mar</tspan>
+                            <tspan x="34.94" y="38.4" style="letter-spacing:-0.01800537109375em">k</tspan>
+                            <tspan x="38.75" y="38.4" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="42.61" y="38.4">t sha</tspan>
+                            <tspan x="58.73" y="38.4" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="61.42" y="38.4">e </tspan>
+                            <tspan x="67.01" y="38.4" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="69.26" y="38.4">or othe</tspan>
+                            <tspan x="93.35" y="38.4" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="96.05" y="38.4">s.</tspan>
+                        </text>
+                        <image width="572" height="362" transform="translate(4468.19 346.75) scale(0.23)" xlink:href="img/HousePrices24.png" /> </g>
+                </g>
+                <g id="mini2000">
+                    <rect id="point-19" data-name="point" x="5090.78" y="505.62" width="2.67" height="34.01" style="fill:#939598" />
+                    <rect id="box-20" data-name="box" x="5018.92" y="321.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox20" />
+                    <text transform="translate(5024.49 488.77)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Mini Cooper C
+                            <tspan x="54.54" y="0" style="letter-spacing:-0.010959201388888888em">e</tspan>
+                            <tspan x="59.1" y="0" style="letter-spacing:-0.00005425347222222222em">ases P</tspan>
+                            <tspan x="83.86" y="0" style="letter-spacing:-0.010036892361111112em">r</tspan>
+                            <tspan x="87.35" y="0">oduction </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Oc</tspan>
+                            <tspan x="9.85" y="10.8" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="12.56" y="10.8">ober 4</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-20" data-name="expand" class="hide">
+                        <text transform="translate(5027.65 427.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">The original mini
+                            <tspan x="57.95" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="61.43" y="0">ooper a</tspan>
+                            <tspan x="87" y="0" style="letter-spacing:-0.010009765625em">ft</tspan>
+                            <tspan x="91.67" y="0">er 41 </tspan>
+                            <tspan x="109.6" y="0" style="letter-spacing:-0.00396728515625em">y</tspan>
+                            <tspan x="113.3" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="117.16" y="0" style="letter-spacing:0.00006103515625em">a</tspan>
+                            <tspan x="121.25" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="123.95" y="0">s </tspan>
+                            <tspan x="0" y="9.6">in p</tspan>
+                            <tspan x="12.4" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="15.1" y="9.6">oduction and </tspan>
+                            <tspan x="61.4" y="9.6" style="letter-spacing:-0.00396728515625em">ov</tspan>
+                            <tspan x="69.41" y="9.6">er 5 million </tspan>
+                            <tspan x="108.33" y="9.6" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="111.9" y="9.6" style="letter-spacing:0.00006103515625em">a</tspan>
+                            <tspan x="116" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="118.69" y="9.6">s </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="3.48" y="19.2">onstruc</tspan>
+                            <tspan x="29.02" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="31.65" y="19.2">ed ends p</tspan>
+                            <tspan x="63.86" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="66.56" y="19.2">oduction.</tspan>
+                        </text>
+                        <image width="520" height="292" transform="translate(5027.91 332.83) scale(0.25)" xlink:href="img/HousePrices25.png" /> </g>
+                </g>
+                <g id="redSox2004">
+                    <rect id="point-20" data-name="point" x="6151.37" y="511.86" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-21" data-name="box" x="6079.51" y="327.78" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox21" />
+                    <text transform="translate(6085.08 495.02)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">B
+                            <tspan x="5.44" y="0" style="letter-spacing:-0.004991319444444444em">o</tspan>
+                            <tspan x="10.39" y="0">s</tspan>
+                            <tspan x="14.37" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="17.73" y="0">on </tspan>
+                            <tspan x="29.75" y="0" style="letter-spacing:-0.009982638888888888em">R</tspan>
+                            <tspan x="35.19" y="0">ed S</tspan>
+                            <tspan x="51.87" y="0" style="letter-spacing:-0.025987413194444444em">o</tspan>
+                            <tspan x="56.63" y="0">x Win World Series</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Oc</tspan>
+                            <tspan x="9.85" y="10.8" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="12.56" y="10.8">ober 27</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-21" data-name="expand" class="hide">
+                        <text transform="translate(6088.24 434.1)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.010009765625em">R</tspan>
+                            <tspan x="4.53" y="0">ed S</tspan>
+                            <tspan x="18.78" y="0" style="letter-spacing:-0.0169677734375em">o</tspan>
+                            <tspan x="22.98" y="0">x a</tspan>
+                            <tspan x="32.26" y="0" style="letter-spacing:-0.010009765625em">ft</tspan>
+                            <tspan x="36.94" y="0">er a d</tspan>
+                            <tspan x="55.45" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="58.14" y="0">ought of 86 </tspan>
+                            <tspan x="97.39" y="0" style="letter-spacing:-0.00396728515625em">y</tspan>
+                            <tspan x="101.09" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="104.95" y="0" style="letter-spacing:0.00006103515625em">a</tspan>
+                            <tspan x="109.05" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="111.74" y="0">s win </tspan>
+                            <tspan x="0" y="9.6">their fi</tspan>
+                            <tspan x="21.69" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="24.38" y="9.6">st </tspan>
+                            <tspan x="32.06" y="9.6" style="letter-spacing:-0.00396728515625em">w</tspan>
+                            <tspan x="37.77" y="9.6">orld series a</tspan>
+                            <tspan x="78.07" y="9.6" style="letter-spacing:-0.0159912109375em">g</tspan>
+                            <tspan x="81.98" y="9.6">ainst the S</tspan>
+                            <tspan x="116.96" y="9.6" style="letter-spacing:0.01397705078125em">t</tspan>
+                            <tspan x="119.77" y="9.6">. </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.011962890625em">L</tspan>
+                            <tspan x="3.75" y="19.2">ouis Ca</tspan>
+                            <tspan x="28" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="30.7" y="19.2">dinals.</tspan>
+                        </text>
+                        <image width="1200" height="814" transform="translate(6087.36 335.11) scale(0.11)" xlink:href="img/HousePrices26.png" /> </g>
+                </g>
+                <g id="facebook2004">
+                    <rect id="point-21" data-name="point" x="5710.27" y="522.63" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-22" data-name="box" x="5638.41" y="338.54" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox22" />
+                    <text transform="translate(5643.98 505.78)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.03797743055555555em">F</tspan>
+                            <tspan x="4.37" y="0">a</tspan>
+                            <tspan x="9.17" y="0" style="letter-spacing:-0.027994791666666668em">c</tspan>
+                            <tspan x="13.12" y="0">ebook is Launched</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.010959201388888888em">F</tspan>
+                            <tspan x="4.12" y="10.8">ebrua</tspan>
+                            <tspan x="25.47" y="10.8" style="letter-spacing:0.027018229166666668em">r</tspan>
+                            <tspan x="28.57" y="10.8">y 4</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-22" data-name="expand" class="hide">
+                        <text transform="translate(5647.14 444.86)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Mark
+                            <tspan x="18.22" y="0" style="letter-spacing:-0.02301025390625em">Z</tspan>
+                            <tspan x="22.31" y="0">uc</tspan>
+                            <tspan x="30.31" y="0" style="letter-spacing:-0.0179443359375em">k</tspan>
+                            <tspan x="34.13" y="0">erbe</tspan>
+                            <tspan x="49.28" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="51.98" y="0">g </tspan>
+                            <tspan x="57.62" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="60.32" y="0">el</tspan>
+                            <tspan x="66.33" y="0" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="70.18" y="0">ases social media </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.0040283203125em">w</tspan>
+                            <tspan x="5.71" y="9.6">ebsi</tspan>
+                            <tspan x="19.44" y="9.6" style="letter-spacing:-0.00994873046875em">t</tspan>
+                            <tspan x="22.06" y="9.6">e </tspan>
+                            <tspan x="27.65" y="9.6" style="letter-spacing:-0.03399658203125em">F</tspan>
+                            <tspan x="31.29" y="9.6">a</tspan>
+                            <tspan x="35.38" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="38.86" y="9.6">ebook </tspan>
+                            <tspan x="61.52" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="64.14" y="9.6">o the public. The </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.0040283203125em">w</tspan>
+                            <tspan x="5.71" y="19.2">ebsi</tspan>
+                            <tspan x="19.44" y="19.2" style="letter-spacing:-0.00994873046875em">t</tspan>
+                            <tspan x="22.06" y="19.2">e </tspan>
+                            <tspan x="27.65" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="30.27" y="19.2">oday has 1.86 billion daily </tspan>
+                            <tspan x="0" y="28.8">use</tspan>
+                            <tspan x="11.67" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="14.37" y="28.8">s.</tspan>
+                        </text>
+                        <image width="512" height="192" transform="translate(5645.8 366.88) scale(0.26)" xlink:href="img/HousePrices27.png" /> </g>
+                </g>
+                <g id="lama2004">
+                    <rect id="point-22" data-name="point" x="5849.47" y="477.78" width="2.67" height="61.14" style="fill:#939598" />
+                    <rect id="box-23" data-name="box" x="5777.61" y="293.69" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox23" />
+                    <text transform="translate(5783.19 460.93)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Dalai Lama Visits Canada</tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">April 25</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-23" data-name="expand" class="hide">
+                        <text transform="translate(5786.34 400.01)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Dalai Lama visits Canada, d
+                            <tspan x="91.37" y="0" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="93.95" y="0">awing </tspan>
+                            <tspan x="0" y="9.6">c</tspan>
+                            <tspan x="3.65" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="6.34" y="9.6" style="letter-spacing:-0.00396728515625em">ow</tspan>
+                            <tspan x="16.36" y="9.6">ds of thousands </tspan>
+                            <tspan x="71.03" y="9.6" style="letter-spacing:-0.00994873046875em">t</tspan>
+                            <tspan x="73.66" y="9.6">o his </tspan>
+                            <tspan x="90.9" y="9.6" style="letter-spacing:-0.01800537109375em">t</tspan>
+                            <tspan x="93.46" y="9.6">alks and </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="2.62" y="19.2" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="6.48" y="19.2">achings.</tspan>
+                        </text>
+                        <image width="255" height="340" transform="translate(5817.21 304.95) scale(0.25)" xlink:href="img/HousePrices28.png" /> </g>
+                </g>
+                <g id="crash2008">
+                    <rect id="point-23" data-name="point" x="7178.44" y="511.38" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-24" data-name="box" x="7106.59" y="327.3" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox24" />
+                    <text transform="translate(7112.16 494.54)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.009982638888888888em">U</tspan>
+                            <tspan x="5.88" y="0">S P</tspan>
+                            <tspan x="18.18" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="21.67" y="0">operty C</tspan>
+                            <tspan x="55.3" y="0" style="letter-spacing:-0.029025607638888888em">r</tspan>
+                            <tspan x="58.62" y="0">ash</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.009006076388888888em">A</tspan>
+                            <tspan x="4.59" y="10.8">ugust</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-24" data-name="expand" class="hide">
+                        <text transform="translate(7115.31 433.62)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.01397705078125em">F</tspan>
+                            <tspan x="3.8" y="0">oll</tspan>
+                            <tspan x="12.22" y="0" style="letter-spacing:-0.0040283203125em">o</tspan>
+                            <tspan x="16.52" y="0">wing the pri</tspan>
+                            <tspan x="56.08" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="59.56" y="0">e inflation of homes </tspan>
+                            <tspan x="0" y="9.6">in a</tspan>
+                            <tspan x="12.06" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="14.75" y="9.6" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="18.61" y="9.6">as a</tspan>
+                            <tspan x="31.77" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="34.46" y="9.6">ound the Uni</tspan>
+                            <tspan x="77.69" y="9.6" style="letter-spacing:-0.00994873046875em">t</tspan>
+                            <tspan x="80.31" y="9.6">ed S</tspan>
+                            <tspan x="94.57" y="9.6" style="letter-spacing:-0.0179443359375em">t</tspan>
+                            <tspan x="97.13" y="9.6">a</tspan>
+                            <tspan x="101.22" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="103.85" y="9.6">es, and </tspan>
+                            <tspan x="0" y="19.2">the sudden c</tspan>
+                            <tspan x="42.83" y="19.2" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="45.41" y="19.2">ash, thousands of </tspan>
+                            <tspan x="0" y="28.8">Ameri</tspan>
+                            <tspan x="19.65" y="28.8" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="23.21" y="28.8">ans lost their homes and </tspan>
+                            <tspan x="0" y="38.4">decla</tspan>
+                            <tspan x="18.19" y="38.4" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="20.89" y="38.4">ed </tspan>
+                            <tspan x="30.91" y="38.4" style="letter-spacing:-0.01397705078125em">b</tspan>
+                            <tspan x="35.24" y="38.4">akrup</tspan>
+                            <tspan x="54.86" y="38.4" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="57.49" y="38.4" style="letter-spacing:0.00604248046875em">c</tspan>
+                            <tspan x="61.18" y="38.4" style="letter-spacing:-0.0350341796875em">y</tspan>
+                            <tspan x="64.64" y="38.4">.</tspan>
+                        </text>
+                        <image width="300" height="310" transform="translate(7138.79 334.63) scale(0.27)" xlink:href="img/HousePrices29.png" /> </g>
+                </g>
+                <g id="castro2008">
+                    <rect id="point-24" data-name="point" x="6714.97" y="522.69" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-25" data-name="box" x="6643.12" y="338.6" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox25" />
+                    <text transform="translate(6648.69 505.84)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Fidel Cast
+                            <tspan x="38.92" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="42.41" y="0">o S</tspan>
+                            <tspan x="54.26" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="57.62" y="0">e</tspan>
+                            <tspan x="62.28" y="0" style="letter-spacing:-0.004991319444444444em">p</tspan>
+                            <tspan x="67.39" y="0">s D</tspan>
+                            <tspan x="78.96" y="0" style="letter-spacing:-0.008029513888888888em">o</tspan>
+                            <tspan x="83.88" y="0">wn</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.010959201388888888em">F</tspan>
+                            <tspan x="4.12" y="10.8">ebrua</tspan>
+                            <tspan x="25.47" y="10.8" style="letter-spacing:0.027018229166666668em">r</tspan>
+                            <tspan x="28.56" y="10.8">y 24</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-25" data-name="expand" class="hide">
+                        <text transform="translate(6651.84 444.92)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.011962890625em">L</tspan>
+                            <tspan x="3.75" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="7.61" y="0">ader of the </tspan>
+                            <tspan x="45.43" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="48.91" y="0">ommunist </tspan>
+                            <tspan x="84.88" y="0" style="letter-spacing:-0.00994873046875em">r</tspan>
+                            <tspan x="87.57" y="0" style="letter-spacing:0.00494384765625em">e</tspan>
+                            <tspan x="91.58" y="0" style="letter-spacing:-0.00396728515625em">v</tspan>
+                            <tspan x="95.29" y="0">olution in </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.010009765625em">C</tspan>
+                            <tspan x="4.45" y="9.6">u</tspan>
+                            <tspan x="8.8" y="9.6" style="letter-spacing:-0.01397705078125em">b</tspan>
+                            <tspan x="13.13" y="9.6">a, Fidel Cast</tspan>
+                            <tspan x="53.46" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="56.15" y="9.6">o s</tspan>
+                            <tspan x="65.46" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="68.08" y="9.6">eps d</tspan>
+                            <tspan x="85.9" y="9.6" style="letter-spacing:-0.00396728515625em">o</tspan>
+                            <tspan x="90.2" y="9.6">wn f</tspan>
+                            <tspan x="104.27" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="106.97" y="9.6">om </tspan>
+                            <tspan x="0" y="19.2">his </tspan>
+                            <tspan x="11.29" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="13.98" y="19.2">ole of p</tspan>
+                            <tspan x="38.67" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="41.37" y="19.2">esiden</tspan>
+                            <tspan x="63.44" y="19.2" style="letter-spacing:0.0140380859375em">t</tspan>
+                            <tspan x="66.25" y="19.2">. His b</tspan>
+                            <tspan x="86.41" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="89.11" y="19.2">other </tspan>
+                            <tspan x="108.86" y="19.2" style="letter-spacing:-0.010009765625em">R</tspan>
+                            <tspan x="113.39" y="19.2">aul </tspan>
+                            <tspan x="0" y="28.8" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="5.66" y="28.8">as </tspan>
+                            <tspan x="14.73" y="28.8" style="letter-spacing:-0.00396728515625em">v</tspan>
+                            <tspan x="18.43" y="28.8">o</tspan>
+                            <tspan x="22.77" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="25.39" y="28.8">ed in as his </tspan>
+                            <tspan x="63.73" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="66.42" y="28.8">epla</tspan>
+                            <tspan x="80.97" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="84.45" y="28.8">emen</tspan>
+                            <tspan x="103.39" y="28.8" style="letter-spacing:0.0140380859375em">t</tspan>
+                            <tspan x="106.21" y="28.8" style="letter-spacing:-0.00006103515625em">.</tspan>
+                        </text>
+                        <image width="395" height="260" transform="translate(6650.24 346.19) scale(0.34)" xlink:href="img/HousePrices30.png" /> </g>
+                </g>
+                <g id="putin2008">
+                    <rect id="point-25" data-name="point" x="6859.11" y="485.84" width="2.67" height="54.22" style="fill:#939598" />
+                    <rect id="box-26" data-name="box" x="6787.25" y="301.76" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox26" />
+                    <text transform="translate(6792.83 469)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.07600911458333333em">V</tspan>
+                            <tspan x="4.31" y="0">. Putin Elec</tspan>
+                            <tspan x="48.74" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="52.1" y="0" xml:space="preserve">ed PM </tspan>
+                            <tspan x="79.83" y="0" style="letter-spacing:-0.004991319444444444em">o</tspan>
+                            <tspan x="84.78" y="0">f Russia </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">May 8</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-26" data-name="expand" class="hide">
+                        <text transform="translate(6795.98 408.08)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Th
+                            <tspan x="8.6" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="11.3" y="0">ough the use of a “p</tspan>
+                            <tspan x="77.76" y="0" style="letter-spacing:-0.00396728515625em">ow</tspan>
+                            <tspan x="87.78" y="0">e</tspan>
+                            <tspan x="91.74" y="0" style="letter-spacing:-0.02398681640625em">r</tspan>
+                            <tspan x="94.33" y="0">-swi</tspan>
+                            <tspan x="107.88" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="110.5" y="0" style="letter-spacing:0.00006103515625em">ching </tspan>
+                            <tspan x="0" y="9.6">ope</tspan>
+                            <tspan x="12.74" y="9.6" style="letter-spacing:-0.02496337890625em">r</tspan>
+                            <tspan x="15.32" y="9.6" style="letter-spacing:-0.00006103515625em">ation</tspan>
+                            <tspan x="32.8" y="9.6" style="letter-spacing:-0.1319580078125em">”</tspan>
+                            <tspan x="35.15" y="9.6">, Vladamir Putin </tspan>
+                            <tspan x="90.09" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="92.78" y="9.6" style="letter-spacing:-0.01397705078125em">e</tspan>
+                            <tspan x="96.64" y="9.6">assumed </tspan>
+                            <tspan x="0" y="19.2">the </tspan>
+                            <tspan x="12.64" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="15.34" y="19.2">ole of Prime Minis</tspan>
+                            <tspan x="74.55" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="77.17" y="19.2">e</tspan>
+                            <tspan x="81.14" y="19.2" style="letter-spacing:-0.05694580078125em">r</tspan>
+                            <tspan x="83.46" y="19.2">. </tspan>
+                        </text>
+                        <image width="980" height="552" transform="translate(6798.22 314.52) scale(0.13)" xlink:href="img/HousePrices31.png" /> </g>
+                </g>
+                <g id="batman2008">
+                    <rect id="point-26" data-name="point" x="7025.81" y="522.58" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-27" data-name="box" x="6953.95" y="338.5" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox27" />
+                    <text transform="translate(6959.53 505.74)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">The Dark Knight</tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">July 18</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-27" data-name="expand" class="hide">
+                        <text transform="translate(6962.68 444.82)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Final per
+                            <tspan x="29.19" y="0" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="31.45" y="0">orman</tspan>
+                            <tspan x="53.66" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="57.14" y="0">e of ac</tspan>
+                            <tspan x="78.76" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="81.38" y="0">or H</tspan>
+                            <tspan x="95.29" y="0" style="letter-spacing:-0.013916015625em">e</tspan>
+                            <tspan x="99.14" y="0">ath </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.011962890625em">L</tspan>
+                            <tspan x="3.75" y="9.6">ed</tspan>
+                            <tspan x="12.16" y="9.6" style="letter-spacing:-0.0140380859375em">g</tspan>
+                            <tspan x="16.08" y="9.6">e</tspan>
+                            <tspan x="20.05" y="9.6" style="letter-spacing:-0.0570068359375em">r</tspan>
+                            <tspan x="22.37" y="9.6">, “The Dark Knight” </tspan>
+                            <tspan x="87.96" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="90.65" y="9.6">el</tspan>
+                            <tspan x="96.66" y="9.6" style="letter-spacing:-0.013916015625em">e</tspan>
+                            <tspan x="100.52" y="9.6">ases </tspan>
+                            <tspan x="116.9" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="119.53" y="9.6">o </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.0040283203125em">w</tspan>
+                            <tspan x="5.71" y="19.2">orldwide a</tspan>
+                            <tspan x="41.14" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="44.62" y="19.2">claim. The m</tspan>
+                            <tspan x="87.42" y="19.2" style="letter-spacing:-0.00390625em">o</tspan>
+                            <tspan x="91.73" y="19.2">vie is </tspan>
+                            <tspan x="0" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="3.48" y="28.8">onside</tspan>
+                            <tspan x="25.92" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="28.62" y="28.8">ed one of the best Batman </tspan>
+                            <tspan x="0" y="38.4">films of all time.</tspan>
+                        </text>
+                        <image width="1200" height="600" transform="translate(6960.67 346.27) scale(0.11)" xlink:href="img/HousePrices32.png" /> </g>
+                </g>
+                <g id="trump2016">
+                    <rect id="point-27" data-name="point" x="8820.27" y="512.41" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-28" data-name="box" x="8748.41" y="328.32" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox28" />
+                    <text transform="translate(8753.98 495.56)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Donald
+                            <tspan x="30.26" y="0" style="letter-spacing:-0.0419921875em">T</tspan>
+                            <tspan x="34.88" y="0">rump Elec</tspan>
+                            <tspan x="74.67" y="0" style="letter-spacing:-0.009982638888888888em">t</tspan>
+                            <tspan x="78.02" y="0">ed</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">Janua</tspan>
+                            <tspan x="22.63" y="10.8" style="letter-spacing:0.027018229166666668em">r</tspan>
+                            <tspan x="25.72" y="10.8">y 20</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-28" data-name="expand" class="hide">
+                        <text transform="translate(8757.14 434.64)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Despi
+                            <tspan x="18.62" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="21.25" y="0">e immense </tspan>
+                            <tspan x="59.34" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="62.82" y="0">ont</tspan>
+                            <tspan x="74.24" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="76.93" y="0" style="letter-spacing:-0.00390625em">ov</tspan>
+                            <tspan x="84.94" y="0">e</tspan>
+                            <tspan x="88.91" y="0" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="91.61" y="0">sy </tspan>
+                            <tspan x="0" y="9.6">th</tspan>
+                            <tspan x="7.06" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="9.75" y="9.6">oughout the enti</tspan>
+                            <tspan x="65.49" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="68.18" y="9.6">e </tspan>
+                            <tspan x="73.77" y="9.6" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="77.33" y="9.6">am</tspan>
+                            <tspan x="88.06" y="9.6" style="letter-spacing:-0.013916015625em">p</tspan>
+                            <tspan x="92.39" y="9.6">aign </tspan>
+                            <tspan x="0" y="19.2">Donald </tspan>
+                            <tspan x="25.8" y="19.2" style="letter-spacing:-0.0460205078125em">T</tspan>
+                            <tspan x="29.68" y="19.2">rump is elec</tspan>
+                            <tspan x="70.06" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="72.68" y="19.2">ed the n</tspan>
+                            <tspan x="99.72" y="19.2" style="letter-spacing:-0.0069580078125em">e</tspan>
+                            <tspan x="103.63" y="19.2">xt </tspan>
+                            <tspan x="0" y="28.8">Uni</tspan>
+                            <tspan x="11.46" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="14.09" y="28.8">ed S</tspan>
+                            <tspan x="28.34" y="28.8" style="letter-spacing:-0.0179443359375em">t</tspan>
+                            <tspan x="30.9" y="28.8">a</tspan>
+                            <tspan x="35" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="37.62" y="28.8">es P</tspan>
+                            <tspan x="51.13" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="53.82" y="28.8">esident</tspan>
+                        </text>
+                        <image width="900" height="506" transform="translate(8758.32 336.5) scale(0.14)" xlink:href="img/HousePrices33.png" /> </g>
+                </g>
+                <g id="fire2016">
+                    <rect id="point-28" data-name="point" x="9038.23" y="522.27" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-29" data-name="box" x="8966.37" y="338.18" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox29" />
+                    <text transform="translate(8971.95 505.42)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.018012152777777776em">F</tspan>
+                            <tspan x="4.54" y="0">ort McMur</tspan>
+                            <tspan x="45.04" y="0" style="letter-spacing:-0.028971354166666668em">r</tspan>
+                            <tspan x="48.36" y="0">ay Wildfi</tspan>
+                            <tspan x="82.8" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="86.29" y="0">e </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">May 3</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-29" data-name="expand" class="hide">
+                        <text transform="translate(8975.1 444.5)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Smaller
+                            <tspan x="27.4" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="30.88" y="0">ommunity </tspan>
+                            <tspan x="67.23" y="0" style="letter-spacing:-0.0140380859375em">F</tspan>
+                            <tspan x="71.03" y="0">ort McMur</tspan>
+                            <tspan x="104.79" y="0" style="letter-spacing:-0.02490234375em">r</tspan>
+                            <tspan x="107.36" y="0">ay is </tspan>
+                            <tspan x="0" y="9.6">e</tspan>
+                            <tspan x="3.97" y="9.6" style="letter-spacing:-0.010009765625em">ff</tspan>
+                            <tspan x="8.48" y="9.6">ec</tspan>
+                            <tspan x="16.1" y="9.6" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="18.72" y="9.6">ed </tspan>
+                            <tspan x="28.74" y="9.6" style="letter-spacing:-0.00390625em">b</tspan>
+                            <tspan x="33.15" y="9.6">y </tspan>
+                            <tspan x="38.5" y="9.6" style="letter-spacing:-0.02490234375em">r</tspan>
+                            <tspan x="41.08" y="9.6">aging wildfi</tspan>
+                            <tspan x="79.7" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="82.39" y="9.6">e. The fi</tspan>
+                            <tspan x="108.46" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="111.15" y="9.6">e </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="3.57" y="19.2">aused the </tspan>
+                            <tspan x="38.03" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="40.73" y="19.2">elo</tspan>
+                            <tspan x="51.07" y="19.2" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="54.64" y="19.2">ation of thousands </tspan>
+                            <tspan x="0" y="28.8">and </tspan>
+                            <tspan x="14.53" y="28.8" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="17.22" y="28.8">esul</tspan>
+                            <tspan x="30.94" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="33.56" y="28.8">ed in almost 13 billion </tspan>
+                            <tspan x="0" y="38.4">dolla</tspan>
+                            <tspan x="16.95" y="38.4" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="19.65" y="38.4">s in </tspan>
+                            <tspan x="32.57" y="38.4" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="35.2" y="38.4">o</tspan>
+                            <tspan x="39.53" y="38.4" style="letter-spacing:-0.0179443359375em">t</tspan>
+                            <tspan x="42.09" y="38.4">al </tspan>
+                            <tspan x="49.85" y="38.4" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="53.33" y="38.4">osts.</tspan>
+                        </text>
+                        <image width="1200" height="675" transform="translate(8975.75 347.86) scale(0.11)" xlink:href="img/HousePrices34.png" /> </g>
+                </g>
+                <g id="mayan2012">
+                    <rect id="point-29" data-name="point" x="8597" y="512.41" width="2.67" height="28.14" style="fill:#939598" />
+                    <rect id="box-30" data-name="box" x="8525.15" y="328.32" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox30" />
+                    <text transform="translate(8530.72 495.56)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Ma
+                            <tspan x="11.65" y="0" style="letter-spacing:-0.019965277777777776em">y</tspan>
+                            <tspan x="16.16" y="0">an Calendar Ends</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">De</tspan>
+                            <tspan x="9.74" y="10.8" style="letter-spacing:-0.017035590277777776em">c</tspan>
+                            <tspan x="13.63" y="10.8">ember 21</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-30" data-name="expand" class="hide">
+                        <text transform="translate(8533.87 434.64)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Az
+                            <tspan x="7.7" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="10.33" y="0">ec </tspan>
+                            <tspan x="19.56" y="0" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="23.13" y="0">alendar mar</tspan>
+                            <tspan x="64.04" y="0" style="letter-spacing:-0.0179443359375em">k</tspan>
+                            <tspan x="67.85" y="0">ed </tspan>
+                            <tspan x="77.88" y="0" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="80.5" y="0">o end on </tspan>
+                            <tspan x="0" y="9.6">De</tspan>
+                            <tspan x="8.86" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="12.34" y="9.6">ember the 21s</tspan>
+                            <tspan x="59.69" y="9.6" style="letter-spacing:0.0140380859375em">t</tspan>
+                            <tspan x="62.5" y="9.6">. </tspan>
+                        </text>
+                        <image width="350" height="339" transform="translate(8553.25 338.22) scale(0.25)" xlink:href="img/HousePrices35.png" /> </g>
+                </g>
+                <g id="jubilee2012">
+                    <rect x="7860.53" y="522.48" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect x="7788.68" y="338.39" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox31" />
+                    <text transform="translate(7794.25 504.93)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">Diamond Jubilee
+                            <tspan x="61.3" y="0" style="letter-spacing:-0.0050048828125em">o</tspan>
+                            <tspan x="65.7" y="0">f Eli</tspan>
+                            <tspan x="78.96" y="0" style="letter-spacing:-0.0140380859375em">z</tspan>
+                            <tspan x="82.52" y="0">ab</tspan>
+                            <tspan x="91.38" y="0" style="letter-spacing:-0.0179443359375em">e</tspan>
+                            <tspan x="95.38" y="0">th II</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.010986328125em">F</tspan>
+                            <tspan x="3.66" y="9.6">ebrua</tspan>
+                            <tspan x="22.64" y="9.6" style="letter-spacing:0.0269775390625em">r</tspan>
+                            <tspan x="25.39" y="9.6">y 6</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-31" data-name="expand" class="hide">
+                        <text transform="translate(7797.4 444.71)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">Queen Eli
+                            <tspan x="31.74" y="0" style="letter-spacing:-0.02294921875em">z</tspan>
+                            <tspan x="34.95" y="0">ab</tspan>
+                            <tspan x="43.49" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="47.34" y="0">th II</tspan>
+                            <tspan x="60.14" y="0" style="letter-spacing:-0.0489501953125em">’</tspan>
+                            <tspan x="61.74" y="0">s Diamon Jubilee </tspan>
+                            <tspan x="0" y="9.6">o</tspan>
+                            <tspan x="4.34" y="9.6" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="7.82" y="9.6">cu</tspan>
+                            <tspan x="15.82" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="18.51" y="9.6">s marking the Queens 60th </tspan>
+                            <tspan x="0" y="19.2">anni</tspan>
+                            <tspan x="14.82" y="19.2" style="letter-spacing:-0.0040283203125em">v</tspan>
+                            <tspan x="18.52" y="19.2">e</tspan>
+                            <tspan x="22.49" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="25.18" y="19.2">sa</tspan>
+                            <tspan x="32.63" y="19.2" style="letter-spacing:0.01904296875em">r</tspan>
+                            <tspan x="35.56" y="19.2">y on the th</tspan>
+                            <tspan x="70.93" y="19.2" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="73.63" y="19.2">one. Canada </tspan>
+                            <tspan x="0" y="28.8">dedi</tspan>
+                            <tspan x="14.82" y="28.8" style="letter-spacing:-0.010009765625em">c</tspan>
+                            <tspan x="18.38" y="28.8">a</tspan>
+                            <tspan x="22.48" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="25.1" y="28.8">es a </tspan>
+                            <tspan x="39.75" y="28.8" style="letter-spacing:-0.00390625em">w</tspan>
+                            <tspan x="45.46" y="28.8" style="letter-spacing:-0.0001220703125em">eek </tspan>
+                            <tspan x="58.98" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="61.6" y="28.8">o </tspan>
+                            <tspan x="67.55" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="71.03" y="28.8">eleb</tspan>
+                            <tspan x="85.45" y="28.8" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="88.02" y="28.8">ations.</tspan>
+                        </text>
+                        <image width="634" height="445" transform="translate(7805.53 349.15) scale(0.18)" xlink:href="img/HousePrices36.png" /> </g>
+                </g>
+                <g id="rover2012">
+                    <rect id="point-30" data-name="point" x="8289.74" y="508.07" width="2.67" height="34.01" style="fill:#939598" />
+                    <rect id="box-31" data-name="box" x="8217.88" y="323.99" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox33" />
+                    <text transform="translate(8223.45 491.23)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.009982638888888888em">C</tspan>
+                            <tspan x="5.13" y="0">uri</tspan>
+                            <tspan x="16.31" y="0" style="letter-spacing:-0.004991319444444444em">o</tspan>
+                            <tspan x="21.26" y="0">sity </tspan>
+                            <tspan x="37.74" y="0" style="letter-spacing:-0.009982638888888888em">R</tspan>
+                            <tspan x="43.18" y="0" style="letter-spacing:-0.008029513888888888em">ov</tspan>
+                            <tspan x="52.74" y="0">er Lands on Ma</tspan>
+                            <tspan x="112.14" y="0" style="letter-spacing:-0.009982638888888888em">r</tspan>
+                            <tspan x="115.63" y="0">s</tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8" style="letter-spacing:-0.009006076388888888em">A</tspan>
+                            <tspan x="4.59" y="10.8">ugust 6</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-32" data-name="expand" class="hide">
+                        <text transform="translate(8226.61 430.31)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.010009765625em">Aft</tspan>
+                            <tspan x="8.9" y="0">er a </tspan>
+                            <tspan x="22.97" y="0" style="letter-spacing:-0.00390625em">y</tspan>
+                            <tspan x="26.67" y="0" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="30.53" y="0">ar of t</tspan>
+                            <tspan x="50.01" y="0" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="52.58" y="0">a</tspan>
+                            <tspan x="56.68" y="0" style="letter-spacing:-0.0040283203125em">v</tspan>
+                            <tspan x="60.38" y="0">el, Nasas Ma</tspan>
+                            <tspan x="101.52" y="0" style="letter-spacing:-0.0098876953125em">r</tspan>
+                            <tspan x="104.21" y="0">s </tspan>
+                            <tspan x="0" y="9.6" style="letter-spacing:-0.010009765625em">C</tspan>
+                            <tspan x="4.45" y="9.6">uriosity </tspan>
+                            <tspan x="31.26" y="9.6" style="letter-spacing:-0.010009765625em">R</tspan>
+                            <tspan x="35.78" y="9.6" style="letter-spacing:-0.00390625em">ov</tspan>
+                            <tspan x="43.79" y="9.6">er lands on Ma</tspan>
+                            <tspan x="92.27" y="9.6" style="letter-spacing:-0.010009765625em">r</tspan>
+                            <tspan x="94.97" y="9.6">s. The </tspan>
+                            <tspan x="0" y="19.2">t</tspan>
+                            <tspan x="2.7" y="19.2" style="letter-spacing:-0.0250244140625em">r</tspan>
+                            <tspan x="5.28" y="19.2">a</tspan>
+                            <tspan x="9.38" y="19.2" style="letter-spacing:-0.0040283203125em">v</tspan>
+                            <tspan x="13.08" y="19.2" style="letter-spacing:0.0001220703125em">el dis</tspan>
+                            <tspan x="30.46" y="19.2" style="letter-spacing:-0.01806640625em">t</tspan>
+                            <tspan x="33.02" y="19.2">an</tspan>
+                            <tspan x="41.5" y="19.2" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="44.98" y="19.2">e </tspan>
+                            <tspan x="50.56" y="19.2" style="letter-spacing:-0.010009765625em">w</tspan>
+                            <tspan x="56.22" y="19.2">as 560 million </tspan>
+                            <tspan x="0" y="28.8">kilom</tspan>
+                            <tspan x="18.94" y="28.8" style="letter-spacing:-0.0140380859375em">e</tspan>
+                            <tspan x="22.79" y="28.8" style="letter-spacing:-0.0098876953125em">t</tspan>
+                            <tspan x="25.42" y="28.8" style="letter-spacing:-0.0001220703125em">e</tspan>
+                            <tspan x="29.38" y="28.8" style="letter-spacing:-0.0098876953125em">r</tspan>
+                            <tspan x="32.08" y="28.8">s.</tspan>
+                        </text>
+                        <image width="4841" height="2949" transform="translate(8225.44 331.56) scale(0.03)" xlink:href="img/HousePrices37.png" /> </g>
+                </g>
+                <g id="penny2012">
+                    <rect id="point-31" data-name="point" x="8046.11" y="522.37" width="2.67" height="17.37" style="fill:#939598" />
+                    <rect id="box-32" data-name="box" x="7974.25" y="338.29" width="146.38" height="184.08" style="fill:#fff;stroke:#939598;stroke-miterlimit:10" class="hideBox34" />
+                    <text transform="translate(7979.82 505.52)" style="font-size:9px;fill:#231f20;font-family:SourceSansPro-Bold, Source Sans Pro">
+                        <tspan style="font-weight:700">
+                            <tspan style="letter-spacing:-0.021050347222222224em">P</tspan>
+                            <tspan x="5.26" y="0">enny is Dis</tspan>
+                            <tspan x="47.29" y="0" style="letter-spacing:-0.028103298611111112em">c</tspan>
+                            <tspan x="51.25" y="0">ontinued in Canada </tspan>
+                        </tspan>
+                        <tspan style="font-family:SourceSansPro-Light, Source Sans Pro">
+                            <tspan x="0" y="10.8">May 4</tspan>
+                        </tspan>
+                    </text>
+                    <g id="expand-33" data-name="expand" class="hide">
+                        <text transform="translate(7982.98 444.6)" style="font-size:8px;fill:#231f20;font-family:SourceSansPro-Regular, Source Sans Pro">
+                            <tspan style="letter-spacing:-0.010009765625em">Aft</tspan>
+                            <tspan x="8.9" y="0">er </tspan>
+                            <tspan x="17.25" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="20.73" y="0">onside</tspan>
+                            <tspan x="43.17" y="0" style="letter-spacing:-0.02490234375em">r</tspan>
+                            <tspan x="45.75" y="0">ation </tspan>
+                            <tspan x="64.85" y="0" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="67.1" y="0">orm the Finan</tspan>
+                            <tspan x="113.83" y="0" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="117.31" y="0">e </tspan>
+                            <tspan x="0" y="9.6">Minist</tspan>
+                            <tspan x="20.14" y="9.6" style="letter-spacing:0.01904296875em">r</tspan>
+                            <tspan x="23.07" y="9.6">y of Canada, planning is put </tspan>
+                            <tspan x="0" y="19.2" style="letter-spacing:-0.010009765625em">f</tspan>
+                            <tspan x="2.26" y="19.2">orth and implemen</tspan>
+                            <tspan x="66.59" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="69.21" y="19.2">ed </tspan>
+                            <tspan x="79.24" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="81.86" y="19.2">o elimina</tspan>
+                            <tspan x="112.86" y="19.2" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="115.49" y="19.2" style="letter-spacing:0.0001220703125em">e </tspan>
+                            <tspan x="0" y="28.8">the 1 </tspan>
+                            <tspan x="18.23" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="21.71" y="28.8">ent </tspan>
+                            <tspan x="34.38" y="28.8" style="letter-spacing:-0.02099609375em">c</tspan>
+                            <tspan x="37.86" y="28.8">ount due </tspan>
+                            <tspan x="69.62" y="28.8" style="letter-spacing:-0.010009765625em">t</tspan>
+                            <tspan x="72.24" y="28.8">o it</tspan>
+                            <tspan x="82.86" y="28.8" style="letter-spacing:-0.0489501953125em">’</tspan>
+                            <tspan x="84.46" y="28.8">s lack of </tspan>
+                            <tspan x="0" y="38.4">use</tspan>
+                            <tspan x="11.67" y="38.4" style="letter-spacing:-0.0150146484375em">f</tspan>
+                            <tspan x="13.89" y="38.4">ulness.</tspan>
+                        </text>
+                        <image width="405" height="405" transform="translate(8007.34 349.07) scale(0.2)" xlink:href="img/HousePrices38.png" /> </g>
+                </g>
+            </g>
+        </g>
+    </svg>
+
+    <div class="background">
+        <img src="svg/Cloud.svg" class="cloud1" style="top:50px">
+        <img src="svg/Cloud.svg" class="cloud2" style="top:150px">
+        <img src="svg/Cloud.svg" class="cloud3" style="top:300px">
+        <img src="svg/Cloud.svg" class="cloud4" style="top:300px">
+        <img src="svg/Cloud.svg" class="cloud5" style="top:350px">
+        <img src="svg/Cloud.svg" class="cloud6" style="top:400px">
+        <img src="svg/Cloud.svg" class="cloud7" style="top:500px">
+        <img src="svg/Cloud.svg" class="cloud8" style="top:550px">
+        <img src="svg/Cloud.svg" class="cloud9" style="top:550px">
+    </div>
+
+    <use id="use" xlink:href="#fullDoc" />
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/odometer.js"></script>
+</body>
+
+</html>

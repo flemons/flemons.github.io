@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.55 66.56">
+    <defs>
+        <style>
+    .cls-1 {
+        fill: #414042;
+    }
+    .cls-2,
+    .cls-3 {
+        font-size: 25.34px;
+    }
+    .cls-2 {
+        fill: #fff;
+    }
+    .cls-2,
+    .cls-3,
+    .cls-4,
+    .cls-8,
+    .cls-9 {
+        font-family: SourceSansPro-Bold, Source Sans Pro;
+        font-weight: 700;
+    }
+    .cls-3,
+    .cls-8,
+    .cls-9 {
+        fill: #424142;
+    }
+    .cls-4,
+    .cls-8 {
+        font-size: 11.78px;
+    }
+    .cls-4 {
+        fill: #231f20;
+    }
+    .cls-5 {
+        letter-spacing: -0.01em;
+    }
+    .cls-6 {
+        letter-spacing: 0em;
+    }
+    .cls-7 {
+        letter-spacing: -0.02em;
+    }
+    .cls-9 {
+        font-size: 10.47px;
+    }
+</style>
+    </defs>
+    <title>gasCost</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_2-2" data-name="Layer 2">
+            <g id="carPanel1984">
+                <g id="GasAmount">
+                    <path class="cls-1" d="M15.91 1.15h14.46v23.23H15.91zM31.41 1.15h14.46v23.23H31.41zM46.82 1.15h14.46v23.23H46.82zM67.01 1.15h14.46v23.23H67.01z" />
+                    <g id="GasNumber1">
+                        <text class="cls-2" transform="translate(16.45 21.03)">0</text>
+                        <text class="cls-2" transform="translate(31.95 21.03)">3</text>
+                        <text class="cls-2" transform="translate(47.37 21.03)">9</text>
+                        <text class="cls-2" transform="translate(67.56 21.03)">9</text>
+                    </g>
+                    <text class="cls-3" transform="translate(60.3 21.45)">.</text>
+                    <text class="cls-4" transform="translate(6.17 40.9)">
+                        <tspan>per lit</tspan>
+                        <tspan class="cls-5" x="33.57" y="0">r</tspan>
+                        <tspan x="38.14" y="0">e </tspan>
+                        <tspan class="cls-6" x="46.69" y="0">o</tspan>
+                        <tspan x="53.17" y="0">f </tspan>
+                        <tspan class="cls-7" x="59.63" y="0">g</tspan>
+                        <tspan x="65.7" y="0">as</tspan>
+                    </text>
+                    <text class="cls-8" transform="translate(82.66 16.72)">¢</text>
+                    <text class="cls-9" transform="rotate(-90 17.99 5.99)">SELF</text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

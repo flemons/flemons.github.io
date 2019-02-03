@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 268.56 204.85">
+  <defs>
+    <style>
+      .cls-1 { isolation: isolate; } .cls-2 { opacity: 0.5; mix-blend-mode: multiply; } .cls-18, .cls-3 { fill: #fff; } .cls-4 { fill: none; stroke: #bcbec0; stroke-miterlimit: 10; stroke-width: 0.5px; } .cls-5 { fill: #f8e9ae; } .cls-6 { fill: #6d6e71; } .cls-7 { font-size: 8.16px; } .cls-14, .cls-15, .cls-7 { fill: #231f20; } .cls-14, .cls-7 { font-family: SourceSansPro-Bold, Source Sans Pro; } .cls-14, .cls-18, .cls-7 { font-weight: 700; } .cls-8 { letter-spacing: -0.02em; } .cls-9 { letter-spacing: -0.01em; } .cls-10 { letter-spacing: -0.03em; } .cls-11 { letter-spacing: -0.02em; } .cls-12 { letter-spacing: -0.03em; } .cls-13 { letter-spacing: 0em; } .cls-14 { font-size: 12.23px; } .cls-15 { font-size: 18px; font-family: ArchivoBlack-Regular, Archivo Black; } .cls-16 { letter-spacing: -0.03em; } .cls-17 { fill: #376195; } .cls-18 { font-size: 16.24px; font-family: BerlinSansFBDemi-Bold, Berlin Sans FB Demi; }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_2-2" data-name="Layer 2">
+        <g id="housePanel1984">
+          <image class="cls-2" width="1119" height="833" transform="matrix(.24 0 0 .24 0 4.93)" xlink:href="HousePanel1.png"/>
+          <path class="cls-3" d="M10.2 15.1h238.09v169.73H10.2z"/>
+          <g id="HousePriceTag">
+            <g id="HousePriceTag-2" data-name="HousePriceTag">
+              <path class="cls-4" d="M228.78 128.82a5.08 5.08 0 0 1 .86 4c-.33 1.95-2.35 6.19-20.38 9.67-24.91 4.8-38.88.3-45.32 6.85-.35.35-3.8 3-2.43 7"/>
+              <path class="cls-5" d="M158 145.47H99.53a7 7 0 0 0-7 7v7.72a7 7 0 0 0 7 7H158zM158 145.47v21.7l7.94-10.85zm2.34 10.85a1.06 1.06 0 1 1 1.06 1.06 1.06 1.06 0 0 1-1.05-1.06z"/>
+              <path class="cls-6" d="M159.62 156.32a1.78 1.78 0 1 0 1.78-1.78 1.78 1.78 0 0 0-1.78 1.78zm.72 0a1.06 1.06 0 1 1 1.06 1.06 1.06 1.06 0 0 1-1.05-1.06z"/>
+            </g>
+            <text class="cls-7" transform="translate(28.24 153.99)">
+              <tspan class="cls-8">A</tspan> <tspan class="cls-9" x="4.51" y="0">v</tspan> <tspan x="8.71" y="0">e</tspan> <tspan class="cls-10" x="12.93" y="0">r</tspan> <tspan x="15.94" y="0">a</tspan> <tspan class="cls-11" x="20.3" y="0">g</tspan> <tspan x="24.51" y="0">e House </tspan> <tspan x="-1.39" y="9.79">Pri</tspan> <tspan class="cls-12" x="9.04" y="9.79">c</tspan> <tspan class="cls-13" x="12.62" y="9.79">e in Canada</tspan>
+            </text>
+          </g>
+          <text class="cls-14" transform="translate(106.16 160.57)">
+            $76,351
+          </text>
+          <text class="cls-15" transform="translate(21.46 15.19)">
+            <tspan class="cls-16">P</tspan> <tspan x="12.53" y="0">opular House Design</tspan>
+          </text>
+        </g>
+        <g id="HousePanelInfo1984">
+          <circle class="cls-17" cx="235.41" cy="27.98" r="7.85"/>
+          <text class="cls-18" transform="translate(233.18 33.54)">
+            i
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
