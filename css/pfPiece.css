@@ -152,6 +152,25 @@
     background-color: #fff;
     padding: 15px;
 }
+
+.cState9{
+    background-image: url(/img/integrateAi/IAIProj1/HeaderImg.png);
+    background-size: cover;
+    min-height: 40vh;
+}
+.cState9 h1{
+    background-color: #fff;
+    padding: 15px;
+}
+.cState10{
+    background-image: url(/img/integrateAi/IAIProj2/HeaderImg.png);
+    background-size: cover;
+    min-height: 40vh;
+}
+.cState10 h1{
+    background-color: #fff;
+    padding: 15px;
+}
 .cState h1{
     background-color: #fff;
     padding: 15px;
