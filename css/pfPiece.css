@@ -171,6 +171,16 @@
     background-color: #fff;
     padding: 15px;
 }
+
+.cState11{
+    background-image: url(/img/integrateAi/IAIProj3/HeaderImg.png);
+    background-size: cover;
+    min-height: 40vh;
+}
+.cState11 h1{
+    background-color: #fff;
+    padding: 15px;
+}
 .cState h1{
     background-color: #fff;
     padding: 15px;
