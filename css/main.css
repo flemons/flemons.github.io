@@ -1,6 +1,28 @@
 body {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0px;
+    
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+body ::-webkit-scrollbar-track {
+  background: #fff;
+}
+/*
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+*/
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #6d6d6d;
+    border-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 p,
@@ -10,6 +32,7 @@ h3,
 a,
 li {
     font-family: 'Raleway', sans-serif;
+    color: #272727;
 }
 
 a {
@@ -23,10 +46,17 @@ figcaption {
 }
 
 p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8em;
+    
+}
+li{
+   font-size: 1rem;
     font-weight: 300;
     line-height: 1.6em;
+    padding-bottom: 1%;
 }
-
 strong {
     font-weight: 700;
     /*    color:#b14016;*/
@@ -34,11 +64,26 @@ strong {
 
 h1 {
     color: #232A2D;
+    font-size: 2.5rem;
 }
 
 h2 {
     color: #232A2D;
 }
+h3{
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.topDesc{
+    font-size: 0.8rem;
+     margin-top: 0.5rem;
+    
+}
+
+.topDesc p{
+   
+}
+
 
 #BFront {
     transform: translateX(-1px);
@@ -77,10 +122,18 @@ h2 {
     animation: bounce 3s infinite;
 }
 
+.desc{
+    margin: 0px;
+}
+
 .bounceIt {
     -moz-animation: bounce 3s infinite;
     -webkit-animation: bounce 3s infinite;
     animation: bounce 3s infinite;
+}
+
+.filledImg{
+     width: 100%;
 }
 
 @keyframes bounce {
@@ -245,6 +298,7 @@ h2 {
 .pfPiece:hover {
     cursor: pointer;
     box-shadow: 1px 1px 10px #888888;
+    border-radius: 4px;
 }
 
 .projTag {
@@ -258,6 +312,13 @@ h2 {
     font-size: 0.833rem;
 }
 
+.respImg{
+    width: 100%;
+}
+.headingTxt{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
 .centerText {
     text-align: center;
 }
@@ -290,14 +351,14 @@ h2 {
 
 .fix {
     position: fixed;
-    padding-top: 15px;
-    background-color: white;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 5px;
     z-index: 99;
     min-height: 49.13px;
 }
 
 .secTitle {
-    text-align: center;
     font-size: 1.44rem;
 }
 
@@ -305,10 +366,6 @@ h2 {
     width: 100%;
 }
 
-.landImgCont {
-    height: 100vh;
-    overflow-y: hidden;
-}
 
 .other {
     opacity: 0;
@@ -322,7 +379,7 @@ h2 {
     font-weight: 700;
     margin-top: -50px;
     letter-spacing: 5px;
-    font-size: 2.074rem;
+    font-size: 2.074em;
     animation: fadeIn 0.5s ease-in-out 0.5s forwards;
 }
 
@@ -346,10 +403,15 @@ h2 {
         opacity: 1;
     }
 }
+nav{
+    background-color: #fff;
+}
 
 .navLogo {
-    width: 25px;
-    margin-top: -4.75px;
+    width: 20px;
+    top:50%;
+    position: absolute;
+    transform: translate(0%, -50%);
 }
 
 .navLogo:hover {
@@ -358,6 +420,7 @@ h2 {
 
 .navLink {
     text-align: right;
+    padding: 10px 0px 10px 15px;
 }
 
 .navLink a {
@@ -378,23 +441,47 @@ h2 {
     content: "";
     position: absolute;
     width: 100%;
-    height: 1px;
-    bottom: 0;
+    height: 2px;
+    bottom: -15%;
     left: 0;
     background-color: #29292b;
-    visibility: hidden;
+    opacity: 0;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.2s ease-in-out 0s;
-    transition: all 0.2s ease-in-out 0s;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
 }
 
 .navLink a:hover:before {
-    visibility: visible;
+    opacity: 1;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.sectionTitle{
+    font-weight: 100;
+    font-size: 0.67rem;
+    text-transform: uppercase;
+    color: #434343;
+        margin-top: 0.5rem;
+}
+
+.sectionTitle2{
+    font-weight: 100;
+    font-size: 0.81rem;
+    text-transform: uppercase;
+    color: #434343;
+        margin-top: 2rem;
 }
 
 .wd {}
+
+#about1{
+    margin-right: 30px;
+}
 
 .d {}

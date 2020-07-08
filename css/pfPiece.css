@@ -1,5 +1,7 @@
 .landImg{
     width: 100%;
+    margin-top: 3rem; 
+    margin-bottom: 2rem;
 }
 .divideImg{
     max-height: 300px;
@@ -11,9 +13,7 @@
     background-size: cover; 
     height: 100vh;
 }
-img:hover {
-    cursor: zoom-in;
-}
+
 .land1{
     background-image: url(/img/glance/land.jpg);
 }
@@ -50,14 +50,15 @@ img:hover {
   right: 75%;
 }
 .projTitleB{
-    font-size: 3rem;
-    margin-bottom: 0px;
-    font-weight: 800;
+    font-size: 1.953rem;
+
+    margin-top: 0.5rem;
+    font-weight: 700;
 }
 .projDesc{
     font-size: 1.44rem;
     font-weight: 300;
-    margin: 0px;
+    margin: 1em 0px 0px 0px;
 /*    color: #2978A0;*/
 }
 .date{}
@@ -90,7 +91,7 @@ img:hover {
      color: #29292b;
 }
 .border{
-    border-right: 2px solid #9b9b9b;
+    border-right: 1px solid #000000;
     position: absolute;
   top: 16px;
     height: 48px;
@@ -104,6 +105,10 @@ img:hover {
     height: 48px;
     right: 15px;
 }
+.divImg{
+    width: 100%;
+    max-height: 40vh;
+}
 .cState{
     background-image: url(/img/glance/cState.jpg);
     background-size: cover;
@@ -112,7 +117,6 @@ img:hover {
 .cState2{
     background-image: url(/img/dataVis/cstate.png);
     background-size: cover;
-    min-height: 40vh;
 }
 .cState3{
     background-image: url(/img/bonci/cState.png);
@@ -138,6 +142,15 @@ img:hover {
     background-image: url(/img/altPF/cState.png);
     background-size: cover;
     min-height: 40vh;
+}
+.cState8{
+    background-image: url(/img/integrateAi/IAIProj1/integrateStock.jpg);
+    background-size: cover;
+    min-height: 40vh;
+}
+.cState8 h1{
+    background-color: #fff;
+    padding: 15px;
 }
 .cState h1{
     background-color: #fff;
@@ -167,6 +180,8 @@ img:hover {
     background-color: #fff;
     padding: 15px;
 }
+
+
 .externalLink{
     color:#6e8fff; font-weight:700;
 }
