@@ -1,4 +1,4 @@
+AuthUserFile /visualPortfolio/.htpasswd
 AuthType Basic
-AuthName "Protected Site"
-AuthUserFile visualPortfolio/.htpasswd
+AuthName "work"
 require valid-user
