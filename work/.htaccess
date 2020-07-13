@@ -1,4 +1,4 @@
-AuthUserFile /visualPortfolio/.htpasswd
+AuthUserFile .htpasswd
 AuthType Basic
 AuthName "work"
 require valid-user
