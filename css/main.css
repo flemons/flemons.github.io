@@ -33,6 +33,7 @@ a,
 li {
     font-family: 'Raleway', sans-serif;
     color: #272727;
+    margin-bottom: 1rem;
 }
 
 a {
@@ -58,7 +59,7 @@ li{
     padding-bottom: 1%;
 }
 strong {
-    font-weight: 700;
+    font-weight: 500;
     /*    color:#b14016;*/
 }
 
@@ -155,7 +156,9 @@ h3{
         transform: translateY(0);
     }
 }
-
+.quoteText{
+    
+}
 .up {
     opacity: 0;
     -moz-animation: fadeIn 0.001s forwards ease-in-out 0.25s;
