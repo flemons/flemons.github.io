@@ -177,6 +177,12 @@
     background-size: cover;
     min-height: 40vh;
 }
+
+.cState12{
+    background-image: url(/img/glance/land2.jpg);
+    background-size: cover;
+    min-height: 40vh;
+}
 .cState11 h1{
     background-color: #fff;
     padding: 15px;
