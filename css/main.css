@@ -1,7 +1,12 @@
 body {
     font-size: 14px;
     margin: 0px;
-    
+/*    background: #F2F4F4;*/
+/*
+    background-image: url(/img/Artboard%203.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+*/
 }
 
 body::-webkit-scrollbar {
@@ -75,6 +80,22 @@ h3{
     font-weight: 700;
     margin-bottom: 0px;
 }
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: #fff;
+}
+
+
 .topDesc{
     font-size: 0.8rem;
      margin-top: 0.5rem;
@@ -115,7 +136,7 @@ h3{
 
 .downArrow {
     min-height: 50px;
-    width: 40px;
+    width: 30px;
     display: block;
     margin: 0 auto;
     bottom: 30px;
@@ -133,6 +154,19 @@ h3{
     -moz-animation: bounce 3s infinite;
     -webkit-animation: bounce 3s infinite;
     animation: bounce 3s infinite;
+}
+
+.button1{
+    color: #fff;
+    border: 1px solid #000000;
+    padding: 0.25rem 1rem 0.25rem  1rem ;
+    background-color: #434343;
+    transition: all 0.25s;
+}
+
+.button1:hover{
+    background-color: #000000;
+    cursor: pointer;
 }
 
 .filledImg{
@@ -310,6 +344,53 @@ h3{
      border-radius: 4px;
     
 }
+
+/*
+.pfPiece:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -0%;
+    left: 0;
+    background-color: #29292b;
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.pfPiece:hover:before {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+*/
+.leftPanel{
+    background-color: #a5dfea;
+}
+.fullWidth{
+    width: 100vw;
+    margin: 0px;
+    position: fixed;
+}
+
+#moreDetailI{
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#moreDetailSteps{
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
 .pfHighlight {
     animation: clickMe 1s ease-in-out infinite alternate;
 }
@@ -330,6 +411,9 @@ h3{
 
 .respImg{
     width: 100%;
+}
+.rTxt{
+    text-align: right;
 }
 .headingTxt{
     font-size: 1.2rem;
@@ -372,6 +456,10 @@ h3{
     padding-bottom: 5px;
     z-index: 99;
     min-height: 49.13px;
+}
+.fix2 {
+    position: fixed;
+    z-index: -100;
 }
 
 .secTitle {
@@ -420,9 +508,43 @@ h3{
     }
 }
 nav{
-    background-color: #fff;
+    background-color: #FFF;
+    z-index: 999;
 }
+.imgText{
+    position:absolute;
+    top:50%;
+    left:50%;
+    opacity: 0;
+    transition: opacity 0.3s; 
+    }
+.imgText h1{
+    position:relative;
+    top:-50%;
+    left:-50%;
+    text-align: center;
+    }
 
+#intAi:hover .imgText {
+     
+    opacity: 1;
+    
+}
+#intAi .overlay{
+    transition: opacity 0.3s;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#232A2D;
+}
+#intAi:hover > .overlay {
+    
+    opacity:0.7;
+    cursor: pointer;
+}
 .navLogo {
     width: 20px;
     top:50%;
