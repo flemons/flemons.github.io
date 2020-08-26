@@ -4,21 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>glance | Barrett Flemons</title>
+    <title>Barrett Flemons</title>
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/pfPiece.css">
+
     <link href="/fonts/Raleway-Bold.ttf" rel="stylesheet">
     <link href="/fonts/Raleway-Light.ttf" rel="stylesheet">
     <link href="/fonts/Raleway-Regular.ttf" rel="stylesheet">
     <link href="/fonts/Raleway-SemiBold.ttf" rel="stylesheet">
-    <!--     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800" rel="stylesheet">-->
+    <link rel="icon" type="image/png" href="/img/BFLogo_1.svg" />
     <script src="/js/jquery-3.3.1.js"></script>
-    <script src="/js/list.min.js"></script>
     <script src="/js/list.min.js"></script>
     <script src="/js/main.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119500375-1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -27,10 +30,72 @@
         }
         gtag('js', new Date());
         gtag('config', 'UA-119500375-1');
+
+        function show() {
+            document.getElementById("moreDetailI").style.opacity = "1";
+            document.getElementById("moreDetailI").style.position = "static";
+
+            document.getElementById("moreDetailSteps").style.opacity = "1";
+            document.getElementById("moreDetailSteps").style.position = "static";
+        }
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").delay(800).fadeOut(400);;
+        });
+
+        // delegate all clicks on "a" tag (links)
+        $(document).on("click", "a", function() {
+
+            // get the href attribute
+            var newUrl = $(this).attr("href");
+
+            // veryfy if the new url exists or is a hash
+            if (!newUrl || newUrl[0] === "#") {
+                // set that hash
+                location.hash = newUrl;
+                return;
+            }
+
+            // now, fadeout the html (whole page)
+            $("html").fadeOut(function() {
+                // when the animation is complete, set the new location
+                location = newUrl;
+            });
+
+            // prevent the default browser behavior.
+            return false;
+        });
     </script>
 </head>
 
 <body>
+    <div class="se-pre-con">
+        <div class="row justify-content-center" style="height: 100vh">
+            <div class="col-lg-6 col-md-8 col-12 align-self-center "><svg xmlns="http://www.w3.org/2000/svg" viewBox="409 550 1254 900">
+                    <title>Barrett Flemons</title>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <polygon data-name="SupportLine" class="cls-2 up" points="946.04 1049.29 946.04 1049.29 947.83 1039.19 960.11 969.55 964.02 947.36 964.02 947.36 973.81 891.8 946.03 891.8 918.26 891.8 909.75 940.05 899.47 998.33 885.59 1077.07 858.09 1233 913.65 1233 928.46 1149 928.46 1149 946.04 1049.29" />
+                            <polygon data-name="LineUp" class="cls-2 slideUp" points="819.04 1865.29 819.04 1865.29 820.83 1855.19 833.11 1785.55 837.02 1763.36 837.02 1763.36 857.81 1651.8 770.03 1651.8 742.26 1651.8 722.75 1756.05 712.47 1814.33 698.59 1893.07 671.09 2049 786.65 2049 801.46 1965 801.46 1965 819.04 1865.29" />
+                            <path data-name="FTop" class="cls-2 across" d="M1103.66,891.81H998.53l-9.8,55.56h105.12c15.32,0,29.91-12.45,32.61-27.78S1119,891.84,1103.66,891.81Z" />
+                            <path data-name="FBot" class="cls-2 across" d="M1066,1104.85h.07c15.32,0,29.91-12.45,32.61-27.78s-7.51-27.74-22.82-27.78H970.76l-9.8,55.56Z" />
+                            <path data-name="MidB" class="cls-2 across" d="M1089.44,972.07H984.38l-9.26,52.5h105.07a50.84,50.84,0,0,1,7.58.57l9.45-53.65A55,55,0,0,1,1089.44,972.07Z" />
+                            <path id="BFront" data-name="BFront" class="cls-2 up" d="M1203.68,919.58c9.77-55.42-25.16-100.8-78.9-104.71l-9.29,52.79c24.69,3.72,40.3,25.55,35.65,51.93s-27.94,48.19-53.93,51.92l-9.45,53.65c24.66,3.74,40.26,25.56,35.61,51.92s-27.92,48.17-53.89,51.92l-9.29,52.79c55.07-4,106-49.32,115.73-104.71,5.53-31.37-3.28-59.51-21.7-78.74C1179.42,979.09,1198.15,951,1203.68,919.58Z" />
+                            <path data-name="BTop" class="cls-2 across" d="M1117.27,814.59H913.11l9.26,52.5H1108a50.86,50.86,0,0,1,7.54.57l9.29-52.79C1122.32,814.69,1119.82,814.59,1117.27,814.59Z" />
+                            <path data-name="BBot" class="cls-2 across" d="M1061.67,1129.56H956.61l-9.26,52.5h105.13q3.86,0,7.71-.28l9.29-52.79A55,55,0,0,1,1061.67,1129.56Z" />
+                            <polygon data-name="SlideLTop" class="cls-2 slideL" points="2060.33 876 2072.5 807 1675.5 807 1663.33 876 2060.33 876" />
+                            <polygon data-name="SlideRTop" class="cls-2 slideR" points="397 954 409.17 885 12.17 885 0 954 397 954" />
+                            <polygon data-name="SlideLMid" class="cls-2 slideL" points="2060.33 1033 2072.5 964 1675.5 964 1663.33 1033 2060.33 1033" />
+                            <polygon class="cls-2 slideR" data-name="SlideRBot" points="397 1112 409.17 1043 12.17 1043 0 1112 397 1112" />
+                            <polygon data-name="SlideLBot" class="cls-2 slideL" points="2060.33 1190 2072.5 1121 1675.5 1121 1663.33 1190 2060.33 1190" />
+                            <polygon data-name="LineDown" class="cls-2 slideDown" points="1377.17 0 1260.17 0 1190.16 397 1307.16 397 1377.17 0" />
+                        </g>
+                    </g>
+                </svg></div>
+        </div>
+    </div>
     <nav class="container-fluid fix" style="margin-top: -50px">
         <div class="row">
             <div class="col-2">
@@ -38,8 +103,8 @@
             </div>
             <div class=" col-4"></div>
             <div class="col-6 navLink">
-                <a id="work1" class="" href="/work/">Work</a>
-                <a id="about1" href="/about/">About</a></div>
+                <a id="work1" class="" href="/#work">Work</a>
+                <a id="about1" href="/#about">About</a></div>
         </div>
     </nav>
     <div class="container">
@@ -98,7 +163,7 @@
                 </p>
             </div>
             <div class="col-md-6 col-12">
-                <a href="https://www.flickr.com/photos/89165847@N00/49035461272/" ><img src="/img/glance/Accident.jpg" class="respImg"></a>
+                <a href="https://www.flickr.com/photos/89165847@N00/49035461272/"><img src="/img/glance/Accident.jpg" class="respImg"></a>
             </div>
         </div>
     </div>
@@ -161,7 +226,7 @@
                 <h3 class="sectionTitle2">Background
                 </h3>
                 <p>We’ve all heard the news cycle “police are cracking down on distracted driving”, it seems every other week there is a new police sting operation. Yet somehow, <strong>accidents caused by distraction still are on the rise.</strong> For my capstone project of IXD, I decided to focus on this problem:</p>
-                                <h2 >How might I combat distracted driving?</h2>
+                <h2>How might I combat distracted driving?</h2>
                 <p>Purposely starting with a broad challenge statement acted as a guide for the initial round of defining the problem space. This began with secondary research to get a solid grasp of my challenge area, which informed how I should branch out to primary research to get a deeper understanding.</p>
 
             </div>
@@ -169,7 +234,7 @@
                 <img src="/img/glance/problem.jpg" class="respImg">
             </div>
         </div>
-        
+
         <div class="row breath">
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Secondary Research
@@ -234,34 +299,34 @@
                 <h3 class="sectionTitle2">overview
                 </h3>
                 <p>Using the new challenge statement, I dove deep into the persona and the impact phones have on people's ability to drive. Having this more in depth understanding on the refined issue will guide the design process with a better understanding of the users and their pain-points. </p>
-                
-                    <h3 class="sectionTitle2">Persona and Interviews
+
+                <h3 class="sectionTitle2">Persona and Interviews
                 </h3>
-                    <p>A persona kicked things off, focusing on the young drivers most affected by this and most likely to get in accidents. This persona guided my next round of 5 interviews and an additional 18 survey responses.<br><br>
-                    
+                <p>A persona kicked things off, focusing on the young drivers most affected by this and most likely to get in accidents. This persona guided my next round of 5 interviews and an additional 18 survey responses.<br><br>
+
                     I ended up with quite a few more key insights including:</p>
-                    <ul>
-                <li>The majority of drivers don’t have access to any new car technology, as they typically can’t afford it</li>
-                        <li>Over 50% of users interviews and surveyed admitted to using their phone while driving</li>
-                        <li>Interviewed users had little interest in phone limiting technology</li>
-                        <li>Interviewed members felt the need still to check even if there is no messages (ghost notifications was a common issue)</li>
-                        <li>Users typically only used a few key functions on there phone while driving when they would (GPS, Music, and Messaging)</li>
+                <ul>
+                    <li>The majority of drivers don’t have access to any new car technology, as they typically can’t afford it</li>
+                    <li>Over 50% of users interviews and surveyed admitted to using their phone while driving</li>
+                    <li>Interviewed users had little interest in phone limiting technology</li>
+                    <li>Interviewed members felt the need still to check even if there is no messages (ghost notifications was a common issue)</li>
+                    <li>Users typically only used a few key functions on there phone while driving when they would (GPS, Music, and Messaging)</li>
                 </ul>
-<p> After having a strong grasp on the user I would be solving this problem for, I mapped their current journey and their pain-points that my solution could solve. This would serve as the guide for the next phase of ideation.</p>
+                <p> After having a strong grasp on the user I would be solving this problem for, I mapped their current journey and their pain-points that my solution could solve. This would serve as the guide for the next phase of ideation.</p>
             </div>
-             <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12">
                 <img src="/img/glance/Persona.png" class="respImg">
-                 <img src="/img/glance/JourneyMap1.jpg" class="respImg">
-                 <img src="/img/glance/JourneyMap2.jpg" class="respImg">
+                <img src="/img/glance/JourneyMap1.jpg" class="respImg">
+                <img src="/img/glance/JourneyMap2.jpg" class="respImg">
             </div>
         </div>
         <div class="container section">
-        <div class="row">
-            <div class="col-12 ">
-                <hr>
+            <div class="row">
+                <div class="col-12 ">
+                    <hr>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="container section" style="min-height:20vh">
         <div class="row ">
@@ -274,11 +339,11 @@
                 <h3 class="sectionTitle2">Brainstorming and testing
                 </h3>
                 <p>Given the set timelines of the project, I moved directly into ideating from the research. This stage would allow me to flesh out multiple ideas quickly for feedback. In total, around 50 unique ideas were generated, which were then refined down to four based on feasibility, novelty, relevance, and novelty.<br><br>
-                   
+
                     For the 4 concepts I narrowed down too, I wireframed rough concepts and then brought them to potential users of the solution (who fit my persona).<br><br>
 
-This grounds my thinking and immediately arises any potential shortcomings of one idea versus another. I generated some new insights from this as well including:
-</p>
+                    This grounds my thinking and immediately arises any potential shortcomings of one idea versus another. I generated some new insights from this as well including:
+                </p>
                 <ul>
                     <li>The need to find positives in people's driving, not negatives</li>
                     <li>Modularity is important to users</li>
@@ -289,27 +354,27 @@ This grounds my thinking and immediately arises any potential shortcomings of on
                 </ul>
                 <p>At this point it was clear the heads up display solution resonated best with the audience, and fit the defined pain-points of the users best.</p>
             </div>
-             <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12">
                 <img src="/img/glance/brainstorming.png" class="respImg breath">
-                                 <img src="/img/glance/TestingConcepts.jpeg" class="respImg breath">
+                <img src="/img/glance/TestingConcepts.jpeg" class="respImg breath">
 
             </div>
         </div>
-         <div class="row">
+        <div class="row">
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Competitor Analysis
                 </h3>
-                    <p>Before moving to a refined concept, I spent more time getting a grasp on how other companies products in this space look and operate I found a few common issues from user reviews.<br><br> 
-                        
-                        Some of those were: the HUD’s that use your phone to sit inside it are frustrating as the app support is mediocre, digital screens make the product very expensive, and in some cases become an expensive additional distraction.</p>
+                <p>Before moving to a refined concept, I spent more time getting a grasp on how other companies products in this space look and operate I found a few common issues from user reviews.<br><br>
+
+                    Some of those were: the HUD’s that use your phone to sit inside it are frustrating as the app support is mediocre, digital screens make the product very expensive, and in some cases become an expensive additional distraction.</p>
             </div>
-             <div class="col-md-6 col-12">
-                 <div class="row">
-                 <div class="col-md-6 col-12"><img src="/img/glance/competitor1.PNG" class="respImg"></div>
-                     <div class="col-md-6 col-12"><img src="/img/glance/competitor2.PNG" class="respImg"></div>
-                     <div class="col-md-6 col-12"><img src="/img/glance/competitor3.PNG" class="respImg"></div>
-                 </div>
-                
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-md-6 col-12"><img src="/img/glance/competitor1.PNG" class="respImg"></div>
+                    <div class="col-md-6 col-12"><img src="/img/glance/competitor2.PNG" class="respImg"></div>
+                    <div class="col-md-6 col-12"><img src="/img/glance/competitor3.PNG" class="respImg"></div>
+                </div>
+
             </div>
         </div>
         <div class="row">
@@ -317,8 +382,9 @@ This grounds my thinking and immediately arises any potential shortcomings of on
                 <h3 class="sectionTitle2">Refined HUD UI Design
                 </h3>
                 <p>From my research both for users and competitors, quite a few design requirements arose that I kept in mind in my iterations. These included:
-</p>
-                <ul><li>Information must be simple</li>
+                </p>
+                <ul>
+                    <li>Information must be simple</li>
                     <li>Cut out anything unnecessary</li>
                     <li>Colours need to contrast the environment</li>
                     <li>Fonts need to be legible while driving</li>
@@ -327,10 +393,10 @@ This grounds my thinking and immediately arises any potential shortcomings of on
                     <li>Content stays in place otherwise</li>
                 </ul>
                 <p>To adhere to these, the functionality was immediately descoped to the 3 key identified phone uses while driving. These from my research were music, GPS, and messaging. For these separate functionalities I iterated through multiple renditions to find the best possible layout.<br><br>
-                    As touch screen interaction is extremely attention grabbing, using the phones voice commands for the actual interactions was the best method forward, so I designed with that intention in mind.<br><br> 
+                    As touch screen interaction is extremely attention grabbing, using the phones voice commands for the actual interactions was the best method forward, so I designed with that intention in mind.<br><br>
                     The final iteration strips back all unnecessary cognitive load and gives users the essentials to be able to make decisions in each core functionality with each screen dedicated to one focus.
 
-</p>
+                </p>
             </div>
             <div class="col-md-6 col-12">
                 <img src="/img/glance/Mockup4.jpg" class="respImg">
@@ -339,10 +405,10 @@ This grounds my thinking and immediately arises any potential shortcomings of on
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-12">                
-                    <h3 class="sectionTitle2">3D Product Design
+            <div class="col-md-6 col-12">
+                <h3 class="sectionTitle2">3D Product Design
                 </h3>
-                    <p>Following a similar theme as the UI design, simplicity was the focus for the model. The goal was to keep potential product costs cheap (and the product affordable), while still creating a beautifully simple shape. The end item accomplishes both.</p>
+                <p>Following a similar theme as the UI design, simplicity was the focus for the model. The goal was to keep potential product costs cheap (and the product affordable), while still creating a beautifully simple shape. The end item accomplishes both.</p>
             </div>
             <div class="col-md-6 col-12">
                 <img src="/img/glance/4.jpg" class="respImg breath">
@@ -365,13 +431,13 @@ This grounds my thinking and immediately arises any potential shortcomings of on
             <div class=" col-md-6 col-12">
                 <h3 class="sectionTitle2">Product Testing
                 </h3>
-                <p > As I did not have access to the likes of eye trackers or virtual environment testing, I had to design an impromptu usability test to determine the products efficacy.
+                <p> As I did not have access to the likes of eye trackers or virtual environment testing, I had to design an impromptu usability test to determine the products efficacy.
                     <br>
                     <br>To complete this test, I had 2 different drivers from my target users, drive the same vehicle, in the same circumstances around my college campus, and then asked them to perform a series of tasks involving their phone. To measure success I timed them, noted any issues they encounter, any unique behaviours, and followed up with questions on their experience. <br><br>
 
                     To test the product, I created a functioning prototype using 3D printing and utilized a phone screen to reflect inside of it. I modeled the product to contain a phone which played an animated version of my designed UI. This animated clip of my video was then played remotely when users interacted with the device completing the same tasks via voice.<br><br>
                 </p>
-                
+
             </div>
             <div class="col-md-6 col-12">
                 <img src="/img/glance/land.jpg" class="respImg breath">
@@ -382,13 +448,13 @@ This grounds my thinking and immediately arises any potential shortcomings of on
             <div class="col-md-12 col-12 ">
                 <h3 class="sectionTitle2">Outcomes
                 </h3>
-                <p class="headingTxt">I found from the tests conducted that the product worked well! Users accomplished tasks in a similar time frame to using their phone, but spent  significantly less time with their eyes off the road. Even more interesting, the users remarked afterwards that they still had their peripheral vision available to them and were more comfortable completing the tasks<br><br>
+                <p class="headingTxt">I found from the tests conducted that the product worked well! Users accomplished tasks in a similar time frame to using their phone, but spent significantly less time with their eyes off the road. Even more interesting, the users remarked afterwards that they still had their peripheral vision available to them and were more comfortable completing the tasks<br><br>
 
-                To bring this project further, I would further develop the prototype product, making refinements to the 3D design, display, and UI, then conduct further testing with a far larger user base to understand where further improvements can be made.
+                    To bring this project further, I would further develop the prototype product, making refinements to the 3D design, display, and UI, then conduct further testing with a far larger user base to understand where further improvements can be made.
                 </p>
             </div>
         </div>
-        
+
     </div>
     <div class="container-fluid footer section" style="min-height:20vh">
         <hr>

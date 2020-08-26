@@ -4,21 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>integrate.ai | Barrett Flemons</title>
+    <title>Barrett Flemons</title>
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/pfPiece.css">
+
     <link href="/fonts/Raleway-Bold.ttf" rel="stylesheet">
     <link href="/fonts/Raleway-Light.ttf" rel="stylesheet">
     <link href="/fonts/Raleway-Regular.ttf" rel="stylesheet">
     <link href="/fonts/Raleway-SemiBold.ttf" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/img/BFLogo_1.svg"/>
+    <link rel="icon" type="image/png" href="/img/BFLogo_1.svg" />
     <script src="/js/jquery-3.3.1.js"></script>
-    <script src="/js/list.min.js"></script>
     <script src="/js/list.min.js"></script>
     <script src="/js/main.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119500375-1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -27,10 +30,72 @@
         }
         gtag('js', new Date());
         gtag('config', 'UA-119500375-1');
+
+        function show() {
+            document.getElementById("moreDetailI").style.opacity = "1";
+            document.getElementById("moreDetailI").style.position = "static";
+
+            document.getElementById("moreDetailSteps").style.opacity = "1";
+            document.getElementById("moreDetailSteps").style.position = "static";
+        }
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").delay(800).fadeOut(400);;
+        });
+        
+        // delegate all clicks on "a" tag (links)
+$(document).on("click", "a", function () {
+
+    // get the href attribute
+    var newUrl = $(this).attr("href");
+
+    // veryfy if the new url exists or is a hash
+    if (!newUrl || newUrl[0] === "#") {
+        // set that hash
+        location.hash = newUrl;
+        return;
+    }
+
+    // now, fadeout the html (whole page)
+    $("html").fadeOut(function () {
+        // when the animation is complete, set the new location
+        location = newUrl;
+    });
+
+    // prevent the default browser behavior.
+    return false;
+});
     </script>
 </head>
 
 <body>
+    <div class="se-pre-con">
+        <div class="row justify-content-center" style="height: 100vh">
+            <div class="col-lg-6 col-md-8 col-12 align-self-center "><svg xmlns="http://www.w3.org/2000/svg" viewBox="409 550 1254 900">
+                    <title>Barrett Flemons</title>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <polygon data-name="SupportLine" class="cls-2 up" points="946.04 1049.29 946.04 1049.29 947.83 1039.19 960.11 969.55 964.02 947.36 964.02 947.36 973.81 891.8 946.03 891.8 918.26 891.8 909.75 940.05 899.47 998.33 885.59 1077.07 858.09 1233 913.65 1233 928.46 1149 928.46 1149 946.04 1049.29" />
+                            <polygon data-name="LineUp" class="cls-2 slideUp" points="819.04 1865.29 819.04 1865.29 820.83 1855.19 833.11 1785.55 837.02 1763.36 837.02 1763.36 857.81 1651.8 770.03 1651.8 742.26 1651.8 722.75 1756.05 712.47 1814.33 698.59 1893.07 671.09 2049 786.65 2049 801.46 1965 801.46 1965 819.04 1865.29" />
+                            <path data-name="FTop" class="cls-2 across" d="M1103.66,891.81H998.53l-9.8,55.56h105.12c15.32,0,29.91-12.45,32.61-27.78S1119,891.84,1103.66,891.81Z" />
+                            <path data-name="FBot" class="cls-2 across" d="M1066,1104.85h.07c15.32,0,29.91-12.45,32.61-27.78s-7.51-27.74-22.82-27.78H970.76l-9.8,55.56Z" />
+                            <path data-name="MidB" class="cls-2 across" d="M1089.44,972.07H984.38l-9.26,52.5h105.07a50.84,50.84,0,0,1,7.58.57l9.45-53.65A55,55,0,0,1,1089.44,972.07Z" />
+                            <path id="BFront" data-name="BFront" class="cls-2 up" d="M1203.68,919.58c9.77-55.42-25.16-100.8-78.9-104.71l-9.29,52.79c24.69,3.72,40.3,25.55,35.65,51.93s-27.94,48.19-53.93,51.92l-9.45,53.65c24.66,3.74,40.26,25.56,35.61,51.92s-27.92,48.17-53.89,51.92l-9.29,52.79c55.07-4,106-49.32,115.73-104.71,5.53-31.37-3.28-59.51-21.7-78.74C1179.42,979.09,1198.15,951,1203.68,919.58Z" />
+                            <path data-name="BTop" class="cls-2 across" d="M1117.27,814.59H913.11l9.26,52.5H1108a50.86,50.86,0,0,1,7.54.57l9.29-52.79C1122.32,814.69,1119.82,814.59,1117.27,814.59Z" />
+                            <path data-name="BBot" class="cls-2 across" d="M1061.67,1129.56H956.61l-9.26,52.5h105.13q3.86,0,7.71-.28l9.29-52.79A55,55,0,0,1,1061.67,1129.56Z" />
+                            <polygon data-name="SlideLTop" class="cls-2 slideL" points="2060.33 876 2072.5 807 1675.5 807 1663.33 876 2060.33 876" />
+                            <polygon data-name="SlideRTop" class="cls-2 slideR" points="397 954 409.17 885 12.17 885 0 954 397 954" />
+                            <polygon data-name="SlideLMid" class="cls-2 slideL" points="2060.33 1033 2072.5 964 1675.5 964 1663.33 1033 2060.33 1033" />
+                            <polygon class="cls-2 slideR" data-name="SlideRBot" points="397 1112 409.17 1043 12.17 1043 0 1112 397 1112" />
+                            <polygon data-name="SlideLBot" class="cls-2 slideL" points="2060.33 1190 2072.5 1121 1675.5 1121 1663.33 1190 2060.33 1190" />
+                            <polygon data-name="LineDown" class="cls-2 slideDown" points="1377.17 0 1260.17 0 1190.16 397 1307.16 397 1377.17 0" />
+                        </g>
+                    </g>
+                </svg></div>
+        </div>
+    </div>
 <nav class="container-fluid fix" style="margin-top: -50px">
         <div class="row">
             <div class="col-2">
@@ -38,8 +103,8 @@
             </div>
             <div class=" col-4"></div>
             <div class="col-6 navLink">
-                <a id="work1" class="" href="/work/">Work</a>
-                <a id="about1" href="/about/">About</a></div>
+                <a id="work1" class="" href="/#work">Work</a>
+                <a id="about1" href="/#about">About</a></div>
         </div>
     </nav>
 
