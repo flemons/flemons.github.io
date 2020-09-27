@@ -44,29 +44,30 @@
             // Animate loader off screen
             $(".se-pre-con").delay(800).fadeOut(400);;
         });
-        
+
         // delegate all clicks on "a" tag (links)
-$(document).on("click", "a", function () {
+        $(document).on("click", "a", function() {
 
-    // get the href attribute
-    var newUrl = $(this).attr("href");
+            // get the href attribute
+            var newUrl = $(this).attr("href");
 
-    // veryfy if the new url exists or is a hash
-    if (!newUrl || newUrl[0] === "#") {
-        // set that hash
-        location.hash = newUrl;
-        return;
-    }
+            // veryfy if the new url exists or is a hash
+            if (!newUrl || newUrl[0] === "#") {
+                // set that hash
+                location.hash = newUrl;
+                return;
+            }
 
-    // now, fadeout the html (whole page)
-    $("html").fadeOut(function () {
-        // when the animation is complete, set the new location
-        location = newUrl;
-    });
+            // now, fadeout the html (whole page)
+            $("html").fadeOut(function() {
+                // when the animation is complete, set the new location
+                location = newUrl;
+            });
 
-    // prevent the default browser behavior.
-    return false;
-});
+            // prevent the default browser behavior.
+            return false;
+        });
+
     </script>
 </head>
 
@@ -127,13 +128,12 @@ $(document).on("click", "a", function () {
         </div>
         <div class="row">
             <div class="col-md-8 col-12 ">
-                <p>In the past our AI had been using a <em>Random Forest</em> approach to models, which is primarily created and then remains unchanged until a ML scientist modifies it. The new approach utilizes a <em>Contextual Bandit</em> which learns and adapts on it’s own without redevelopment.<br><br>
+                <p>Our AI had previously been using a Random Forest approach to models, which is built and remains unchanged. The new approach utilizes a Contextual Bandit which learns and adapts on it’s own without redevelopment.<br><br>
 
-                    With the change in approach, the people and companies we were designing for had changed. <strong>The main outcomes of this project was to identify our product market fit, re-identify our users and their processes, then redesign the product</strong> to better fit this along with our new approach with the AI.<br><br> 
-                    
-                    My role in this project had me leading the research effort as well as synthesizing the results into 2 seperate UX tools, and ideating designs to help best fit this new user understanding.<br><br>
-                    
-                 At my departure, a first pass on what <em>integrate.ai's</em> product market fit had been completed, but not tested in our preferred method of the 40% rule. However we had completed designs that followed our identified users and process, and I had led a new Shopify integration to be developed that sought to ease the difficulty of clients coming on board.
+                    The goal of this project was to re-identify our users, their processes, and how we can aid them, then redesign the product to better fit this process along with our new approach with the AI. <br><br>
+
+                    At my departure, through user research we had a definition of users, their problems, and processes, and redesigned Contextual Bandit focused products.
+
                 </p>
             </div>
             <div class="col-md-4 col-12" style="border-left: 1px #b7b7b7 solid; padding-left: 2rem;">
@@ -162,11 +162,7 @@ $(document).on("click", "a", function () {
         <div class="row">
             <div class=" col-12 ">
                 <h1 class="projTitle ">Problem</h1>
-                <p class="headingTxt">Our machine learning team from the beginning had been using a Random Forest approach to models. This forced them to make changes manually and required a lot of engineering effort. It also relied heavily on historic data to create the initial model, which not all new clients had.<br><br>
-
-                    The company decided to move towards Contextual Bandits which learn on their own and require far less engineering effort, on top of needing little to no need of historic data<br><br>
-
-                    The biggest implication for the product as it currently stood, was that a model created in the UI would actually be created, not just selected from a pre-generated list. This had implications for things such as forecasted results, the lifecycle of models, and even any user input necessary for model creation.
+                <p class="headingTxt">Integrate.ai transitioned towards Contextual Bandits away from the Random Forest approach, deprecating the current product workflow.
 
                 </p>
             </div>
@@ -176,10 +172,7 @@ $(document).on("click", "a", function () {
         <div class="row">
             <div class=" col-12 ">
                 <h1 class="projTitle ">Solution</h1>
-                <p class="headingTxt">Revising the product lead to large changes and ultimately the removal of the FAM suite format. As Contextual Bandits would required more detail and input from the user, a step by step format was created that guided users through the full end to end of creating their own custom model.<br><br>
-
-                    After putting their model into action they would be prompted with updates on it’s progression to full autonomy from it’s random learning phase in the campaign HUB, the replacement for activate. This screen also provided robust visuals for users to get an understanding of how their model is performing and then enact different approaches to try and solve potential issues differently.
-
+                <p class="headingTxt">Revising the product for a Contextual Bandit approach, the new interface gave users the tools to build their learning models from scratch.
 
                 </p>
             </div>
@@ -211,7 +204,9 @@ $(document).on("click", "a", function () {
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Focus
                 </h3>
-                <p>Given the new approach for the company, some of our initial research and design iterations had become greatly deprecated. As a company which was now 3 years old, <strong>there was no clear product market fit</strong>.<br><br> The gaps that existed in understanding the 3rd and primary persona identified in the previous stage, as well as their common problems had now become imperative to the company's success.
+                <p>Most of our prior research had become greatly deprecated, and at this point in the product life cycle there was still no clear product market fit. <br><br>
+
+                    The gaps that existed in understanding our users, their common problems and where we fit was the desired understanding at the end of this research cycle.
                 </p>
             </div>
             <div class="col-md-6 col-12">
@@ -222,7 +217,10 @@ $(document).on("click", "a", function () {
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Scope
                 </h3>
-                <p>As an advocate for spending the time to gain this understanding since my start at integrate.ai, I was tasked with leading an in-depth research study partnered with my COO, and a PM. This project would encompass <strong>70+ total interviews</strong> conducted through respondent.io in a span of <strong>3 months</strong>.<br><br> The approach I put in place was to strive initially for quantity and breadth, then move to more refined qualitative and directional interviews.
+                <p>As an advocate for research since my start at integrate.ai, I was tasked with leading a research study partnered with my COO, and a PM. <br><br>
+
+                    This project encompassed 70+ total interviews conducted in a span of 3 months. The approach was to strive initially for quantity and breadth, then move to more refined qualitative and directional interviews as we grew our understanding.
+
                 </p>
             </div>
         </div>
@@ -230,23 +228,24 @@ $(document).on("click", "a", function () {
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Approach
                 </h3>
-                <p>We utilized the initially completed research as a guide for starting points, but found very quickly that <strong>searching for a role title was fruitless</strong>. The variance in company to company in actual role function was massive.<br><br> Thus starting intentionally broad in job titles and functions, helped to understand at a faster pace who best fits using our product, and who else may be involved.
+                <p>We utilized the previous research to start, but found that searching by role was fruitless. The variance in actual role function was massive. <br><br>Starting broad in job titles and functions, helped to understand at a faster pace who fits our user archetype, and who else may be involved.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-12">
-                <h3 class="sectionTitle2">My contributions to the research
+                <h3 class="sectionTitle2">My contributions
                 </h3>
                 <p><strong>My participation in this research exercise included:</strong><br></p>
                 <ul>
-                    <li>Constructing an initial and subsequent additional interview guides based on the findings we had made in the process</li>
-                    <li>Leading or participating in 90% of the total interviews</li>
-                    <li>Determining best practices of recording and synthesizing the interviews</li>
-                    <li>Defining what end goals of the project would look like</li>
-                    <li>Independently completing the synthesis of the research complete</li>
+                    <li>Constructing multiple interview guides based on the findings we had made in the process</li>
+                    <li>Leading or participating in all interviews</li>
+                    <li>Determining best practices of recording and synthesis</li>
+                    <li>Defining what success of the project would look like</li>
+                    <li>Independently completing synthesis of the research</li>
                     <li>Constructing 3 separate defined user archetypes and a customer journey map</li>
                 </ul>
+
             </div>
             <div class="col-md-6 col-12">
                 <img src="/img/integrateAi/IAIProj3/JourneyMap%20Rough.jpg" class="respImg">
@@ -256,13 +255,14 @@ $(document).on("click", "a", function () {
             <div class="col-12">
                 <h3 class="sectionTitle2">Outcomes
                 </h3>
-                <p>With the initial focus of product market fit, the end result was not going to be realized until the product itself has been in the hands of the users. The intention was to achieve the “40% rule” after the product had been released, to determine if it was invaluable. This was to be completed at the end of the new rendition.<br><br>
+                <p>The decision made was to achieve the <em>40%</em> rule after the new product iteration had been released.<br><br>
 
-                    <strong>A total of 3 user archetypes and a customer journey map were built</strong> to aid in the construction of this new rendition. These archetypes served as the base understanding of what users expected, what they needed, and what they were most used to.<br><br>
+                    3 archetypes and a customer journey map was constructed to aid in the construction of this new iteration. These were the baseline understanding of our users and their processes. <br><br>
 
-                    Archetypes instead of personas were decided upon, due to the inherent variations in the people we felt would use our product. The were defined not by job titles or more specific tendencies, but by broader common characteristics.<br><br>
+                    Archetypes instead of personas were decided upon, due to the variations in people who would use our product. They were defined not by job titles or tendencies, but by common characteristics.<br><br>
 
-                    These archetypes were then mapped with a process that identified how companies complete the promotional process today. This customer journey map saw through the lifecycle of a promotional campaign, highlighting who was involved, the tasks that are being completed, and the challenges facing team members in the work today.
+                    These archetypes were mapped with a process that illustrated the lifecycle of an advertising campaign, who was involved, tasks completed, and the challenges today.
+
                 </p>
             </div>
         </div>
@@ -283,16 +283,17 @@ $(document).on("click", "a", function () {
     <div class="container section">
         <div class="row ">
             <div class="col-md-12 col-12 ">
-                <h2 class="projTitle">Ideation &amp; design</h2>
+                <h2 class="projTitle">Making it so</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Inspiration
                 </h3>
-                <p>While the previous iterations had less context and more opportunity for wide breadth of exploration, this iteration focused more on the process versus any one screen. The move away from refining a list meant I used design patterns that reflected a step by step process.<br><br>
+                <p>This iteration focused more on the process versus any one screen. Because of the move away from refining a list, I used design patterns that reflected a step by step process instead.<br><br>
 
-                    <strong>Ecommerce checkout flows and various softwares account creation</strong> were big ideas that influenced the exploration. But I also kept novelty alive <strong>looking at some video games, and even instruction manuals.</strong>
+                    Ecommerce checkout flows and account creation UI were big influences that guided the exploration. But I also looked at video games, and even instruction manuals.
+
                 </p>
             </div>
             <div class="col-md-6 col-12">
@@ -303,11 +304,17 @@ $(document).on("click", "a", function () {
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">Wireframing and low-Fidelity Mockups
                 </h3>
-                <p>With the new user archetypes and journey map as a guide, the previous “FAM” (<em>Forecast, Activate, Monitor</em>) product suite was going to <strong>transition away from picking a pre-generated model from a list of choices, to creating an entirely new one from scratch.</strong><br><br>
+                <p>Contextual Bandits have a few key differences from Random Forest that I explored in low-fidelity mockups. </p>
+                <ul>
+                    <li>They require a learning period</li>
+                    <li>Cold-start use cases would no longer yield a forecasted result beforehand</li>
+                    <li>Models would no longer be constructed in batch</li>
+                    <li> The inclusion of the Trusted Signal Exchange</li>
+                </ul><br><br>
 
-                    <em>Contextual Bandits</em> have a few key differences from <em>Random Forest's</em> that I explored in low-fidelity mockups. They require a learning period where it will not “exploit” or immediately push certain promos. Cold-start use cases also would no longer yield a forecasted result beforehand, as predicting how the contextual bandit would learn was impossible. <br><br>
+                <p>
+                    This was all focused around a new user flow that matched both this journey map, and the new necessary steps to build the bandit.
 
-                    The exploration also included a major asset of integrate.ai which had not yet been in the integrate.ai product, the <em>Trusted Signal Exchange</em>. This was pushed as our “difference maker” in the industry and essentially allowed for users to see the benefits that sharing signals from their data could provide.
                 </p>
             </div>
             <div class="col-md-6 col-12">
@@ -318,33 +325,36 @@ $(document).on("click", "a", function () {
             <div class="col-md-6 col-12">
                 <h3 class="sectionTitle2">High-Fidelity Mockups
                 </h3>
-                <p>The main, major new addition for this iteration was the added control users have for setting up a model. Users now no longer pull from a list of pre-generated concepts, but instead build a model from scratch. <br><br>
+                <p><em>Model Setup</em><br>
+                    Users set the parameters of the model to suit their needs best in a few short steps. These steps simplify the input of constraints the AI needs to create a model, taking inspiration from profile signup flows from other applications. <br><br>
 
-                    Using the journey map as the guide, we determined a new user flow that matched both this journey map, and the new necessary steps to build the bandit. The flow was setup as follows:<br><br>
+                    With the Machine Learning team as our guide we determined several necessary steps to create a model:<br>
+                    <ul>
+                        <li>Name</li>
+                        <li>Objective function</li>
+                        <li>Offers available</li>
+                        <li>Products to be included</li>
+                        <li>Traffic allocation</li>
+                        <li>Budget</li>
+                    </ul>
 
-                    <em>Model Setup</em><br>
-                    Users set up the model parameters to suit their needs best in a few short steps. These steps simplify the input of constraints the AI needs to create a model, taking inspiration from profile onboarding tools in other applications. <br><br>
+                    <p>Each of these steps were grouped where context of decision making was needed, and then mapped to 4 key steps:</p>
+                    <ul>
+                        <li>Focus (Name and Objective Function)</li>
+                        <li>Setup (Offers available and Products to be included)</li>
+                        <li>Allocation</li>
+                        <li>Review</li>
+                    </ul>
 
-                    With the Machine Learning team as our guide we determined several necessary steps that require user input to create a model. They were:<br>
-                </p>
-                <ul>
-                    <li>Name</li>
-                    <li>Objective function</li>
-                    <li>Offers available</li>
-                    <li>Products to be included</li>
-                    <li>Traffic allocation</li>
-                    <li>Budget</li>
-                </ul>
-                <p>The added benefit is that they match what our personas preference for more control today. One of the main tools that the users we interviewed work with and understand is AB testing tools. Users want to control how much of their site/product visitation traffic is dedicated to the campaign versus a control group for comparison. The Model Setup makes this simple.<br><br>
-                    
-                    <em>Model Hub</em><br>
-                    Using <em>Activate</em> as the base, users have an overview of the entire spectrum of active, queued, and past models. Each model has its corresponding summary metrics that demonstrate their efficacy and a trend graph highlighting their chief outcome over time. This would prompt an interest in a user taking deeper look.<br><br>
+                    <br><br>
+                <p>
+                    <em>Model Hub</em>
+                    Here users have an overview of model status and Each model has summary metrics to demonstrate its efficacy. Both were included to inspire that deeper dive for understanding.<br><br>
 
-                    Another major difference for this version was the inclusion of the <em>Trusted Signal Exchange</em>. The bar visual below each item demonstrated ranked signals in the network that has benefitted each model based on impact. This was a business pushed decision to have it in such a prominent place, as the initial concept had it integrated into the individual model panels.<br><br>
+                    The Trusted Signal Exchange (TSE) was included in this iteration as a bar graph. Included with each model, it demonstrated signals from the TSE that benefitted each model ranked on impact. <br><br>
 
-                    The other main update for this iteration was the expanded views of the individual models. Prior to this, more data could only be found when selecting the monitor button to be brought to a separate page. Now the model dropdowns included visuals corresponding to individual products, offer performance and effectiveness, and customer cluster analysis. All of which were ways of looking at data that were not currently available to our users, and data sets that had previously been extremely difficult to surface.<br><br>
+                    Prior to this, more data could only be found when selecting the monitor button. Now the model dropdowns include additional summary visuals corresponding for aspects like product offer performance, and customer analysis. <br><br></p>
 
-                    A <em>Model Monitor</em> update was also queued to be the next step, but my time was cut short before we could move to changing it to best suit the new process.</p>
             </div>
             <div class=" col-md-6 col-12"><iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" class=" breath" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FFY3nstTBKMJKA9SniUnatP%2FBusiness-Tools-Contextual-Bandit%3Fnode-id%3D4594%253A11781%26viewport%3D5525%252C1340%252C0.43964266777038574%26scaling%3Dcontain&chrome=DOCUMENTATION" allowfullscreen></iframe>
                 <img src="/img/integrateAi/IAIProj3/Apply%20Treatments.png" class="respImg breath">
@@ -368,12 +378,11 @@ $(document).on("click", "a", function () {
         </div>
         <div class="row">
             <div class="col-md-12 col-12">
-                <p class="headingTxt">Through my efforts, the team was in a stronger state to identify their fit in the marketplace after my departure. As the company was forced to withstand the test of coronavirus, the extreme dropping of clients and lack of user base resulted in <strong>no real gauge of if the product would fit the 40% theory</strong>.<br><br>
+                <p class="headingTxt">Through our efforts, the team was in a strong state to identify their fit in the marketplace after my departure. As the company was forced to withstand the coronavirus, the dropping of clients user base resulted in no gauge of the 40% theory.<br><br>
 
-                    Through the research however, I managed to create the first pass on our users in the form of archetypes, and the process we fit into in the form of a journey map. Testing it's validity and making further changes was the next steps with these tools, but I did not get the opportunity.<br><br>
-                    
-                    The product redesign itself was fully completed, and at the time of my departure, had begun development. With this redesign, <strong>I also led the design efforts for the Shopify integration</strong>  we were undertaking. This project was completed and had begun serving as an easier method of onboarding clients into the integrate.ai product.
-    
+However through our research, the first pass on our users as archetypes, and their promotional process in the form of a journey map was completed. Testing validity was the next step with these tools.<br><br>
+
+The product redesign itself was completed, and had begun development. With the redesign, I led the design efforts for the Shopify integration. This project was completed and had begun serving as an easier method of onboarding clients.
                 </p>
             </div>
         </div>
@@ -456,4 +465,6 @@ $(document).on("click", "a", function () {
         </div>
     </div>
     <script src="/js/bootstrap.min.js"></script>
-</body></html>
+</body>
+
+</html>
