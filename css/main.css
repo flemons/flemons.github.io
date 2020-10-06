@@ -457,7 +457,7 @@ if it's not present, don't show loader */
     padding-left: 30px;
     padding-bottom: 5px;
     z-index: 99;
-    min-height: 49.13px;
+    top: 0px;
 }
 .fix2 {
     position: fixed;
