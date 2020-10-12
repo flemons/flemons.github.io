@@ -135,7 +135,9 @@ if it's not present, don't show loader */
 }
 
 .downArrow {
-    min-height: 50px;
+/*    position: absolute; */
+    left: 50%; 
+    z-index: 999;
     width: 30px;
     display: block;
     margin: 0 auto;
