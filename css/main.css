@@ -7,6 +7,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 */
+    overflow-y: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -64,7 +65,7 @@ li{
     padding-bottom: 1%;
 }
 strong {
-    font-weight: 500;
+    font-weight: 700;
     /*    color:#b14016;*/
 }
 
@@ -108,7 +109,9 @@ if it's not present, don't show loader */
 .breath{
     margin-top: 8rem;
 }
-
+.breath2{
+    margin-top: 4rem;
+}
 #BFront {
     transform: translateX(-1px);
 }
@@ -434,7 +437,7 @@ if it's not present, don't show loader */
 }
 .headingTxt{
     font-size: 1.2rem;
-    line-height: 1.8rem;
+    line-height: 2.441rem;
 }
 .centerText {
     text-align: center;
@@ -618,7 +621,7 @@ nav{
 }
 
 .sectionTitle{
-    font-weight: 300;
+    font-weight: 500;
     font-size: 0.67rem;
     text-transform: uppercase;
     color: #434343;
@@ -631,6 +634,12 @@ nav{
     text-transform: uppercase;
     color: #434343;
         margin-top: 2rem;
+}
+.sectionTitle3{
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #000;
+    
 }
 
 .wd {}

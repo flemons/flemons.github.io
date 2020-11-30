@@ -38,6 +38,7 @@
         //paste this code under the head tag or in a separate js file.
         // Wait for window load
         $(window).load(function() {
+            document.getElementById("home").style.overflowY = "scroll";
             // Animate loader off screen
             $(".se-pre-con").delay(800).fadeOut(400);;
         });
@@ -67,7 +68,7 @@
     </script>
 </head>
 
-<body>
+<body id="home">
     <div class="se-pre-con">
         <div class="row justify-content-center" style="height: 100vh">
             <div class="col-lg-6 col-md-8 col-12 align-self-center "><svg xmlns="http://www.w3.org/2000/svg" viewBox="409 550 1254 900">
@@ -195,7 +196,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-12">
-                <h3 class="sectionTitle2">User interviews and feedback sessions
+                <h3 class="sectionTitle3">User interviews
                 </h3>
                 <p>We conducted multiple interview sessions, divided between foundational questions for role understanding, and then qualitative usability testing for feedback on the user flow.
                 </p>
@@ -227,7 +228,7 @@
         </div>
         <div class="row" style="margin-top: 1rem">
             <div class="col-md-6 col-12">
-                <h3 class="topDesc sectionTitle2">Contracted help
+                <h3 class="topDesc sectionTitle3">Contracted help
 
                 </h3>
                 <p>Post our internal research effort, we decided we would need external assistance to define our understanding of our users.<br><br>
@@ -256,7 +257,7 @@
                 <img src="/img/integrateAi/IAIProj2/Review.jpg" class="respImg">
             </div>
             <div class="col-md-6 col-12">
-                <h3 class="topDesc sectionTitle2">Internal review
+                <h3 class="topDesc sectionTitle3">Internal review
 
                 </h3>
                 <p>
@@ -275,7 +276,7 @@
         </div>
         <div class="row">
             <div class=" col-12">
-                <h3 class="topDesc sectionTitle2">Identifying a user flow
+                <h3 class="topDesc sectionTitle3">Identifying a user flow
 
                 </h3>
                 <p>I completed a suggested user flow to guide the rest of the design of the product to serve as a baseline to identify any gaps in the product before undertaking any ideation effort.<br><br>
@@ -302,7 +303,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-12">
-                <h3 class="sectionTitle2">Inspiration
+                <h3 class="sectionTitle3">Inspiration
                 </h3>
                 <p>Instead of pulling from more abstract and futuristic looking interfaces, inspiration was pulled from a wide spectrum of currently existing products.<br><br>
 
@@ -320,7 +321,7 @@
                 <img src="/img/integrateAi/IAIProj2/Wireframes.png" class="respImg">
             </div>
             <div class="col-md-6 col-12">
-                <h3 class="sectionTitle">Wireframing
+                <h3 class="sectionTitle3">Wireframing
                 </h3>
                 <p>In these sketches I explored concepts in ecommerce as well as industries like package tracking/logistics, music streaming, and search even some SQL tools.
                 </p>
@@ -329,7 +330,7 @@
         </div>
         <div class="row" style="margin-top: 2rem">
             <div class="col-md-6 col-12">
-                <h3 class="sectionTitle2">Chosen Wireframe Solution
+                <h3 class="sectionTitle3">Chosen Wireframe Solution
                 </h3>
                 <p>With my Director, and using the internal domain experts, we came to the conclusion of using the ecommerce focused product.<br><br>
 
@@ -343,7 +344,7 @@
         </div>
         <div class="row" style="margin-top: 1rem">
             <div class="col-md-6 col-12">
-                <h3 class="topDesc sectionTitle2"> Hi-fidelity mockups
+                <h3 class="topDesc sectionTitle3"> Hi-fidelity mockups
 
                 </h3>
                 <p><em>Forecast</em> was the focus of the product, allowing users to pick the campaign that fits their needs. It worked with two new components <em>Activate</em> (campaign management) and <em>Monitor</em> (campaign tracking).<br><br>

@@ -38,6 +38,7 @@
         //paste this code under the head tag or in a separate js file.
         // Wait for window load
         $(window).load(function() {
+            document.getElementById("home").style.overflowY = "scroll";
             // Animate loader off screen
             $(".se-pre-con").delay(800).fadeOut(400);;
         });
@@ -68,7 +69,7 @@ $(document).on("click", "a", function () {
 
 </head>
 
-<body>
+<body id="home">
     <div class="se-pre-con">
         <div class="row justify-content-center" style="height: 100vh">
             <div class="col-lg-6 col-md-8 col-12 align-self-center "><svg xmlns="http://www.w3.org/2000/svg" viewBox="409 550 1254 900">
