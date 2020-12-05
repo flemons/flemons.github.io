@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
     font-size: 14px;
     margin: 0px;
@@ -167,6 +170,7 @@ if it's not present, don't show loader */
     padding: 0.25rem 1rem 0.25rem  1rem ;
     background-color: #434343;
     transition: all 0.25s;
+    
 }
 
 .button1:hover{
@@ -316,7 +320,23 @@ if it's not present, don't show loader */
         ;
     }
 }
-
+.arrow{
+    width: 1rem;
+    margin: 1rem auto;
+}
+.cls-1{
+    stroke:#000;
+    stroke-width: 3;
+    stroke-miterlimit:10;
+    stroke-dasharray: 100;
+    animation: dash 2s ease-in infinite reverse;
+}
+@keyframes dash {
+  to {
+    stroke-dasharray:100;
+    stroke-dashoffset: 200;
+  }
+}
 .downArrow:hover {
     color: #131314;
     cursor: pointer;
@@ -328,6 +348,7 @@ if it's not present, don't show loader */
     background: #272727;
     font-size: 1rem;
      margin-top: 0.5rem;
+    transition: all 0.25s;
     
 }
 .pfBut:hover{
