@@ -59,13 +59,13 @@ p {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.8em;
+    color: #2d2f33;
     
 }
 li{
    font-size: 1rem;
     font-weight: 300;
     line-height: 1.6em;
-    padding-bottom: 1%;
 }
 strong {
     font-weight: 700;
@@ -645,7 +645,7 @@ nav{
     font-weight: 500;
     font-size: 0.67rem;
     text-transform: uppercase;
-    color: #434343;
+    color: #2d2f33;
         margin-top: 0.5rem;
     letter-spacing: 0.1rem;
 }
@@ -654,14 +654,14 @@ nav{
     font-weight: 300;
     font-size: 0.81rem;
     text-transform: uppercase;
-    color: #434343;
+    color: #2d2f33;
         margin-top: 2rem;
 }
 .sectionTitle3{
     font-weight: 700;
-    font-size: 1.25rem;
-    color: #000;
-    
+    font-size: 1.953rem;
+    color: #2d2f33;
+    margin-top: 1rem;
 }
 
 .wd {}
