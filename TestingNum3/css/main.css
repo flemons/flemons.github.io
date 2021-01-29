@@ -80,6 +80,16 @@ nav a{
     background: #FE1942;
     color: #000;
 }
+ .hole { 
+     position: absolute; 
+     left: 50px;
+     right: 50px;
+     width: 50px;
+     height: 50px; 
+     box-shadow: 0 0 0 99999px rgba;
+
+}
+
 @keyframes dash {
   to {
     stroke-dasharray:100;
@@ -230,6 +240,13 @@ nav a:hover:before{
 
 }
 */
+.pfTitle{
+    font-size: 4.209rem;;
+    color: #fff;
+    -webkit-text-stroke-width: 0.2rem;
+  -webkit-text-stroke-color: black;
+    
+}
 #centerCont{
     display: flex;
   justify-content: center;
