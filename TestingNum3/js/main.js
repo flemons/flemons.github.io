@@ -9,7 +9,7 @@
 
     function imgLoaded(){
       c += 1;
-      var perc = ((100/tot*c)*0.22 << 0) +"rem";
+      var perc = ((100/tot*c)*0.23 << 0) +"rem";
       intro.style.width = perc;
       if(c===tot) return doneLoading();
     }

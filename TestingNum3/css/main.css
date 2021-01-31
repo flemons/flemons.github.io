@@ -1,10 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
 body{
     padding: 0;
     margin: 0;
     font-size: 12px;
-    font-family: 'Quicksand', sans-serif;
-/*    background-color: #181918;*/
-    background: linear-gradient(180deg, #1f2021 0%, #181918 100%);
+    font-family: 'Roboto', sans-serif;
+    background-color: #0f0f0f;
+/*    background: linear-gradient(180deg, #1f2021 0%, #181918 100%);*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff;
@@ -22,17 +25,26 @@ p{
     font-size: 1rem;
     margin: 0;
 }
+.subPar{
+    font-weight: 100;
+    font-size: 0.75rem;
+    margin: 2rem 0px;
+    line-height: 1.12rem;
+    display: inline-block;
+}
+
 li{
     font-size: 0.75rem;
 }
 h1{
-font-family: 'Kanit', sans-serif;
+font-family: 'Raleway', sans-serif;
     font-size: 1.333rem;
 }
 h2{
-   font-family: 'Kanit', sans-serif;
-    font-size: 1.333rem;
-    
+   font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-weight: 800;
 }
 .
 nav{
@@ -247,6 +259,111 @@ nav a:hover:before{
   -webkit-text-stroke-color: black;
     
 }
+.pfLink{
+    display: block;
+    z-index: 1;
+}
+
+.pfLink:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -5%;
+    width: 0%;
+    height: 0%;
+    z-index: 0;
+    animation: pfHoverOut 0.3s forwards ease-in-out;
+   
+    
+}
+.pfLink:hover:before{
+    cursor: pointer;
+    animation: pfHover 0.3s forwards ease-in-out;
+}
+@keyframes pfHover{
+    0%{
+        height: 0%;
+        width: 0%;
+        border-top: 0px solid #3e3e3e;
+        border-bottom: 0px solid #3e3e3e;
+        border-right: 0px solid #3e3e3e;
+        border-left: 0px solid #3e3e3e;
+        box-shadow: none;
+    }
+    33%{
+        height: 110%;
+        width: 0%;
+        border-top: 0px solid #3e3e3e;
+        border-bottom: 0px solid #3e3e3e;
+        border-right: 0px solid #3e3e3e;
+        border-left: 1px solid #3e3e3e;
+        box-shadow: none;
+    }
+    66%{
+        height: 110%;
+        width: 100%;
+        border-top: 1px solid #3e3e3e;
+        border-bottom: 1px solid #3e3e3e;
+        border-right: 0px solid #3e3e3e;
+        border-left: 1px solid #3e3e3e;
+        box-shadow: none;
+    }
+    100%{
+        height: 110%;
+        width: 100%;
+        border-top: 1px solid #3e3e3e;
+        border-bottom: 1px solid #3e3e3e;
+        border-right: 1px solid #3e3e3e;
+        border-left: 1px solid #3e3e3e;
+        box-shadow: 0px 0px 5px 5px #eee;
+    }
+    
+    
+}
+@keyframes pfHoverOut{
+    0%{
+        height: 110%;
+        width: 100%;
+        border-top: 1px solid #3e3e3e;
+        border-bottom: 1px solid #3e3e3e;
+        border-right: 1px solid #3e3e3e;
+        border-left: 1px solid #3e3e3e;
+        box-shadow: 0px 0px 5px 5px #eee;
+        
+        
+    }
+    33%{
+        height: 110%;
+        width: 100%;
+        border-top: 1px solid #3e3e3e;
+        border-bottom: 1px solid #3e3e3e;
+        border-right: 0px solid #3e3e3e;
+        border-left: 1px solid #3e3e3e;
+        box-shadow: none;
+        
+        
+    }
+    66%{
+        height: 110%;
+        width: 0%;
+        border-top: 0px solid #3e3e3e;
+        border-bottom: 0px solid #3e3e3e;
+        border-right: 0px solid #3e3e3e;
+        border-left: 1px solid #3e3e3e;
+        box-shadow: none;
+    }
+    100%{
+        height: 0%;
+        width: 0%;
+        border-top: 0px solid #3e3e3e;
+        border-bottom: 0px solid #3e3e3e;
+        border-right: 0px solid #3e3e3e;
+        border-left: 0px solid #3e3e3e;
+        box-shadow: none;
+    }
+    
+    
+}
 #centerCont{
     display: flex;
   justify-content: center;
@@ -278,11 +395,13 @@ nav a:hover:before{
     display: inline-block;
     margin: auto;
     text-transform: uppercase;
+    
 }
 #headTxt h1{
     text-align: left;
     font-size: 4.209rem;
     margin: 0;
+    margin-left: -4px;
 }
 .landBox{
     width: 100%;
@@ -294,9 +413,11 @@ nav a:hover:before{
     font-size:  1.777rem;
     text-align: center;
     margin: 0;
-    font-weight: 300;
-    letter-spacing: 0.31rem;
+    font-weight: 100;
+    letter-spacing: 0.43rem;
     text-transform: uppercase;
+    margin-left: ;
+    margin-right: -4px;
 }
 
 .superheader{
@@ -335,7 +456,7 @@ nav a:hover:before{
     opacity: 0;
     margin: 0 auto 0 auto;  
     border-top: solid 1px #fff; 
-    width: 21rem; 
+    width: 23rem; 
     transition: all 1s ease-in-out;
 }
 
