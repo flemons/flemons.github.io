@@ -25,14 +25,6 @@ p{
     font-size: 1rem;
     margin: 0;
 }
-.subPar{
-    font-weight: 100;
-    font-size: 0.75rem;
-    margin: 2rem 0px;
-    line-height: 1.12rem;
-    display: inline-block;
-}
-
 li{
     font-size: 0.75rem;
 }
@@ -46,94 +38,108 @@ h2{
     margin: 0.5rem 0;
     font-weight: 800;
 }
-.
-nav{
-    display: inline-block;
-    width: 100%;
+
+
+
+
+/**Nav Css**/
+nav {
     position: fixed;
-    top:0;
-    left: 0; 
-}
-nav a{
-    padding: 10px;
-    color: #ededf8;
-}
-.animCol{
-    height: 0px;
+    top: 0;
     width: 100%;
-    margin: 0;
-    position: relative;
-    transition: height 1s ease-in-out;
+    z-index: 9999;
+    transition: all 0.5s ease-in-out;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+nav li {
+  float: left;
+    font-size: 0.75rem;
+    margin: 1rem 1rem;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+ 
+    padding: 0.1rem;
+  text-decoration: none;
+    font-weight: 100;
+    
+    cursor: pointer;
+}
+
+.navFocus{
+   cursor: pointer;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s; 
+}
+.navFocus:before {
+    content: "";
+  position: absolute;
+  z-index: -1;
+  top: 1rem;
+  left: 0rem;
+  right: 0rem;
+  bottom: 0;
+    height: 0.01rem;
+  width: 0%;
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+    transition: width .2s;
+}
+.navFocusCol1:not(.scrolled):before {
+    background: #FFF;
+}
+.navFocusCol1.active{
+    background: #FFF;
+    color: black;
+}
+.navFocus:hover, .navFocus:focus, .navFocus:active {
+  
     
 }
-.arrow{
-    width: 1rem;
-    margin: 2rem auto;
+.navFocus:hover:before, .navFocus:focus:before, .navFocus:active:before {
+  width: 100%;
 }
-.cls-1{
-    stroke:#fff;
-    stroke-width: 3;
-    stroke-miterlimit:10;
-    stroke-dasharray: 100;
-    animation: dash 2s ease-in infinite reverse;
+.navFocusCol1:before{
+    background: #000;
 }
-.CTA{
-    margin-top: 1rem
-}
-.CTA a{
-    padding: 0.5rem;
-    font-size: 1rem;
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-.CTA a:hover{
-    background: #FE1942;
-    color: #000;
-}
- .hole { 
-     position: absolute; 
-     left: 50px;
-     right: 50px;
-     width: 50px;
-     height: 50px; 
-     box-shadow: 0 0 0 99999px rgba;
-
+.navbar-fixed-top.scrolled {
+  color: #000 !important;
+font-weight: 300;
 }
 
-@keyframes dash {
-  to {
-    stroke-dasharray:100;
-    stroke-dashoffset: 200;
-  }
-}
-.fullImg{
-    width: 100%;
-    
-}
-.breathsm{
-    margin-top: 1rem;
-}
-.breathmd{
-    margin-top: 2.369rem;
-}
-.breathlg{
-    margin-top: 4.209rem;
-}
-.navHover{
-    padding-left: 3.4vw;
-}
-.navHover:hover{
-    cursor: pointer;
-    font-weight: 700;
-}
 
-.helper{
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
+
+
+
+
+
+
+
+/* Hover Sweep code*/
+
 .hvr-sweep {
     cursor: pointer;
   vertical-align: middle;
@@ -212,6 +218,87 @@ nav a{
 .hvr-sweep:hover:before, .hvr-sweep:focus:before, .hvr-sweep:active:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+
+
+
+.subPar{
+    font-weight: 100;
+    font-size: 0.75rem;
+    margin: 2rem 0px;
+    line-height: 1.12rem;
+    display: inline-block;
+}
+
+
+
+.animCol {
+    height: 0px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    transition: height 1s ease-in-out;
+    
+}
+.arrow{
+    width: 1rem;
+    margin: 2rem auto;
+}
+.cls-1{
+    stroke:#fff;
+    stroke-width: 3;
+    stroke-miterlimit:10;
+    stroke-dasharray: 100;
+    animation: dash 2s ease-in infinite reverse;
+}
+.CTA{
+    margin-top: 1rem
+}
+.CTA a{
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.CTA a:hover{
+    background: #FE1942;
+    color: #000;
+}
+
+@keyframes dash {
+  to {
+    stroke-dasharray:100;
+    stroke-dashoffset: 200;
+  }
+}
+.fullImg{
+    width: 100%;
+    
+}
+.breathsm{
+    margin-top: 1rem;
+}
+.breathmd{
+    margin-top: 2.369rem;
+}
+.breathlg{
+    margin-top: 4.209rem;
+}
+.navHover{
+    padding-left: 3.4vw;
+}
+.navHover:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.helper{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 .navHover2{
     padding-left: 3.4vw;
@@ -401,7 +488,8 @@ nav a:hover:before{
     text-align: left;
     font-size: 4.209rem;
     margin: 0;
-    margin-left: -4px;
+    margin-left: -2px;
+    
 }
 .landBox{
     width: 100%;

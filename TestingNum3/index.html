@@ -52,15 +52,31 @@
 
         }
     </script>
+    <script>$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".navbar-fixed-top");
+      var $head = $("#land");
+      var $navBefore = $(".navFocus");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $head.height());
+      
+    
+  });
+});</script>
 </head>
 
 <body>
-    
-    <div style="min-height: 100vh">
+    <nav class=""><ul>
+  
+  
+  
+  <li style="float:right"><a href="#about" class="navFocus navFocusCol1 navbar-fixed-top" >About</a></li>
+        <li style="float:right"><a href="#caseStudies" class="navFocus navFocusCol1 navbar-fixed-top" >Work</a></li>
+</ul></nav>
+    <div id="land"style="min-height: 100vh">
     <div id="centerCont">
         <div id="headTxt">
             <h1 style="display: inline-block; line-height: 0rem">Barrett</h1>
-            <img src="img/BFLogoOutline.svg" style="height: 3rem; margin-left: 1.3rem; ">
+            <img src="img/BFLogoOutline.svg" style="height: 3rem; margin-left: 1rem; ">
             <!--    <hr>-->
             <p class="subHead" style="">Product Designer</p>
 
@@ -71,7 +87,7 @@
 
 
     <div id="intro">
-        <div class="animCol" style="background: linear-gradient(90deg, #682A6E 0%, #BF406B 100%); margin-top: 0px"></div>
+        <div class="animCol" style="background: linear-gradient(90deg, #682A6E 0%, #BF406B 100%);"></div>
         <div class="animCol" style="background: linear-gradient(90deg, #BF406B 0%, #EC905F 100%); "></div>
         <div class="animCol" style="background: linear-gradient(90deg, #EC905F 0%, #F1E678 100%); "></div>
 
@@ -88,7 +104,7 @@
         </ul>
 -->
 
-        <div class="arrow"><a href="#work"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <div class="arrow"><a href="#caseStudies"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                     <defs>
                         <style>
                         </style>
@@ -99,9 +115,9 @@
                     <line class="cls-1" x1="100" y1="54.5" x2="50" y2="100" />
                 </svg></a></div>
     </div></div>
-    <div class="container-fluid" style="background: #fff; color: black; min-height: 100vh; background-image: linear-gradient(rgba(230, 230, 230, .2) .1em, transparent .1em), linear-gradient(90deg, rgba(230, 230, 230, .2) .1em, transparent .1em);background-size: 3em 3em;">
+    <div class="container-fluid" style="background: #fff; color: black; min-height: 100vh; background-image: linear-gradient(rgba(230, 230, 230, .2) .1em, transparent .1em), linear-gradient(90deg, rgba(230, 230, 230, .2) .1em, transparent .1em);background-size: 3em 3em;" id="caseStudies">
 
-        <div class="row" id="work">
+        <div class="row">
             <div class="col-12 breathmd" style="text-align: center">
                 <h1 class="secTitle" >Case Studies</h1>
                 
@@ -134,7 +150,7 @@
                 <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%; "/>
                     
                 <h2>Product definition</h2>
-                    <p class="secTitleSm" style="text-align: left">Product Designer  | Front-End Developer</p>
+                    <p class="secTitleSm" >Product Designer  | Front-End Developer</p>
 
                 </a>
             </div>
@@ -330,10 +346,6 @@
         </div>
 -->
     </div>
-
-
-
-
 </body></html>
 
 
