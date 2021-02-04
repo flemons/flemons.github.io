@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;600;800&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
-    
+
     <title></title>
     <style>
         .load {
@@ -32,7 +32,8 @@
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(cityName).style.position = "static"; document.getElementById(cityName).style.opacity = "1";
+            document.getElementById(cityName).style.position = "static";
+            document.getElementById(cityName).style.opacity = "1";
             evt.currentTarget.className += " active";
         }
     </script>
@@ -52,299 +53,190 @@
 
         }
     </script>
-    <script>$(function () {
-  $(document).scroll(function () {
-    var $nav = $(".navbar-fixed-top");
-      var $head = $("#land");
-      var $navBefore = $(".navFocus");
-    $nav.toggleClass('scrolled', $(this).scrollTop() > $head.height());
-      
-    
-  });
-});</script>
+    <script>
+        $(function() {
+            $(document).scroll(function() {
+                var $nav = $(".navbar-fixed-top");
+                var $head = $("#land");
+                var $navBefore = $(".navFocus");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $head.height());
+
+
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <nav class=""><ul>
-  
-  
-  
-  <li style="float:right"><a href="#about" class="navFocus navFocusCol1 navbar-fixed-top" >About</a></li>
-        <li style="float:right"><a href="#caseStudies" class="navFocus navFocusCol1 navbar-fixed-top" >Work</a></li>
-</ul></nav>
-    <div id="land"style="min-height: 100vh">
-    <div id="centerCont">
-        <div id="headTxt">
-            <h1 style="display: inline-block; line-height: 0rem">Barrett</h1>
-            <img src="img/BFLogoOutline.svg" style="height: 3rem; margin-left: 1rem; ">
-            <!--    <hr>-->
-            <p class="subHead" style="">Product Designer</p>
+    <nav class="">
+        <ul>
+
+
+
+            <li style="float:right"><a href="#about" class="navFocus navFocusCol1 navbar-fixed-top">About</a></li>
+            <li style="float:right"><a href="#caseStudies" class="navFocus navFocusCol1 navbar-fixed-top">Work</a></li>
+        </ul>
+    </nav>
+    <div id="land" style="min-height: 100vh">
+        <div id="centerCont">
+            <div id="headTxt">
+                <h1 style="display: inline-block; line-height: 0rem">Barrett</h1>
+                <img src="img/BFLogoOutline.svg" style="height: 3rem; margin-left: 1rem; ">
+                <!--    <hr>-->
+                <p class="subHead" style="">Product Designer</p>
+
+            </div>
 
         </div>
 
+
+
+        <div id="intro">
+
+            <div class="animCol" style="background: linear-gradient(90deg, #682A6E 0%, #BF406B 100%);"></div>
+            <div class="animCol" style="background: linear-gradient(90deg, #BF406B 0%, #EC905F 100%); "></div>
+            <div class="animCol" style="background: linear-gradient(90deg, #EC905F 0%, #F1E678 100%); "></div>
+
+
+        </div>
+        <div id="subIntro" style="">
+            <p class="subPar" style="width: 30%;"><strong>Boisturious, beard-bearing, Barrett!</strong></p>
+            <p class="subPar" style="width: 65%; float: right">Product designer, user researcher, developer translator, and people motivator.</p>
+
+            <div class="arrow"><a href="#caseStudies"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <defs>
+                            <style>
+                            </style>
+                        </defs>
+                        <title>Arrow</title>
+                        <line class="cls-1" x1="50" x2="50" y2="70.5" />
+                        <line class="cls-1" y1="54.5" x2="50" y2="100" />
+                        <line class="cls-1" x1="100" y1="54.5" x2="50" y2="100" />
+                    </svg></a></div>
+        </div>
     </div>
-
-
-
-    <div id="intro">
-        <div class="animCol" style="background: linear-gradient(90deg, #682A6E 0%, #BF406B 100%);"></div>
-        <div class="animCol" style="background: linear-gradient(90deg, #BF406B 0%, #EC905F 100%); "></div>
-        <div class="animCol" style="background: linear-gradient(90deg, #EC905F 0%, #F1E678 100%); "></div>
-
-    </div>
-    <div id="subIntro" style="">
-        <p class="subPar" style="width: 30%;"><strong>Boisturious, beard-bearing, Barrett.</strong></p>
-        <p class="subPar" style="width: 65%; float: right">Product designer, user researcher, developer translator, and people motivator.</p>
-<!--
-        <h1 class="secTitle">Navigate</h1>
-        <ul style="list-style: none; text-align: right; display: inline-block; float: right">
-            <li style="border-bottom: solid 1px #fff;" class="navHover hvr-sweep hvr-sweepcol1"><a>Work</a></li>
-            <li class="navHover hvr-sweep hvr-sweepcol2" style="border-bottom: solid 1px #fff;"><a>About</a></li>
-            <li class="navHover hvr-sweep hvr-sweepcol3"><a>Contact</a></li>
-        </ul>
--->
-
-        <div class="arrow"><a href="#caseStudies"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <defs>
-                        <style>
-                        </style>
-                    </defs>
-                    <title>Arrow</title>
-                    <line class="cls-1" x1="50" x2="50" y2="70.5" />
-                    <line class="cls-1" y1="54.5" x2="50" y2="100" />
-                    <line class="cls-1" x1="100" y1="54.5" x2="50" y2="100" />
-                </svg></a></div>
-    </div></div>
     <div class="container-fluid" style="background: #fff; color: black; min-height: 100vh; background-image: linear-gradient(rgba(230, 230, 230, .2) .1em, transparent .1em), linear-gradient(90deg, rgba(230, 230, 230, .2) .1em, transparent .1em);background-size: 3em 3em;" id="caseStudies">
 
         <div class="row">
             <div class="col-12 breathmd" style="text-align: center">
-                <h1 class="secTitle" >Case Studies</h1>
-                
+                <p class="secTitleSm">Work</p>
+                <h1 class="secTitle">Case Studies</h1>
+
             </div>
-            
+
             <div class="col-12">
-            <div class="row">
-                <div class="col-12" style="height: 0.5rem; background: #F1E678"></div>
-                <div class="col-12" style="height: 0.5rem; background: #EC905F"></div>
-                <div class="col-12 " style="height: 0.5rem; background: #BF406B"></div>
-                <div class="col-12" style="height: 0.5rem; background: #682A6E"></div>
-                
+                <div class="row">
+                    <div class="col-12" style="height: 0.5rem; background: #F1E678"></div>
+                    <div class="col-12" style="height: 0.5rem; background: #EC905F"></div>
+                    <div class="col-12 " style="height: 0.5rem; background: #BF406B"></div>
+                    <div class="col-12" style="height: 0.5rem; background: #682A6E"></div>
+
+                </div>
+
             </div>
-            
-            </div>
-            
-            
+
+
         </div>
-        <div class="row breathsm">
-            
+        <div class="row breathmd">
+
             <div class="col-12" style=" ">
-            <h1 class="subHead">integrate.ai</h1>
+                <h1 class="subHead">integrate.ai</h1>
             </div>
-            <div class="col-12 breathsm"></div>
+            <div class="col-12 breathmd"></div>
             <div class="col"></div>
-            <div class="col-sm-3 col-12" >
-                <a  class="pfLink" href="../integrateAi-Project1/">
-                    
-                    
-                <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%; "/>
-                    
-                <h2>Product definition</h2>
-                    <p class="secTitleSm" >Product Designer  | Front-End Developer</p>
+            <div class="col-sm-3 col-12">
+                <a class="pfLink" href="../integrateAi-Project1/">
+
+
+                    <img src="../TestingNum3/img/integrateAi/IAIProj1/Preview.png" style="vertical-align: middle; width: 100%; " />
+
+                    <h2>Product definition</h2>
+                    <p class="secTitleSm">Product Designer | Front-End Developer</p>
 
                 </a>
             </div>
             <div class="col"></div>
-            <div class="col-sm-3 col-12" >
+            <div class="col-sm-3 col-12">
                 <a class="pfLink" href="../integrateAi-Project2/">
-                    
-                    
-                <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%; "/>
-                    
-                <h2>Generalizing a product</h2>
+
+
+                    <img src="img/integrateAi/IAIProj2/Preview.png" style="vertical-align: middle; width: 100%; " />
+
+                    <h2>Generalizing a product</h2>
                     <p class="secTitleSm" style="text-align: left">Product Designer</p>
 
                 </a>
             </div>
             <div class="col"></div>
-            <div class="col-sm-3 col-12" >
+            <div class="col-sm-3 col-12">
                 <a class="pfLink" href="../TestingNum3/integrateAi-Project1/">
-                    
-                    
-                <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%; "/>
-                    
-                <h2 >Research study</h2>
-                    <p class="secTitleSm" style="text-align: left">Product Designer  | User Researcher</p>
+
+
+                    <img src="img/integrateAi/IAIProj3/Preview.png" style="vertical-align: middle; width: 100%; " />
+
+                    <h2>Research study</h2>
+                    <p class="secTitleSm" style="text-align: left">Product Designer | User Researcher</p>
 
                 </a>
             </div>
             <div class="col"></div>
-<!--
-            <div class="col-sm-3 col-12" >
-                <p class="secTitleSm" >integrate.ai</p>
-                <h2 style="margin-top: 0px;">Generalizing a product</h2>
-                
-                <div style="border-bottom: 1px solid #000; padding-bottom: 1rem"></div>
-                <div class="row breathsm">
-                
-                    <div class="col-2"><p class="secTitleSm" style="text-align: left">Date</p>
-                        <p class="topDesc"></p></div>
-                    <div class="col-10"><p class="secTitleSm" style="text-align: left"><strong>November 2018 – May 2019</strong></p>
-                        <p class="topDesc"></p></div>
-                    <div class="col-2"><p class="secTitleSm" style="text-align: left">Roles</p>
-                        <p class="topDesc"></p></div>
-                    <div class="col-10"><p class="secTitleSm" style="text-align: left"><strong>Product Designer</strong></p>
-                        </div>
-                    <div class="col-12"><img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 50%"/></div>
-                    
-                </div>
-                
-            
-            </div>
--->
-<!--
-            <div class="col-sm-3 col-12" >
-                <p class="secTitleSm" >integrate.ai</p>
-                <h2 style="margin-top: 0px;">Research study</h2>
-                <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%"/>
 
-
-                <div class="row breathsm">
-                
-                    <div class="col-2"><p class="secTitleSm" style="text-align: left">Date</p>
-                        <p class="topDesc"></p></div>
-                    <div class="col-10"><p class="secTitleSm" style="text-align: left"><strong>November 2019 – June 2020</strong></p>
-                        <p class="topDesc"></p></div>
-                    <div class="col-2"><p class="secTitleSm" style="text-align: left">Roles</p>
-                        <p class="topDesc"></p></div>
-                    <div class="col-10"><p class="secTitleSm" style="text-align: left"><strong>Product Designer | UXR </strong></p>
-                        <p class="topDesc"></p></div>
-                    
-                    
-                </div>
-
-            
-            </div>
--->
         </div>
         <div class="row breathlg">
-            <div class="col-12" >
-            <h1 class="subHead">Other Projects</h1>
+            <div class="col-12">
+                <h1 class="subHead">Other Projects</h1>
             </div>
-            <div class="col-12 breathsm"></div>
+            <div class="col-12 breathmd"></div>
             <div class="col"></div>
-            <div class="col-sm-3 col-12" >
-                <a class="pfLink" href="../glance/">     
-                <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%; "/>
-                    
-                <h2 >Distracted Driving</h2>
+            <div class="col-sm-3 col-12">
+                <a class="pfLink" href="../glance/">
+                    <img src="img/glance/Preview.png" style="vertical-align: middle; width: 100%; " />
+
+                    <h2>Distracted Driving</h2>
                     <p class="secTitleSm" style="text-align: left">Product Designer | User Researcher</p>
 
                 </a>
             </div>
             <div class="col-sm-1 col-12"></div>
-            <div class="col-sm-3 col-12" >
-                <a class="pfLink" href="../roadRage/">     
-                <img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%; "/>
-                    
-                <h2 >Road Rage</h2>
+            <div class="col-sm-3 col-12">
+                <a class="pfLink" href="../roadRage/">
+                    <img src="img/roadRage/Preview.png" style="vertical-align: middle; width: 100%; " />
+
+                    <h2>Road Rage</h2>
                     <p class="secTitleSm" style="text-align: left">Product Designer | User Researcher</p>
 
                 </a>
             </div>
-            
+
             <div class="col"></div>
-            
+
         </div>
         <div class="row breathlg"></div>
-<!--
+    </div>
+    <div class="container-fluid" style="background: #fff; color: black; min-height: 100vh; " id="about">
         <div class="row">
-            <div class="col-sm-4" >
-                <div class="row">
-                    
-                    <div class="col-12 tablinks hvr-sweep hvr-sweepcol1 active" onclick="openCity(event, 'Productdefinition')"
-                        >
-                        <h1>Product definition</h1>
-                        <p style="margin-bottom: 1rem; font-size: 0.75rem;">Product Designer | UXR | Front-End Developer</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-12 tablinks hvr-sweep hvr-sweepcol2" onclick="openCity(event, 'Generalizingaproduct')">
-                        <h1>Generalizing a product</h1>
-                        <p style="margin-bottom: 1rem">Product Designer | UXR | Front-End Developer</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-12 tablinks hvr-sweep hvr-sweepcol3" onclick="openCity(event, 'Researchstudy')">
-                        <h1>Research study</h1>
-                        <p style="margin-bottom: 1rem">Product Designer | UXR | Front-End Developer</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-12 tablinks hvr-sweep hvr-sweepcol4" onclick="openCity(event, 'Distracteddriving')">
-                        <h1>Distracted driving</h1>
-                        <p style="margin-bottom: 1rem">Product Designer | UXR | Front-End Developer</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-12 tablinks hvr-sweep hvr-sweepcol5" onclick="openCity(event, 'Roadrage')">
-                        <h1>Road rage</h1>
-                        <p style="margin-bottom: 1rem">Product Designer | UXR | Front-End Developer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="row">
-                    
-                    <div id="Productdefinition" class="col-12 tabcontent" style="position: static; opacity: 1">
-                        <div class="row" >
-                            
-                            
-                            <div class="col-sm-4 col-12" >
-                                <span class="helper"></span><img src="img/integrateAi/IAIProj1/HeroImage.png" style="vertical-align: middle; width: 100%"/>
-
-                            </div>
-                            
-                            <div class="col-sm-5 col-12">
-                        <h1 class="secTitle" >integrate.ai</h1>
-                       <div >
-                        <p class="topDesc">Leading all aspects of the first product iteration</p>
-                    </div>
-                        <div class="descSpace">
-                        <h3 class="secTitleSm">Date</h3>
-                        <p class="topDesc">August 2018 – September 2018</p>
-                    </div>
-                        <div class="descSpace">
-                        <h3 class="secTitleSm">Roles</h3>
-                        <p class="topDesc">Product Designer <br> User Researcher<br> Front-End Developer</p>
-                        
-                    </div>
-                    <div class="topDesc CTA" style="">
-                                <a class="CTA">View Case Study</a></div>
-                        </div> 
-                        </div>
-                    </div>
-                    <div class="col-12 tabcontent" id="Generalizingaproduct">
-                        <h1>Generalizing a product</h1>
-                    </div>
-                    <div class="col-12 tabcontent" id="Researchstudy">
-                        <h1>Research Study</h1>
-                    </div>
-                    <div class="col-12 tabcontent" id="Distracteddriving">
-                        <h1>Distracted driving</h1>
-                    </div>
-                    <div class="col-12 tabcontent" id="Roadrage">
-                        <h1>Road rage</h1>
-                    </div>
-                </div>
+            <div class="col-12 breathlg" style="text-align: center">
+                <p class="secTitleSm">About</p>
+                <h1 class="secTitle">Who I am</h1>
 
             </div>
+    </div>
+        <div class="row breathmd">
+            <div class="col"></div>
+            <div class="col-sm-3 col-12"><p style="margin:0px">
+                        Over twenty years ago in a vehicle destined for outdoorsy folks, was a button big enough for me to use with my gloves! Who would have even thought of such a thing? What a clever <em>interaction.</em><br><br>
+                        It has stuck with me since, leading me to pursue a career in how I too, could leave someone with a lasting delight.<br><br> With over 3 years experience as both an individual contributer and team leader, in both enterprise and startups, I've grown to relish ambiguity.<br><br>
+
+                        My background in development and research allows me to wear a wardrobe of hats, contributing, planning, and leading all stages of the design process. <br><br>
+                
+                        Personally I'm always trying new hobbies and skills. Currently I'm practicing 3D product sketching with a mix of design strategy learning on the side. <br><br>
+
+                        Reach out to me  if you'd like to chat!<br><br>
+
+                    </p></div>
+            <div class="col"></div>
         </div>
--->
+
     </div>
 </body></html>
 
