@@ -37,13 +37,28 @@ h2{
     font-size: 1rem;
     margin: 0.5rem 0;
     font-weight: 800;
+    color: #222;
 }
 p{
     font-weight: 300;
-    font-size: 0.75rem;
-    line-height: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
-
+.social{
+    margin: 0.3rem;
+}
+.cls-1{
+    fill: #313131;
+    transition: all 0.3s;
+}
+.cls-1:hover{
+    fill: #151515;
+}
+.gradTxt{
+    background: -webkit-linear-gradient(0.25turn, #EC905F, #F1E678);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 
 /**Nav Css**/
@@ -512,6 +527,18 @@ nav a:hover:before{
     margin-right: -4px;
     line-height: normal;
 }
+.subHeadW{
+    font-size:  1.777rem;
+    text-align: center;
+    margin: 0;
+    font-weight: 100;
+    letter-spacing: 0.43rem;
+    text-transform: uppercase;
+    margin-left: ;
+    margin-right: -4px;
+    line-height: normal;
+    color: #222;
+}
 
 .superheader{
     font-weight: 300;
@@ -524,6 +551,7 @@ nav a:hover:before{
     display: inline-block; 
     font-size: 3.157rem;
     margin: 0px;
+    color: #222;
 /*
     font-size:  1.5rem;
     margin: 0;
