@@ -40,6 +40,8 @@ h2{
 }
 p{
     font-weight: 300;
+    font-size: 0.75rem;
+    line-height: 1.1rem;
 }
 
 
@@ -508,6 +510,7 @@ nav a:hover:before{
     text-transform: uppercase;
     margin-left: ;
     margin-right: -4px;
+    line-height: normal;
 }
 
 .superheader{
@@ -566,6 +569,42 @@ nav a:hover:before{
     padding: 0;
     
 }
+
+/*
+.line{
+    width: 100%;
+        height: 10rem;
+        border-bottom: 1rem solid #F1E678;
+        -webkit-transform:
+            translateX(-0%)
+            rotate(20deg); 
+        position: absolute;
+     
+       
+}.line2{
+    width: 100%;
+        height: 11rem;
+        border-bottom: 1rem solid #EC905F;
+        -webkit-transform:
+            translateX(-0%)
+            rotate(20deg); 
+        position: absolute;
+     
+        
+}.line3{
+    width: 100%;
+        height: 12rem;
+        border-bottom: 1rem solid #BF406B;
+        -webkit-transform:
+            translateX(-0%)
+            rotate(20deg); 
+        position: absolute;
+     
+        
+}
+*/
+
+/*
 .line1 {
         width: 70rem;
         height: 100%;
@@ -600,6 +639,7 @@ nav a:hover:before{
         position: absolute;
     z-index: -1;
     }
+*/
 .tabcontent{
     position: absolute;
     opacity: 0;
