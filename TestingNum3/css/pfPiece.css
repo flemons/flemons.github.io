@@ -38,9 +38,15 @@
 .modal{
     z-index: 999;
 }
+
+
 .projTitle{
-    font-size: 1.953rem;
+    font-size: 2.369rem;
     margin-bottom: 0px;
+}
+.stepTitle{
+    font-size: 1.777rem;
+    margin: 0px;
 }
 .borderBot {
     margin-top: 15px;
@@ -227,9 +233,11 @@
     font-size: 1.2rem;
     font-weight: 700;
 }
+/*
 .section{
-  margin-top: 5%;  
+  margin-top: 30vh;  
 }
+*/
 .footer{
 }
 .contactFix{
@@ -406,3 +414,5 @@ button{
     max-width: 800px;
   }
 }
+
+

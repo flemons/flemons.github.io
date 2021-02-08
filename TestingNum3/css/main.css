@@ -1,10 +1,10 @@
 html {
     scroll-behavior: smooth;
+    font-size: 12px;
 }
 body{
     padding: 0;
-    margin: 0;
-    font-size: 12px;
+    margin: 0; 
     font-family: 'Roboto', sans-serif;
     background-color: #0f0f0f;
 /*    background: linear-gradient(180deg, #1f2021 0%, #181918 100%);*/
@@ -23,17 +23,20 @@ li a{
 }
 p{
     font-size: 1rem;
+    line-height: 1.5rem;
     margin: 0;
 }
 li{
-    font-size: 0.75rem;
+    
+}
+h1,h2,h3,h4{
+   font-family: 'Raleway', sans-serif; 
 }
 h1{
-font-family: 'Raleway', sans-serif;
     font-size: 1.333rem;
 }
 h2{
-   font-family: 'Raleway', sans-serif;
+   
     font-size: 1rem;
     margin: 0.5rem 0;
     font-weight: 800;
@@ -43,6 +46,9 @@ p{
     font-weight: 300;
     font-size: 1rem;
     line-height: 1.5rem;
+}
+p strong{
+    font-weight: 500;
 }
 .social{
     margin: 0.3rem;
@@ -61,12 +67,13 @@ p{
 }
 
 
+
 /**Nav Css**/
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 9998;
     transition: all 0.5s ease-in-out;
 }
 
@@ -80,7 +87,7 @@ nav ul {
 
 nav li {
   float: left;
-    font-size: 0.75rem;
+    font-size: 1rem;
     margin: 1rem 1rem;
 }
 
@@ -89,12 +96,14 @@ nav li a {
   color: white;
   text-align: center;
  
-    padding: 0.1rem;
+    padding:  0.2rem 0;
   text-decoration: none;
-    font-weight: 100;
+    font-weight: 300;
     
     cursor: pointer;
 }
+
+/**Side Nav **/
 
 .navFocus{
    cursor: pointer;
@@ -110,8 +119,8 @@ nav li a {
 .navFocus:before {
     content: "";
   position: absolute;
-  z-index: -1;
-  top: 1rem;
+  z-index: 9999;
+  top: 1.4rem;
   left: 0rem;
   right: 0rem;
   bottom: 0;
@@ -148,9 +157,17 @@ nav li a {
   color: #000 !important;
 font-weight: 300;
 }
+.navLogo{
+    vertical-align: middle;
+    width: 1rem;
+    cursor: pointer;
+}
 
 
 
+.fullImg {
+    width: 100%;
+}
 
 
 
@@ -306,6 +323,9 @@ font-weight: 300;
 .breathlg{
     margin-top: 4.209rem;
 }
+.breathxlg{
+    margin-top: 7.478rem;
+}
 .navHover{
     padding-left: 3.4vw;
 }
@@ -358,6 +378,16 @@ nav a:hover:before{
 
 }
 */
+.gridBkg{
+    background: #fff; color: black;  background-image: linear-gradient(rgba(230, 230, 230, .2) .1em, transparent .1em), linear-gradient(90deg, rgba(230, 230, 230, .2) .1em, transparent .1em);background-size: 3em 3em;
+}
+.headingTxt{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.333rem;
+    line-height: 2.441rem;
+    font-weight: 300;
+}
+
 .pfTitle{
     font-size: 4.209rem;;
     color: #fff;
@@ -560,18 +590,24 @@ nav a:hover:before{
     text-transform: uppercase;
 */
 }
-.descSpace{
-    margin-top: 1.5rem;
+.secTitleMd{
+    display: inline-block; 
+    font-size: 2.369rem;
+    margin: 0px;
+    color: #222;
 }
 .secTitleSm{
     font-size: 0.75rem;
-    margin:   0;
-    font-weight: 300;
     text-transform: uppercase;
+    font-weight: 300;
+    margin: 0;
+
+    
 }
-.topDesc{
-    line-height: 1.5rem;
+.descSpace{
+    margin-top: 1.5rem;
 }
+
 
 #subIntro{
     opacity: 0;
@@ -598,76 +634,7 @@ nav a:hover:before{
     
 }
 
-/*
-.line{
-    width: 100%;
-        height: 10rem;
-        border-bottom: 1rem solid #F1E678;
-        -webkit-transform:
-            translateX(-0%)
-            rotate(20deg); 
-        position: absolute;
-     
-       
-}.line2{
-    width: 100%;
-        height: 11rem;
-        border-bottom: 1rem solid #EC905F;
-        -webkit-transform:
-            translateX(-0%)
-            rotate(20deg); 
-        position: absolute;
-     
-        
-}.line3{
-    width: 100%;
-        height: 12rem;
-        border-bottom: 1rem solid #BF406B;
-        -webkit-transform:
-            translateX(-0%)
-            rotate(20deg); 
-        position: absolute;
-     
-        
-}
-*/
 
-/*
-.line1 {
-        width: 70rem;
-        height: 100%;
-        border-bottom: 1rem solid #FE1942;
-        -webkit-transform:
-            translateY(-10vw)
-            translateX(10rem)
-            rotate(55deg); 
-        position: absolute;
-    z-index: -1;
-    }
-
- .line2 {
-        width: 70rem;
-        height: 100%;
-        border-bottom: 1rem solid #009B26;
-        -webkit-transform:
-            translateY(-10vw)
-            translateX(11rem)
-            rotate(55deg); 
-        position: absolute;
-     z-index: -1;
-    }
-.line3 {
-        width: 70rem;
-        height: 100%;
-        border-bottom: 1rem solid #0085E2;
-        -webkit-transform:
-            translateY(-10vw)
-            translateX(12rem)
-            rotate(55deg); 
-        position: absolute;
-    z-index: -1;
-    }
-*/
 .tabcontent{
     position: absolute;
     opacity: 0;
@@ -675,30 +642,99 @@ nav a:hover:before{
     
 }
 .tablinks{
-/*
-    background: #000;
-    color: #fff;
-*/
+
     
 }
 .tablinks h1{
     font-weight: 700;
 }
 
+/** -------- Merged CSS -------- **/
+
+
+.topDesc{
+    font-size: 1rem;
+     margin-bottom: 1.5rem;
+    
+}
+
+.topDesc p{
+   
+}
+.breath{
+    margin-top: 8rem;
+}
+.breath2{
+    margin-top: 4rem;
+}
+
+.pfBut:hover{
+
+    background: #000000;
+    cursor: pointer;
+}
+.pfPiece {
+    padding: 20px 20px;
+    transition: box-shadow .3s;
+    opacity: 1;
+/*    transition: visibility 0s linear 300ms, opacity 300ms;*/
+    height: fit-content;
 /*
-.workDiv2 {
-  -webkit-clip-path: polygon(37% 0, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(37% 0, 100% 0, 100% 100%, 17% 100%);
-    background-color: #ff0000;
-}
-.workDiv3 {
-  -webkit-clip-path: polygon(39% 0, 100% 0, 100% 96%, 0 100%);
-  clip-path: polygon(39% 0, 100% 0, 100% 100%, 19% 100%);
-    background-color: #0e3bf8;
-}
-.workDiv4 {
-  -webkit-clip-path: polygon(41% 0, 100% 0, 100% 100%, 21%  100%);
-  clip-path: polygon(41% 0, 100% 0, 100% 100%, 21% 100%);
-    background-color: #ffffff;
-}
+    border: 1px solid #eee;
+    border-radius: 4px;
 */
+}
+
+.pfPiece h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.pfPiece img {
+    width: 100%;
+}
+
+.pfPiece:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(33,33,33,.2) !important;
+     border-radius: 4px;
+    
+}
+
+
+
+
+
+.navLogo {
+    width: 1rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+.sectionTitle{
+    font-weight: 500;
+    font-size: 0.67rem;
+    text-transform: uppercase;
+    color: #2d2f33;
+        margin-top: 0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.sectionTitle2{
+    font-weight: 300;
+    font-size: 0.81rem;
+    text-transform: uppercase;
+    color: #2d2f33;
+        margin-top: 2rem;
+}
+.sectionTitle3{
+    font-weight: 700;
+    font-size: 1.953rem;
+    color: #2d2f33;
+    margin-top: 1rem;
+}
+
+.citingLink{
+    color: #489ad6;
+}

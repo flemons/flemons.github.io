@@ -1,0 +1,78 @@
+/*!
+ * Bootstrap Table of Contents v1.0.1 (http://afeld.github.io/bootstrap-toc/)
+ * Copyright 2015 Aidan Feldman
+ * Licensed under MIT (https://github.com/afeld/bootstrap-toc/blob/gh-pages/LICENSE.md) */
+nav[data-toggle=toc] .nav > li > a {
+    display: block;
+    padding: 0.1rem 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #767676;
+    text-align: left !important;
+    
+}
+
+nav[data-toggle=toc] .nav > li > a:focus,
+nav[data-toggle=toc] .nav > li > a:hover {
+    padding-left: 1.1rem;
+    color: #682A6E;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 2px solid #682A6E
+}
+
+nav[data-toggle=toc] .nav-link.active,
+nav[data-toggle=toc] .nav-link.active:focus,
+nav[data-toggle=toc] .nav-link.active:hover {
+    padding-left: 18px;
+    font-weight: 700;
+    color: #682A6E;
+    background-color: transparent;
+    border-left: 2px solid #682A6E
+}
+
+nav[data-toggle=toc] .nav-link + ul {
+    display: none;
+    padding-bottom: 10px
+}
+
+nav[data-toggle=toc] .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 2rem;
+    font-size: 12px;
+    font-weight: 400;
+    
+}
+
+nav[data-toggle=toc] .nav .nav > li  {
+    float: none !important;
+}
+
+nav[data-toggle=toc] .nav .nav > li > a:focus,
+nav[data-toggle=toc] .nav .nav > li > a:hover {
+    padding-left: 2rem
+}
+
+nav[data-toggle=toc] .nav .nav > li > .active,
+nav[data-toggle=toc] .nav .nav > li > .active:focus,
+nav[data-toggle=toc] .nav .nav > li > .active:hover {
+    padding-left: 2rem;
+    font-weight: 500
+}
+
+nav[data-toggle=toc] .nav-link.active + ul {
+    display: block
+}
+#toc{
+    position: fixed;
+    left: 0;
+    top: 3rem;
+    max-width: 16.666667%;
+    text-align: left !important;
+    
+}
+.nav li{
+    margin: 0.5rem 0 ;
+    width: 100%;
+}
