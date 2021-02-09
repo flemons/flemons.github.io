@@ -15,10 +15,10 @@ nav[data-toggle=toc] .nav > li > a {
 nav[data-toggle=toc] .nav > li > a:focus,
 nav[data-toggle=toc] .nav > li > a:hover {
     padding-left: 1.1rem;
-    color: #682A6E;
+    color: #2e2e2e ;
     text-decoration: none;
     background-color: transparent;
-    border-left: 2px solid #682A6E
+    border-left: 1px solid #2e2e2e 
 }
 
 nav[data-toggle=toc] .nav-link.active,
@@ -26,14 +26,14 @@ nav[data-toggle=toc] .nav-link.active:focus,
 nav[data-toggle=toc] .nav-link.active:hover {
     padding-left: 18px;
     font-weight: 700;
-    color: #682A6E;
+    color: #2e2e2e ;
     background-color: transparent;
-    border-left: 2px solid #682A6E
+    border-left: 1px solid #2e2e2e 
 }
 
 nav[data-toggle=toc] .nav-link + ul {
     display: none;
-    padding-bottom: 10px
+    
 }
 
 nav[data-toggle=toc] .nav .nav > li > a {
