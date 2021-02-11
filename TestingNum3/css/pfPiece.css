@@ -416,3 +416,22 @@ button{
 }
 
 
+.quote{
+   font-size: 2.659rem;
+    background: linear-gradient(90deg, #EC905F 0%, #F1E678 100%);
+    margin-bottom: 1rem;
+    line-height: 2.559rem;
+    
+}
+.quoteSub{
+    margin-left: 1rem;
+}
+.challengeState{
+   font-size: 2.659rem;
+/*    background: linear-gradient(90deg, #682A6E 0%, #BF406B 100%);*/
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700
+    
+}
