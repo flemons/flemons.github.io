@@ -1,3 +1,12 @@
+p a{
+    color: #EC905F !important;
+    font-weight: 600;
+}
+.lineLink{
+    color: #EC905F !important;
+    font-weight: 600;
+}
+
 .landImg{
     width: 100%;
     margin-top: 3rem; 
@@ -38,9 +47,15 @@
 .modal{
     z-index: 999;
 }
+
+
 .projTitle{
-    font-size: 2.441rem;
+    font-size: 2.369rem;
     margin-bottom: 0px;
+}
+.stepTitle{
+    font-size: 1.777rem;
+    margin: 0px;
 }
 .borderBot {
     margin-top: 15px;
@@ -54,10 +69,6 @@
 
     margin-top: 0.5rem;
     font-weight: 700;
-}
-.projTitleM{
-    font-size:  3.052rem;
-    margin: 0px;
 }
 .projDesc{
     font-size: 1.44rem;
@@ -121,7 +132,6 @@
 .cState2{
     background-image: url(/img/dataVis/cstate.png);
     background-size: cover;
-    min-height: 40vh;
 }
 .cState3{
     background-image: url(/img/bonci/cState.png);
@@ -232,9 +242,11 @@
     font-size: 1.2rem;
     font-weight: 700;
 }
+/*
 .section{
-  margin-top: 5%;  
+  margin-top: 30vh;  
 }
+*/
 .footer{
 }
 .contactFix{
@@ -410,4 +422,25 @@ button{
   .modal-lg {
     max-width: 800px;
   }
+}
+
+
+.quote{
+   font-size: 2.659rem;
+    background: linear-gradient(90deg, #EC905F 0%, #F1E678 100%);
+    margin-bottom: 1rem;
+    line-height: 2.559rem;
+    
+}
+.quoteSub{
+    margin-left: 1rem;
+}
+.challengeState{
+   font-size: 2.659rem;
+/*    background: linear-gradient(90deg, #682A6E 0%, #BF406B 100%);*/
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700
+    
 }
