@@ -261,7 +261,7 @@ font-weight: 300;
 
 .subPar{
     font-weight: 100;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     margin: 2rem 0px;
     line-height: 1.12rem;
     display: inline-block;
@@ -598,7 +598,7 @@ nav a:hover:before{
     color: #222;
 }
 .secTitleSm{
-    font-size: 0.75rem;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 300;
     margin: 0;
