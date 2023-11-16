@@ -1,0 +1,58 @@
+<svg width="2000" height="500" viewBox="0 0 2000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="2000" height="500" rx="8" fill="#0D0C0B"/>
+<rect x="667" y="80" width="388.571" height="340" rx="25.9048" fill="#FFF9F0"/>
+<rect x="683.191" y="96.1904" width="222.619" height="24.2857" rx="12.1429" fill="#ADA79E"/>
+<rect x="683.191" y="128.571" width="121.429" height="8.09524" rx="4.04762" fill="#C7C1B7"/>
+<rect x="683.191" y="140.714" width="105.238" height="8.09524" rx="4.04762" fill="#C7C1B7"/>
+<rect x="683.191" y="152.857" width="129.524" height="8.09524" rx="4.04762" fill="#C7C1B7"/>
+<rect x="683.191" y="193.333" width="64.7619" height="64.7619" fill="#8C8115"/>
+<rect x="756.049" y="193.333" width="64.7619" height="64.7619" fill="#BFB443"/>
+<rect x="828.906" y="193.333" width="64.7619" height="64.7619" fill="#F1E678"/>
+<rect x="901.764" y="193.333" width="64.7619" height="64.7619" fill="#F7F1AD"/>
+<rect x="974.619" y="193.333" width="64.7619" height="64.7619" fill="#FCFAE3"/>
+<rect x="683.191" y="266.19" width="64.7619" height="64.7619" fill="#873408"/>
+<rect x="756.049" y="266.19" width="64.7619" height="64.7619" fill="#BA5E2D"/>
+<rect x="828.906" y="266.19" width="64.7619" height="64.7619" fill="#EC905F"/>
+<rect x="901.764" y="266.19" width="64.7619" height="64.7619" fill="#F2B391"/>
+<rect x="974.619" y="266.19" width="64.7619" height="64.7619" fill="#F7D7C6"/>
+<rect x="683.191" y="339.047" width="64.7619" height="64.7619" fill="#590D27"/>
+<rect x="756.049" y="339.047" width="64.7619" height="64.7619" fill="#8C2347"/>
+<rect x="828.906" y="339.047" width="64.7619" height="64.7619" fill="#BF406B"/>
+<rect x="901.764" y="339.047" width="64.7619" height="64.7619" fill="#D97798"/>
+<rect x="974.619" y="339.047" width="64.7619" height="64.7619" fill="#F2B6CA"/>
+<g clip-path="url(#clip0_275_15448)">
+<rect x="1087.95" y="80" width="244.881" height="91.0714" rx="25.9048" fill="#FFF9F0"/>
+<rect width="91.0714" height="91.0714" transform="translate(1087.95 80)" fill="#FFF9F0"/>
+<path d="M1130.14 105.291H1137.16L1152.7 146.143H1144.53L1140.73 135.959H1126.46L1122.72 146.143H1114.55L1130.14 105.291ZM1139.29 130.377L1133.65 114.325L1127.78 130.377H1139.29Z" fill="#423E3A"/>
+<rect x="1195.22" y="101.25" width="44.5238" height="16.1905" rx="8.09524" fill="#ADA79E"/>
+<rect x="1195.22" y="125.536" width="121.429" height="8.09524" rx="4.04762" fill="#ADA79E"/>
+<rect x="1195.22" y="141.727" width="105.238" height="8.09524" rx="4.04762" fill="#ADA79E"/>
+</g>
+<g clip-path="url(#clip1_275_15448)">
+<rect x="1087.95" y="204.464" width="244.881" height="91.0714" rx="25.9048" fill="#FFF9F0"/>
+<rect width="91.0714" height="91.0714" transform="translate(1087.95 204.464)" fill="#FFF9F0"/>
+<path d="M1135.26 237.743L1125.1 265.714H1120.95L1132.64 235.024H1135.32L1135.26 237.743ZM1143.77 265.714L1133.59 237.743L1133.53 235.024H1136.21L1147.95 265.714H1143.77ZM1143.25 254.353V257.683H1126V254.353H1143.25Z" fill="#423E3A"/>
+<rect x="1195.22" y="225.714" width="50.5952" height="16.1905" rx="8.09524" fill="#ADA79E"/>
+<rect x="1195.22" y="250" width="105.238" height="8.09524" rx="4.04762" fill="#ADA79E"/>
+<rect x="1195.22" y="266.19" width="97.1429" height="8.09524" rx="4.04762" fill="#ADA79E"/>
+</g>
+<g clip-path="url(#clip2_275_15448)">
+<rect x="1087.95" y="328.929" width="244.881" height="91.0714" rx="25.9048" fill="#FFF9F0"/>
+<rect width="91.0714" height="91.0714" transform="translate(1087.95 328.929)" fill="#FFF9F0"/>
+<path d="M1134.8 367.574L1129.08 383.31H1126.75L1133.33 366.044H1134.84L1134.8 367.574ZM1139.59 383.31L1133.86 367.574L1133.83 366.044H1135.33L1141.94 383.31H1139.59ZM1139.29 376.918V378.792H1129.59V376.918H1139.29Z" fill="#423E3A"/>
+<rect x="1195.22" y="350.179" width="28.3333" height="16.1905" rx="8.09524" fill="#ADA79E"/>
+<rect x="1195.22" y="374.465" width="121.429" height="8.09524" rx="4.04762" fill="#ADA79E"/>
+<rect x="1195.22" y="390.655" width="113.333" height="8.09524" rx="4.04762" fill="#ADA79E"/>
+</g>
+<defs>
+<clipPath id="clip0_275_15448">
+<rect x="1087.95" y="80" width="244.881" height="91.0714" rx="25.9048" fill="white"/>
+</clipPath>
+<clipPath id="clip1_275_15448">
+<rect x="1087.95" y="204.464" width="244.881" height="91.0714" rx="25.9048" fill="white"/>
+</clipPath>
+<clipPath id="clip2_275_15448">
+<rect x="1087.95" y="328.929" width="244.881" height="91.0714" rx="25.9048" fill="white"/>
+</clipPath>
+</defs>
+</svg>

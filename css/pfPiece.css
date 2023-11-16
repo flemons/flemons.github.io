@@ -1,6 +1,6 @@
 p a{
-    color: #EC905F !important;
-    font-weight: 600;
+    color: #BF406B !important;
+    font-weight: 500;
 }
 .lineLink{
     color: #EC905F !important;
@@ -47,8 +47,6 @@ p a{
 .modal{
     z-index: 999;
 }
-
-
 .projTitle{
     font-size: 2.369rem;
     margin-bottom: 0px;
@@ -125,18 +123,41 @@ p a{
     max-height: 40vh;
 }
 .cState{
+/*
     background-image: url(/img/glance/cState.jpg);
     background-size: cover;
     min-height: 40vh;
+*/
+    background-color:  #0D0C0B;
+}
+.cState h2{
+    margin: 0rem 0rem 0rem 1rem;
+    color: #FFF9F0;
 }
 .cState2{
+/*
     background-image: url(/img/dataVis/cstate.png);
     background-size: cover;
+*/
+    background-color:  #0D0C0B;
 }
+.cState2 h2{
+    margin: 1rem;
+    color: #FFF9F0;
+}
+
 .cState3{
+/*
     background-image: url(/img/bonci/cState.png);
     background-size: cover;
     min-height: 40vh;
+*/
+    background-color:  #0D0C0B;
+    
+}
+.cState3 h2{
+    margin: 0rem 0rem 0rem 1rem;
+    color: #FFF9F0;
 }
 .cState4{
     background-image: url(/img/onTrack/cState.png);
@@ -159,13 +180,16 @@ p a{
     min-height: 40vh;
 }
 .cState8{
-    background-image: url(/img/integrateAi/IAIProj1/integrateStock.jpg);
+/*
+    background-image: url(/img/breakImg/1.png);
     background-size: cover;
-    min-height: 40vh;
+*/
+/*    min-height: 40vh;*/
+    background-color: #0D0C0B;
 }
-.cState8 h1{
-    background-color: #fff;
-    padding: 15px;
+.cState8 h2{
+    margin: 1rem;
+    color: #FFF9F0;
 }
 
 .cState9{
@@ -202,18 +226,8 @@ p a{
     background-color: #fff;
     padding: 15px;
 }
-.cState h1{
-    background-color: #fff;
-    padding: 15px;
-}
-.cState2 h1{
-    background-color: #fff;
-    padding: 15px;
-}
-.cState3 h1{
-    background-color: #fff;
-    padding: 15px;
-}
+
+
 .cState4 h1{
     background-color: #fff;
     padding: 15px;
@@ -248,6 +262,7 @@ p a{
 }
 */
 .footer{
+    margin-bottom: 2rem;
 }
 .contactFix{
     position: fixed;
