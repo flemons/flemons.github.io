@@ -132,7 +132,7 @@ p a{
 }
 .cState h2{
     margin: 0rem 0rem 0rem 1rem;
-    color: #FFF9F0;
+    color: #FFF;
 }
 .cState2{
 /*
@@ -143,7 +143,7 @@ p a{
 }
 .cState2 h2{
     margin: 1rem;
-    color: #FFF9F0;
+    color: #FFF;
 }
 
 .cState3{
@@ -157,7 +157,7 @@ p a{
 }
 .cState3 h2{
     margin: 0rem 0rem 0rem 1rem;
-    color: #FFF9F0;
+    color: #FFF;
 }
 .cState4{
     background-image: url(/img/onTrack/cState.png);
@@ -189,7 +189,7 @@ p a{
 }
 .cState8 h2{
     margin: 1rem;
-    color: #FFF9F0;
+    color: #FFF;
 }
 
 .cState9{
