@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" id="document">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Tag Manager -->
-
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -82,35 +82,31 @@
             var x, i;
             x = document.getElementsByClassName("filterDiv");
             for (i = 0; i < x.length; i++) {
-                if(x[i].classList.contains(c)){
+                if (x[i].classList.contains(c)) {
                     x[i].classList.remove("hide");
-                }
-
-                else if (c == "all"){
+                } else if (c == "all") {
                     x[i].classList.remove("hide");
-                }
-                else{
+                } else {
                     x[i].classList.add("hide");
                 }
-                
+
             }
-                if(c == "manage"){
-                    document.getElementById("q4Head").classList.add("hide");
-                }
-            else{
+            if (c == "manage") {
+                document.getElementById("q4Head").classList.add("hide");
+            } else {
                 document.getElementById("q4Head").classList.remove("hide");
             }
 
         }
-        
+
         function filterProj(elem) {
             var j, y;
             y = document.getElementsByClassName("filterProj");
             console.log(y.length);
             for (j = 0; j < y.length; j++) {
-        // Remove the class 'active' if it exists
-        y[j].classList.remove('filterProjAct');
-    }
+                // Remove the class 'active' if it exists
+                y[j].classList.remove('filterProjAct');
+            }
             elem.classList.add('filterProjAct');
         }
     </script>
@@ -144,7 +140,7 @@
         </div>
         <div id="subIntro" style="">
             <p class="subPar" style="width: 35%;"><strong>Boisterious, bearded, Barrett!</strong></p>
-            <p class="subPar" style="width: 60%; float: right;">Product designer, user researcher,<br> design system wizard, and <strong class="gradTxt">car obsessor</strong>.</p>
+            <p class="subPar" style="width: 60%; float: right;">Product designer, user researcher,<br> design system wizard, and <a href="https://www.instagram.com/barrettflemons/?hl=en" target=”_blank”><strong class="gradTxt">car obsessor</strong></a>.</p>
 
             <div class="arrow"><a href="#work"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <defs>
@@ -163,6 +159,7 @@
             <div class="col-sm-auto breathsm" style=" ">
                 <h1>WORK</h1>
             </div>
+            <!--
             <div class="d-none d-sm-block col-sm-auto breathsm" style=" ">
                 <a class="filterProj " onclick="filterWork('all'); filterProj(this)">All</a>
             </div>
@@ -175,6 +172,7 @@
             <div class="d-none d-sm-block col-sm-auto breathsm" style=" ">
                 <a class="filterProj " onclick="filterWork('manage'); filterProj(this)">Management</a>
             </div>
+-->
             <div class="d-none d-sm-block col breathsm">
                 <hr>
             </div>
@@ -192,103 +190,20 @@
                 <h3>Geotab</h3>
             </div>
             <div class="col-sm-auto" style=" ">
-                <p>2021 - 2023</p>
+                <p>2021 - Present</p>
             </div>
             <div class="col">
                 <hr>
             </div>
         </div>
         <div class="row" style="margin-left: 2rem; margin-right: 2rem;">
-            <div class="col-sm-3 col-12 filterDiv process">
-                <a class="pfLink" href="/CentralizingSafety/">
-                    <img src="/img/thumbnails/safety.svg" style="vertical-align: middle; width: 100%;" />
-                    <p class="breathsm body-01"><strong>Centralizing safety</strong></p>
-                    <p class="body3" style="text-align: left">Making a one stop shop for all things safety.</p>
-                    <div class="pfHide container-flex ">
-                        <div class="row d-flex  align-items-center">
 
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">6 months</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Product design | UXR</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Design process</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-<!--
-            <div class="col-sm-3 col-12 filterDiv process">
-                <a class="pfLink" href="DefiningAnAsset/">
-                    <img src="img/thumbnails/assets.svg" style="vertical-align: middle; width: 100%; " />
-
-                    <p class="breathsm body-01"><strong>Defining an asset</strong></p>
-                    <p class="body3" style="text-align: left">Future-proofing the concept of a fleet asset.</p>
-                    <div class="pfHide container-flex ">
-
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">14 months</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Product design | UXR</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Design process</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-
-                </a>
-            </div>
--->
             <div class="col-sm-3 col-12 filterDiv ds manage">
                 <a class="pfLink" href="/UnitingDesignSystems/">
-                    <img src="/img/thumbnails/uniting.svg" style="vertical-align: middle; width: 100%;"/>
-                    <p class="breathsm body-01"><strong>Uniting design systems</strong></p>
-                    <p class="body3" style="text-align: left">Consolidating 6 independent design systems.</p>
+                    <img src="/img/thumbnails/uniting.svg" style="vertical-align: middle; width: 100%;" />
+                    <p class="breathsm body-01"><strong>Uniting systems</strong></p>
+                    <p class="body3" style="text-align: left">Consolidating 6 unique design systems.</p>
                     <div class="pfHide container-flex ">
-                        <div class="row d-flex  align-items-center">
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">12 months</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
                         <div class="row d-flex  align-items-center">
 
                             <div class="col-sm-auto" style=" ">
@@ -313,19 +228,9 @@
             <div class="col-sm-3 col-12 filterDiv ds manage">
                 <a class="pfLink" href="/RedefiningPatterns/">
                     <img src="/img/thumbnails/patterns.svg" style="vertical-align: middle; width: 100%; " />
-                    <p class="breathsm body-01"><strong>Redefining patterns</strong></p>
+                    <p class="breathsm body-01"><strong>Defining patterns</strong></p>
                     <p class="body3" style="text-align: left">Rethinking the atomic design systems model.</p>
                     <div class="pfHide container-flex ">
-
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">10 months</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
                         <div class="row d-flex  align-items-center">
 
                             <div class="col-sm-auto" style=" ">
@@ -348,6 +253,32 @@
 
                 </a>
             </div>
+            <div class="col-sm-3 col-12 filterDiv process">
+                <a class="pfLink" href="/CentralizingSafety/">
+                    <img src="/img/thumbnails/safety.svg" style="vertical-align: middle; width: 100%;" />
+                    <p class="breathsm body-01"><strong>Centralizing safety</strong></p>
+                    <p class="body3" style="text-align: left">Making a one stop shop for all things safety.</p>
+                    <div class="pfHide container-flex ">
+                        <div class="row d-flex  align-items-center">
+                            <div class="col-sm-auto" style=" ">
+                                <p class="caption-01">Product design | UXR</p>
+                            </div>
+                            <div class="col d-none d-md-block">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row d-flex  align-items-center">
+
+                            <div class="col-sm-auto" style=" ">
+                                <p class="caption-01">Design process</p>
+                            </div>
+                            <div class="col d-none d-md-block">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
         <div id="q4Head" class="row d-flex  align-items-center breathmd">
 
@@ -362,61 +293,13 @@
             </div>
         </div>
         <div class="row" style="margin-left: 2rem; margin-right: 2rem;">
-            <div class="col-sm-3 col-12 filterDiv process">
-                <a class="pfLink" href="/LiveConferencingQandA/">
-                    <img src="/img/thumbnails/qanda.svg" style="vertical-align: middle; width: 100%; " />
-
-                    <p class="breathsm body-01"><strong>Live conferencing Q&#38;A</strong></p>
-                    <p class="body3" style="text-align: left">Enabling Q&#38;A for remote shareholder meetings.</p>
-                    <div class="pfHide container-flex ">
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">4 weeks</p>
-                            </div>
-                            <div class="col">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Product design | UXR</p>
-                            </div>
-                            <div class="col">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Design process</p>
-                            </div>
-                            <div class="col">
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </a>
-            </div>
             <div class="col-sm-3 col-12 filterDiv ds">
                 <a class="pfLink" href="/SketchToFigma/">
                     <img src="/img/thumbnails/transition.svg" style="vertical-align: middle; width: 100%; " />
 
-                    <p class="breathsm body-01"><strong>From Sketch to Figma</strong></p>
+                    <p class="breathsm body-01"><strong>Sketch to Figma</strong></p>
                     <p class="body3" style="text-align: left">Migrating a company from Sketch to Figma</p>
                     <div class="pfHide container-flex ">
-
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">1 month</p>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
                         <div class="row d-flex  align-items-center">
 
                             <div class="col-sm-auto" style=" ">
@@ -440,56 +323,27 @@
 
                 </a>
             </div>
-
-        </div>
-<!--
-        <div class="row d-flex align-items-center breathmd">
-
-            <div class="col-sm-auto" style=" ">
-                <h3>integrate.ai</h3>
-            </div>
-            <div class="col-sm-auto" style=" ">
-                <p>2018 - 2020</p>
-            </div>
-            <div class="col">
-                <hr>
-            </div>
-        </div>
--->
-<!--
-        <div class="row" style="margin-left: 2rem; margin-right: 2rem;">
             <div class="col-sm-3 col-12 filterDiv process">
-                <a class="pfLink" href="DefiningAnAiProduct/">
-                    <img src="/img/thumbnails/define.svg" style="vertical-align: middle; width: 100%; " />
+                <a class="pfLink" href="/LiveConferencingQandA/">
+                    <img src="/img/thumbnails/qanda.svg" style="vertical-align: middle; width: 100%; " />
 
-                    <p class="breathsm body-01"><strong>Defining a product</strong></p>
-                    <p class="body3" style="text-align: left">Rapidly iterating a first pass of the integrate.ai product.</p>
+                    <p class="breathsm body-01"><strong>Live Q&#38;A</strong></p>
+                    <p class="body3" style="text-align: left">Enabling Q&#38;A for remote shareholder meetings.</p>
                     <div class="pfHide container-flex ">
-
                         <div class="row d-flex  align-items-center">
 
                             <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">2 months</p>
+                                <p class="caption-01">Product design | UXR</p>
                             </div>
-                            <div class="col d-none d-md-block">
+                            <div class="col">
                                 <hr>
                             </div>
                         </div>
                         <div class="row d-flex  align-items-center">
-
                             <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Product designer</p>
+                                <p class="caption-01">Design process</p>
                             </div>
-                            <div class="col d-none d-md-block">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Conventional design process</p>
-                            </div>
-                            <div class="col d-none d-md-block">
+                            <div class="col">
                                 <hr>
                             </div>
                         </div>
@@ -499,49 +353,8 @@
                 </a>
             </div>
 
-            <div class="col-sm-3 col-12 filterDiv process">
-                <a class="pfLink" href="ProductMarketFit/">
-                    <img src="img/thumbnails/fit.svg" style="vertical-align: middle; width: 100%; " />
-                    <p class="breathsm body-01"><strong>Product market fit</strong></p>
-                    <p class="body3" style="text-align: left">Defining where we fit in the emerging AI world.</p>
-                    <div class="pfHide container-flex ">
-
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">10 months</p>
-                            </div>
-                            <div class="col line">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">User researcher</p>
-                            </div>
-                            <div class="col line">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row d-flex  align-items-center">
-
-                            <div class="col-sm-auto" style=" ">
-                                <p class="caption-01">Conventional design process</p>
-                            </div>
-                            <div class="col line">
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </a>
-            </div>
 
         </div>
--->
-
         <div class="row breathmd"></div>
     </div>
     <div class="container-fluid" style="background: url('/img/Bkg.svg') ; background-repeat: no-repeat; background-size: cover; color: black; min-height: 100vh; " id="about">
@@ -556,16 +369,14 @@
         </div>
         <div class="row breathmd">
             <div class="col"></div>
-            <div class="col-md-4 col-12" style="margin-bottom: 2rem; background-color: #fff">
-                <p class="headingTxt body-01">
-                    With 6+ years experience as an IC and team leader, in both enterprise and startups, I'm no stranger to a challenge.
-<br><br>
-Give me your fresh takes, your black boxes, and my experience in development and research will find any way to break down walls and bring us to the solution that's <em>worth</em> building.<br><br>
+            <div class="col-md-4 col-12" style="padding-bottom: 2rem; background-color: #fff">
+                <p class="headingTxt">
+                    With 7+ years experience as an IC and team lead, in both enterprise and startups, I'm no stranger to a challenge.
+                    <br><br>
+                    Give me your fresh takes, your black boxes, and my experience in development and research will find any way to break down walls and bring us to the solution that's <em>worth</em> building.<br><br>
 
-Personally I'm always looking to learn new hobbies and skills. Currently I'm practicing 3D drawing and digital illustration, while exploring design systems and their future with AI. <br><br>
-
-Reach out to me if you'd like to chat!<br><br>
-(Perhaps over pizza 👀)
+                    Reach out to me if you'd like to chat!<br><br>
+                    (Perhaps over pizza 👀)
 
 
                 </p>
@@ -620,8 +431,5 @@ Reach out to me if you'd like to chat!<br><br>
         </div>
         <div class="row breathmd"></div>
     </div>
-     
+
 </body></html>
-
-
-
