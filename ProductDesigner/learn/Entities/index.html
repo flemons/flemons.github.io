@@ -50,20 +50,25 @@
 
                     Probably even in your pocket. They just might not be immediately apparent.
                 </p>
-                <img>
+                <img src="/img/learn/entities/ARImage.jpg" class="fullWidth">
 
-                <p class="content">Entities are <strong>“data objects”</strong> that represent a documented item within a catalog. Specifically, groups of data that can easily distinguish objects from one another, and amongst themselves. Those of you in the know may recognize some terms I am using here are pulled from Ontologies, and you'd be exactly correct
+                <p class="content">Entities came about in my work as a means to further a product's consistency. <strong>Users were finding that they couldn't easily recognize two objects from one another.</strong> It almost always required a user to dig a layer or two deeper before they realized they were looking at the wrong object.
                 </p>
-                <img>
+                <figure><img src="/img/learn/entities/complicatedTable.png" class="fullWidth">
+
+                    <figcaption>Source: Nielson Norman Group</figcaption>
+                </figure>
                 <p class="content">This is especially relevant for platforms that allow for much user modularity, as well as generative AI that seeks to clearly inform and distinguish. Users want to recognize what they are looking at, regardless of context.</p>
                 <h4>But what are entities?</h4>
-                <p class="content">Entities are <strong>“data objects”</strong> that represent a documented item within a catalog. Specifically, groups of data that can easily distinguish data objects from one another. Those of you in the know may recognize some terms I am using here are pulled from Ontologies, and you'd be exactly correct<br><br>
+                <p class="content">Entities are <strong>“data objects”</strong> that represent a documented item within a catalog. Specifically, an entity makes up how a object is defined and relates to it's peers, along with other objects. Those of you in the know may recognize some terms I am using here are pulled from Ontologies, and you'd be exactly correct<br><br>
 
                     I ain't inventing nothing, just making it more visually repeatable.<br><br>
 
                     In practice, entities are less UI components and more documentation. A completed entity defines the minimum standards for an object, it's optional data, as well as how it relates to others. Here's a simple example:
                 </p>
-                <img>
+                <img src="/img/learn/entities/basicOntology.png" class="fullWidth" style="box-shadow: none">
+
+
                 <h4>How do you build them</h4>
                 <p class="content">Development and data science are critical for this work, and should be partners in all entity definitions. Engage with and learn how your company's data is structured, and the specifics around the objects in your product. Users however are the ones ultimately impacted by your decisions, so make sure to cater your entity definition to them.<br><br>
                     Decide on one data object that is most fundamental to your product/feature/business. The goal here is being able to draw your entity, as complex as possible. Most critically you should have a deep understanding of:</p>
@@ -71,25 +76,32 @@
                     <li><strong>What are the key identifiers of your chosen object(s)?</strong> What are the qualities/data that <em>only</em> this object has, that distinguishes it from other objects (and other of the same object type) in the system. Some examples include names, id’s, invoice numbers etc..<br><br>
 
                         Make sure to understand it primarily from a user's perspective. Sometimes like in the case of my previous work, we needed <em>two</em> unique identifiers as names were sometimes reused, so we included “type” as another key identifier. Those building with databases will think of this as the “primary key”, but remember, <strong>users don’t read databases.</strong></li>
-                    <img>
+                    <img src="/img/learn/entities/MinimumIdentifiers.png" class="fullWidth" style="margin: 2rem 0; box-shadow: none">
                     <li><strong>How does your primary object relate to other objects?</strong> Are certain object combinations commonly used to accomplish a task? Are two objects closely related? Are they completely different?<br><br>
-                        Think through the key object and its relationships. You may discover certain objects have a co-dependency on one another, this can be a potential area of simplification when you refine your entities (as an entity does not need to match a database 1 to 1).</li>
-                    <img>
+                        Think through the key object and its relationships. You may discover certain objects have a co-dependency on one another, this can be a potential area of simplification when you refine your entities (as an entity does not need to match a database 1 to 1). <strong>An object has to be able to exist without relationships to be an object, otherwise it is data.</strong></li>
+                    <a href="/img/learn/entities/Objects.png" class="align-self-center" target="_blank">
+                        <img src="/img/learn/entities/Objects.png" class="fullWidth" style="margin: 2rem 0; box-shadow: none">
+                    </a>
 
                     <li><strong>What contexts can the object be utilized?</strong> Understanding the contexts that your objects live in will help you define not only the actions that occur in these contexts, but the data needed for a user. This is your opportunity to define your minimum standards for contextual data. This is data that must always been included for certain contexts. For example if your user profile is used in a mortgage context, what numbers are most critical.<br><br>
 
 
                         In my previous work, I have found our data relationship definitions helping guide everything from page layouts to entire product roadmaps. Being able to succinctly point to the most critical information, and supplementary information to users helps for situations where a user may be deciding <em>outside</em> of an interaction flow on whether they need to complete a task. An example would be a dashboard overview, you have to be specific with what data to include to not overwhelm a user.
                     </li>
+                    <a href="/img/learn/entities/Contexts.png" class="align-self-center" target="_blank">
+                        <img src="/img/learn/entities/Contexts.png" class="fullWidth" style="margin: 2rem 0; box-shadow: none"></a>
+
                 </ul>
                 <img>
                 <p class="content">You can iterate, expand and continue mapping your entity as much as fits your company's needs. Watch for entity creep though as you get further understanding. It will be tempting to start mapping other objects. At this point you will probably have a spiderweb of concepts. Now we can refine.<br><br>There are a few different methods to refine your entities. Feel free to use one or both!</p>
 
                 <ol class="contentList">
                     <li><strong>Refine by pruning.</strong> This can be difficult when building entities for the first time but is most effective. With your research and business goals in hand, prune the branches of your entity. Starting with the data contexts, which are most critical? Which are edge cases? Remove the branches that you and your team won’t refer to, but keep a copy if you every decide to reintroduce a concept. Repeat the same process for specific metrics included for each of the remaining usage contexts.</li>
-                    <img>
+                    <a href="/img/learn/entities/Pruning.png" class="align-self-center" target="_blank">
+                        <img src="/img/learn/entities/Pruning.png" class=" fullWidth" style="margin: 2rem 0; box-shadow: none"></a>
                     <li><strong>Refine by ideating.</strong> Instead of changing your entity diagram, try conceptualizing the relationships as bite sized UI components. Rapidly build these, leveraging any pre-existing components and generative AI tools if you have them available. These are not meant to be published, you want to understand how a designer may approach using your tool outside of components. The results of this <em>can</em> be used to make UI components afterwards if it suits your teams use case.</li>
-                    <img>
+                    <a href="/img/learn/entities/UI.png" class="align-self-center" target="_blank">
+                        <img src="/img/learn/entities/UI.png" class=" fullWidth" style="margin: 2rem 0; box-shadow: none"></a>
                 </ol>
 
                 <h4 style="margin-top: 2rem">So… now what do I do with it?</h4>
@@ -97,8 +109,13 @@
 
                     When you are confident in your entity, mandate it. If a new body of work involves the usage of your defined entity, ensure it follows your minimum standards of data. You will organically begin documenting its usage, and potential opportunities for the aforementioned UI components.<br><br>
 
-                    <strong>Ensuring your team speaks the same language is the starting point for any major experience improvements, and entities are a method to do just that</strong>. Entities are the bones, it’s still up to you and your team to leverage it to make the best experience possible.
+                    <strong>Ensuring your team speaks the same language is the starting point for any major experience improvements, and entities are a method to do just that</strong>. Entities are the bones, it’s still up to you and your team to leverage it to make the best experience possible. Here is an example of what is possible:
                 </p>
+                <figure><a href="https://www.figma.com/board/o0hEOBn5rWwvLhhXNcuTPr/Ontology?node-id=0-1&t=R0hDQqYmXuWjaUh0-1" class="align-self-center" target="_blank">
+                        <img src="/img/learn/entities/Ontology.png" class=" fullWidth" style="margin: 2rem 0; box-shadow: none"></a>
+                    <figcaption>Click on the image to view the full example.</figcaption>
+                </figure>
+
 
             </div>
             <div class="col">
